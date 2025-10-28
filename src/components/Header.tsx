@@ -55,7 +55,7 @@ export default function Header() {
         <nav
           className={`${poppins.className} hidden md:flex space-x-16 text-gray-700 font-medium`}
         >
-          {["BIOGRAPHY", "OTUN", "BALOGUN", "RADIO"].map((item) => (
+          {["BIOGRAPHY", "OTUN LINE", "BALOGUN LINE", "RADIO"].map((item) => (
             <motion.div
               key={item}
               whileHover={{ y: -2 }}
@@ -97,16 +97,18 @@ export default function Header() {
             className={`${poppins.className} md:hidden bg-white shadow-md`}
           >
             <nav className="flex flex-col space-y-3 px-6 py-4 text-gray-700 font-medium">
-              {["BIOGRAPHY", "OTUN", "BALOGUN", "RADIO"].map((item) => (
-                <Link
-                  key={item}
-                  href={`/${item.toLowerCase().replace(" ", "")}`}
-                  className="hover:text-[#b68d40] transition"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item}
-                </Link>
-              ))}
+              {["BIOGRAPHY", "OTUN LINE", "BALOGUN LINE", "RADIO"].map(
+                (item) => (
+                  <Link
+                    key={item}
+                    href={`/${item.toLowerCase().replace(" ", "")}`}
+                    className="hover:text-[#b68d40] transition"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item}
+                  </Link>
+                )
+              )}
             </nav>
           </motion.div>
         )}
