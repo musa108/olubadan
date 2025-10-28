@@ -46,7 +46,8 @@ export default function CulturalHeritage() {
             <Image
               src="/royal_festival.jpeg"
               alt="Ibadan Festival"
-              fill
+              height={350}
+              width={600}
               className="object-cover"
             />
           </div>
@@ -97,7 +98,8 @@ export default function CulturalHeritage() {
             <Image
               src="/royal_palace.jpeg"
               alt="Olubadan Palace"
-              fill
+              height={350}
+              width={500}
               className="object-cover"
             />
           </div>

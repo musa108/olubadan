@@ -17,6 +17,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Olubadan website",
   description: "welcome to the official website of Olubadan of Ibadanland",
+  keywords: ["Olubadan", "Ibadan", "Royalty", "Culture"],
+  authors: [{ name: "Zaheer" }],
 };
 
 export default function RootLayout({

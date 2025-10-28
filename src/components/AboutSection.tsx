@@ -30,7 +30,8 @@ export default function AboutSection() {
           <Image
             src="/olubadan.jpeg"
             alt="Olubadan Ladoja"
-            fill
+            height={400}
+            width={350}
             className="object-cover"
           />
         </div>
