@@ -34,7 +34,7 @@ export default function RadioSection() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-[#fffaf4] to-[#f9f3e8] py-20 px-6 md:px-16">
+    <section className="bg-linear-to-b from-[#fffaf4] to-[#f9f3e8] py-20 px-6 md:px-16">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
         {/* Radio Image */}
         <motion.div
