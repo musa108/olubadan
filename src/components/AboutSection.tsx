@@ -26,9 +26,9 @@ export default function AboutSection() {
         viewport={{ once: true }}
         className="w-full md:w-1/2 flex justify-center"
       >
-        <div className="relative w-[350px] h-[400px] rounded-lg overflow-hidden shadow-lg">
+        <div className="relative w-88 h-100 rounded-lg overflow-hidden shadow-lg">
           <Image
-            src="/olubadan.jpeg" 
+            src="/olubadan.jpeg"
             alt="Olubadan Ladoja"
             height={400}
             width={350}
@@ -64,7 +64,7 @@ export default function AboutSection() {
             whileTap={{ scale: 0.95 }}
             className="bg-[#b68d40] text-white px-6 py-3 rounded-md font-semibold shadow-md hover:bg-[#a67a2e] transition"
           >
-            Read Biography
+            Read More
           </motion.button>
         </Link>
       </motion.div>
