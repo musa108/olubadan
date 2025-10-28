@@ -28,7 +28,7 @@ export default function AboutSection() {
       >
         <div className="relative w-88 h-100 rounded-lg overflow-hidden shadow-lg">
           <Image
-            src="/olubadan.jpeg"
+            src="/HisMajesty.jpeg"
             alt="Olubadan Ladoja"
             height={400}
             width={350}
