@@ -28,7 +28,7 @@ export default function AboutSection() {
       >
         <div className="relative w-[350px] h-[400px] rounded-lg overflow-hidden shadow-lg">
           <Image
-            src="/olubadan.jpeg"
+            src="/olubadan.jpeg" 
             alt="Olubadan Ladoja"
             height={400}
             width={350}
@@ -64,7 +64,7 @@ export default function AboutSection() {
             whileTap={{ scale: 0.95 }}
             className="bg-[#b68d40] text-white px-6 py-3 rounded-md font-semibold shadow-md hover:bg-[#a67a2e] transition"
           >
-            Read More
+            Read Biography
           </motion.button>
         </Link>
       </motion.div>
