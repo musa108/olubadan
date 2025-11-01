@@ -73,7 +73,7 @@ export default function CulturalHeritage() {
             between the palace and the people, keeping ancient customs alive for
             future generations.
           </p>
-          <Link href="/heritage">
+          <Link href="/ibadanHeritage">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
