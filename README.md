@@ -1,18 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Olubadan Kingdom Website
+
+Welcome to the official website of the **Olubadan Kingdom**, a historic and culturally rich monarchy in Ibadan, Nigeria. This platform celebrates the heritage, traditions, and leadership of the Yoruba people.
+
+## About the Project
+
+This website is built using [Next.js](https://nextjs.org), a powerful React framework for building modern web applications. It features a dynamic and responsive design to showcase the legacy of the Olubadan Kingdom.
+
+### Key Features:
+
+- **Hero Section**: A visually stunning introduction to the Olubadan Kingdom with rotating images and descriptive text.
+- **Navigation**: Easy access to information about the Otun Line, Balogun Line, Mogaji Line, Baale Line, and more.
+- **Responsive Design**: Optimized for all devices, from mobile to desktop.
+- **Animations**: Smooth transitions and animations powered by Framer Motion.
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to run the project locally:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/olubadan-kingdom.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd olubadan-kingdom
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
+4. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
