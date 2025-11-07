@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   description: "welcome to the official website of Olubadan of Ibadanland",
   keywords: ["Olubadan", "Ibadan", "Royalty", "Culture"],
   authors: [{ name: "Zaheer" }],
+  icons: {
+    icon: "/the king.jpeg",
+  },
 };
 
 export default function RootLayout({
