@@ -20,7 +20,7 @@ export default function BalogunLine() {
       title: "HIS ROYAL MAJESTY",
       name: "OBA TAJUDEEN ABIMBOLA AJIBOLA",
       position: "BALOGUN OF IBADANLAND",
-      image: "/balogun1.jpg",
+      image: "/balogun1.jpeg",
     },
     {
       title: "HIS ROYAL MAJESTY",
