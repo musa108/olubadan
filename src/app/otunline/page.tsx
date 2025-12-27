@@ -20,25 +20,25 @@ export default function OtunLine() {
       title: "HIS ROYAL MAJESTY",
       name: "OBA (SIR) EDDY OYEWOLE",
       position: "OTUN OLUBADAN OF IBADANLAND",
-      image: "/otun1.jpg",
+      image: "/oba/otun1.jpg",
     },
     {
       title: "HIS ROYAL MAJESTY",
       name: "OBA ABIODUN KOLA-DAISI",
       position: "OSI OLUBADAN OF IBADANLAND",
-      image: "/otun2.jpg",
+      image: "/oba/otun2.jpeg",
     },
     {
       title: "HIS ROYAL MAJESTY",
       name: "OBA HAMIDU AJIBADE",
       position: "ASHIPA OLUBADAN OF IBADANLAND",
-      image: "/otun3.jpg",
+      image: "/oba/otun3.jpeg",
     },
     {
       title: "HIS ROYAL MAJESTY",
       name: "OBA ADEBAYO AKANDE",
       position: "EKERIN OLUBADAN OF IBADANLAND",
-      image: "/otun4.jpg",
+      image: "/oba/otun4.jpg",
     },
     {
       title: "HIS ROYAL MAJESTY",
@@ -89,7 +89,7 @@ export default function OtunLine() {
                 src={chief.image}
                 alt={chief.title}
                 fill
-                className="object-cover"
+                className="object-center"
               />
             </div>
 

@@ -20,37 +20,37 @@ export default function BalogunLine() {
       title: "HIS ROYAL MAJESTY",
       name: "OBA TAJUDEEN ABIMBOLA AJIBOLA",
       position: "BALOGUN OF IBADANLAND",
-      image: "/balogun1.jpeg",
+      image: "/oba/balogun1.jpeg",
     },
     {
       title: "HIS ROYAL MAJESTY",
       name: "OBA KOLAWOLE ADEGBOLA",
       position: "OTUN BALOGUN OF IBADANLAND",
-      image: "/balogun2.jpg",
+      image: "/oba/balogun2.jpg",
     },
     {
       title: "HIS ROYAL MAJESTY",
       name: "OBA JOHN ISIOYE DADA ",
       position: "OSI BALOGUN OF IBADANLAND",
-      image: "/balogun3.jpg",
+      image: "/oba/balogun3.jpg",
     },
     {
       title: "HIS ROYAL MAJESTY",
       name: "ABIODUN AZEEZ",
       position: "ASHIPA BALOGUN OF IBADANLAND",
-      image: "/balogun4.jpg",
+      image: "/oba/balogun4.jpg",
     },
     {
       title: "HIS ROYAL MAJESTY",
       name: "AKEEM BOLAJI ADEWOYIN",
       position: "EKERIN BALOGUN OF IBADANLAND",
-      image: "/balogun5.jpg",
+      image: "/oba/balogun5.jpg",
     },
     {
       title: "HIGH CHIEF",
       name: "SHARAFADEEN ABIODUN",
       position: "EKARUN BALOGUN OF IBADANLAND ",
-      image: "/balogun6.jpg",
+      image: "/oba/balogun6.jpg",
     },
   ];
 
@@ -95,7 +95,7 @@ export default function BalogunLine() {
                 src={chief.image}
                 alt={chief.title}
                 fill
-                className="object-cover"
+                className="object-center"
               />
             </div>
 
