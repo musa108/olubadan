@@ -26,12 +26,11 @@ export default function AboutSection() {
         viewport={{ once: true }}
         className="w-full md:w-1/2 flex justify-center"
       >
-        <div className="relative w-88 h-100 rounded-lg overflow-hidden shadow-lg">
+        <div className="relative w-full md:w-[400px] h-[500px] rounded-lg overflow-hidden shadow-lg">
           <Image
             src="/HisMajesty.jpeg"
             alt="Olubadan Ladoja"
-            height={400}
-            width={350}
+            fill
             className="object-cover"
           />
         </div>

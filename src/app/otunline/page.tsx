@@ -44,7 +44,7 @@ export default function OtunLine() {
       title: "HIS ROYAL MAJESTY",
       name: "KOLA BABALOLA, SAN",
       position: "EKARUN OLUBADAN OF IBADANLAND",
-      image: "/otun5.jpg",
+      image: "/oba/otun5.jpg",
     },
   ];
 
@@ -84,12 +84,15 @@ export default function OtunLine() {
             viewport={{ once: true }}
             className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all"
           >
-            <div className="relative w-full h-64">
+            <div className="relative w-full h-72 md:h-80">
               <Image
                 src={chief.image}
                 alt={chief.title}
                 fill
-                className="object-center"
+                className="object-cover object-top"
+                sizes="(max-width:768px) 100vw,
+                       (max-width:1200px) 50vw,
+                       33vw"
               />
             </div>
 

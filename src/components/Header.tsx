@@ -38,13 +38,14 @@ export default function Header() {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="bg-white shadow-md sticky top-0 z-50"
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
-        {/* Logo */}
+      <div className="max-w-7xl mx-auto flex items-center px-4 py-4">
+        
+        {/* LOGO — stays fully left now */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="flex items-center space-x-4"
+          className="flex items-center space-x-4 mr-auto"
         >
           <Image
             src="/the king.jpeg"

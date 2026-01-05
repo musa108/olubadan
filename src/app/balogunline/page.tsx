@@ -90,12 +90,12 @@ export default function BalogunLine() {
             viewport={{ once: true }}
             className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all"
           >
-            <div className="relative w-full h-64">
+            <div className="relative w-full h-72 md:h-80">
               <Image
                 src={chief.image}
                 alt={chief.title}
                 fill
-                className="object-center"
+                className="object-cover object-center"
               />
             </div>
 
