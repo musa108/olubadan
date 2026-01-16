@@ -39,7 +39,7 @@ export default function NewsPage() {
         </motion.div>
       </div>
 
-      {/* SINGLE NEWS ARTICLE */}
+      {/* NEWS ARTICLE 1 */}
       <div className="max-w-4xl mx-auto px-6 mt-16">
         {/* Cover Image */}
         <motion.div
@@ -115,8 +115,7 @@ export default function NewsPage() {
             className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
           >
             Senator Adamu Aliero congratulated Oba Ladoja on his ascension to
-            the throne, recalling their relationship from when both served as
-            State Governors, describing him as diligent and thorough.
+            the throne, describing him as diligent and thorough.
           </p>
 
           <p
@@ -125,6 +124,81 @@ export default function NewsPage() {
             Senate President Akpabio expressed optimism about the creation of
             Ibadan State, adding that Oba Ladoja represents a great asset to
             Ibadan and the South-West.
+          </p>
+
+          <p className={`${poppins.className} font-medium text-gray-800 mt-8`}>
+            <strong>Signed:</strong> <br />
+            Adeola Oloko <br />
+            Media Aide, Olubadan of Ibadanland.
+          </p>
+        </motion.div>
+      </div>
+
+      {/* NEWS ARTICLE 2 — NEWLY ADDED */}
+      <div className="max-w-4xl mx-auto px-6 mt-20">
+        {/* Cover Image (Add your image name here) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative w-full h-72 md:h-[420px] rounded-2xl overflow-hidden shadow-lg"
+        >
+          <Image
+            src="/news2.jpeg" // 🔥 Replace with actual image file
+            alt="Olubadan Appointed New Chairman"
+            fill
+            className="object-cover"
+          />
+        </motion.div>
+
+        {/* Article Content */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="bg-white shadow-lg rounded-2xl p-8 md:p-12 mt-10"
+        >
+          <h2
+            className={`${playfair.className} text-3xl md:text-4xl text-[#b68d40] font-bold`}
+          >
+            OLUBADAN IS NEW CHAIRMAN, OYO STATE TRADITIONAL COUNCIL
+          </h2>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-6 leading-relaxed text-[17px]`}
+          >
+            The dust over the rotational chairmanship of Oyo State Council of
+            Obas and Chiefs has been settled by the Oyo State Government. The
+            State Governor, Engr. Seyi Makinde, disclosed on Thursday that the
+            rotational chairmanship—which rotates between Olubadan, Soun of
+            Ogbomoso and Alaafin of Oyo—will begin with Oba Rashidi Adewolu
+            Ladoja.
+          </p>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
+          >
+            At a well-attended inauguration of the State Council of Obas and
+            Chiefs at the Western House of Chiefs, Governor Makinde announced:
+            “After consultation with Their Imperial Majesties, it was decided
+            that the rotational system with Olubadan as the chair should begin.”
+          </p>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
+          >
+            Oba Ladoja, surrounded by top monarchs including Soun of Ogbomoso,
+            Eleruwa of Eruwa, Aseyin of Iseyin, Okere of Saki and others,
+            expressed gratitude to the Governor for reconstituting the Council
+            and thanked fellow monarchs for their unity and solidarity.
+          </p>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
+          >
+            Speaking with reporters after the meeting, the Olubadan stated that
+            the focus of the Council would be ensuring peace, security, safety,
+            and progress across all domains in Oyo State.
           </p>
 
           <p className={`${poppins.className} font-medium text-gray-800 mt-8`}>
