@@ -219,7 +219,7 @@ export default function NewsPage() {
           className="relative w-full h-72 md:h-[420px] rounded-2xl overflow-hidden shadow-lg"
         >
           <Image
-            src="/news3.jpeg" // 
+           src="/oba-and-fg.jpeg" 
             alt="Ladoja visits SGF, seeks FG's assistance over ecological problems"
             fill
             className="object-cover"
