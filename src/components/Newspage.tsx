@@ -234,7 +234,7 @@ export default function NewsPage() {
           className="bg-white shadow-lg rounded-2xl p-8 md:p-12 mt-10"
         >
           <h2
-            className={`${playfair.className} text-3xl capitalize md:text-4xl text-[#b68d40] font-bold`}
+            className={`${playfair.className} text-3xl uppercase md:text-4xl text-[#b68d40] font-bold`}
           >
             Ladoja visits SGF, seeks FG's assistance over ecological problems
           </h2>
