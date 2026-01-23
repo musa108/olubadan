@@ -208,6 +208,86 @@ export default function NewsPage() {
           </p>
         </motion.div>
       </div>
+
+      {/* NEWS ARTICLE 3 — NEWLY ADDED */}
+      <div className="max-w-4xl mx-auto px-6 mt-20">
+        {/* Cover Image (Add your image name here) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative w-full h-72 md:h-[420px] rounded-2xl overflow-hidden shadow-lg"
+        >
+          <Image
+            src="/news3.jpeg" // 
+            alt="Ladoja visits SGF, seeks FG's assistance over ecological problems"
+            fill
+            className="object-cover"
+          />
+        </motion.div>
+
+        {/* Article Content */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="bg-white shadow-lg rounded-2xl p-8 md:p-12 mt-10"
+        >
+          <h2
+            className={`${playfair.className} text-3xl capitalize md:text-4xl text-[#b68d40] font-bold`}
+          >
+            Ladoja visits SGF, seeks FG's assistance over ecological problems
+          </h2>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-6 leading-relaxed text-[17px]`}
+          >
+            The Olubadan of Ibadanland, Oba Rashidi Adewolu Ladoja has implored the
+            Federal Government to help solve the ecological problems in Ibadan.
+            The first class monarch made this plea today in Abuja when he visited
+            the Secretary to the Government of the Federation, Dr George Akume.
+            In a release signed by his Media Aide, Adeola Oloko, the Olubadan
+            acknowledged the previous interventions of the Federal Government and
+            World Bank on Ogunpa channelisation programme.
+            The royal father, however, added that Ogunpa ecological problem
+            gained more prominence because the areas affected are elitist areas
+            stretching from Mokola, Ekotedo, Ogunpa, Oke Ado to Molete.
+          </p>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
+          >
+            He therefore requested the assistance of the Federal Government to help solve the
+            ecological problems threatening the down-troddenpeople
+            living around Oranyan, Kudeti Agbongbon Area and some other parts of city
+            that have not been in the spotlight due to no fault on some other parts of city
+            that have not been in the spotlight due to no fault of theirs.
+          </p>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
+          >
+            the Federal Government scribe, Dr George Akume ssid he was not surprised that Kabiyesi
+            Olubadan could come all the way from Ibadan to Abuja to bring the attention of the
+            Federal Government to the plight of his people, adding that this is why Olubadan 
+            has won a wide perspective of affection.
+          </p>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
+          >
+            He promised that everything would be done by the Federal Government to assist.
+            Oba Ladoja was accompanied by Senator Fatai Buhari (Oyo North) and 
+            Senator Sharafadeen Alli (Oyo South) amongst others.
+          </p>
+
+          <p className={`${poppins.className} font-medium text-gray-800 mt-8`}>
+            <strong>Signed:</strong> <br />
+            Adeola Oloko <br />
+            Media Aide, Olubadan of Ibadanland.
+          </p>
+        </motion.div>
+      </div>
     </div>
   );
 }
