@@ -38,8 +38,82 @@ export default function NewsPage() {
           </p>
         </motion.div>
       </div>
+      {/* NEWS ARTICLE 1 — NEWLY ADDED */}
+      <div className="max-w-4xl mx-auto px-6 mt-20">
+        {/* Cover Image (Add your image name here) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative w-full h-72 md:h-[420px] rounded-2xl overflow-hidden shadow-lg"
+        >
+          <Image
+            src="/news4.jpeg"
+            alt="Olubadan shines at THE SUN`s Award night"
+            fill
+            className="object-cover"
+          />
+        </motion.div>
 
-      {/* NEWS ARTICLE 1 */}
+        {/* Article Content */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="bg-white shadow-lg rounded-2xl p-8 md:p-12 mt-10"
+        >
+          <h2
+            className={`${playfair.className} text-3xl uppercase md:text-4xl text-[#b68d40] font-bold`}
+          >
+            Olubadan shines at THE SUN`s Award night
+          </h2>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-6 leading-relaxed text-[17px]`}
+          >
+            His Imperial Majesty, Oba Rashidi Adewolu Ladoja, the 44th Olubadan of Ibadanland
+            and former governor of Oyo State, has been named as one of the winners of The Sun
+            Lifetime Achievement Award for 2025.
+          </p>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
+          >
+
+            Saturday,January 31 was a glorious day for Olubadan of Ibadanland,
+            His Imperial Majesty,Oba Rashidi Adewolu Ladoja,Arusa 1 as he received
+            the Lifetime Service Award from one of Nigeria`s leading newsapers,
+            The Sun at Eko Hotel,Lagos.
+            Dignitaries from different walks of life-home and abroad- honoured the
+            Chairman,Oyo State Council of Obas and Chiefs at the occasion.
+          </p>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
+          >
+            It was indeed a night to remember as the event, chaired by Air Peace boss,Chief Onyema,
+            paraded serving Governors,distinguished Senators,Honourable members,
+            Federal House of Representatives,royal fathers,
+            industry captains and fathers of faith.
+          </p>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
+          >
+          It was indeed a night to remember as the event, chaired by Air Peace boss,
+          Chief Onyema, paraded serving Governors,distinguished Senators,
+          Honourable members,Federal House of Representatives,
+          royal fathers,industry captains and fathers of faith.
+          </p>
+
+          <p className={`${poppins.className} font-medium text-gray-800 mt-8`}>
+            <strong>Signed:</strong> <br />
+            Adeola Oloko <br />
+            Media Aide, Olubadan of Ibadanland.
+          </p>
+        </motion.div>
+      </div>
+      {/* NEWS ARTICLE 2*/}
       <div className="max-w-4xl mx-auto px-6 mt-16">
         {/* Cover Image */}
         <motion.div
@@ -134,7 +208,7 @@ export default function NewsPage() {
         </motion.div>
       </div>
 
-      {/* NEWS ARTICLE 2 — NEWLY ADDED */}
+      {/* NEWS ARTICLE 3— NEWLY ADDED */}
       <div className="max-w-4xl mx-auto px-6 mt-20">
         {/* Cover Image (Add your image name here) */}
         <motion.div
@@ -209,7 +283,7 @@ export default function NewsPage() {
         </motion.div>
       </div>
 
-      {/* NEWS ARTICLE 3 — NEWLY ADDED */}
+      {/* NEWS ARTICLE 4 — NEWLY ADDED */}
       <div className="max-w-4xl mx-auto px-6 mt-20">
         {/* Cover Image (Add your image name here) */}
         <motion.div
@@ -219,7 +293,7 @@ export default function NewsPage() {
           className="relative w-full h-72 md:h-[420px] rounded-2xl overflow-hidden shadow-lg"
         >
           <Image
-           src="/oba-and-fg.jpeg" 
+            src="/oba-and-fg.jpeg"
             alt="Ladoja visits SGF, seeks FG's assistance over ecological problems"
             fill
             className="object-cover"
@@ -236,7 +310,7 @@ export default function NewsPage() {
           <h2
             className={`${playfair.className} text-3xl uppercase md:text-4xl text-[#b68d40] font-bold`}
           >
-            Ladoja visits SGF, seeks FG's assistance over ecological problems
+            Ladoja visits SGF, seeks FGs assistance over ecological problems
           </h2>
 
           <p
@@ -269,7 +343,7 @@ export default function NewsPage() {
           >
             the Federal Government scribe, Dr George Akume ssid he was not surprised that Kabiyesi
             Olubadan could come all the way from Ibadan to Abuja to bring the attention of the
-            Federal Government to the plight of his people, adding that this is why Olubadan 
+            Federal Government to the plight of his people, adding that this is why Olubadan
             has won a wide perspective of affection.
           </p>
 
@@ -277,7 +351,7 @@ export default function NewsPage() {
             className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
           >
             He promised that everything would be done by the Federal Government to assist.
-            Oba Ladoja was accompanied by Senator Fatai Buhari (Oyo North) and 
+            Oba Ladoja was accompanied by Senator Fatai Buhari (Oyo North) and
             Senator Sharafadeen Alli (Oyo South) amongst others.
           </p>
 
