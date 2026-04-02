@@ -39,7 +39,8 @@ export default function NewsPage() {
         </motion.div>
       </div>
       {/* NEWS ARTICLE 1 — NEWLY ADDED */}
-      <div className="max-w-4xl mx-auto px-6 mt-20">
+      <div className="max-w-7xl mx-auto px-6 mt-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+      <div className="w-full flex flex-col h-full">
         {/* Cover Image (Add your image name here) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,7 +61,7 @@ export default function NewsPage() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="bg-white shadow-lg rounded-2xl p-8 md:p-12 mt-10"
+          className="bg-white shadow-lg rounded-2xl p-8 md:p-12 mt-10 flex-1"
         >
           <h2
             className={`${playfair.className} text-3xl uppercase md:text-4xl text-[#b68d40] font-bold`}
@@ -114,7 +115,7 @@ export default function NewsPage() {
         </motion.div>
       </div>
       {/* NEWS ARTICLE 2*/}
-      <div className="max-w-4xl mx-auto px-6 mt-16">
+      <div className="w-full flex flex-col h-full">
         {/* Cover Image */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -135,7 +136,7 @@ export default function NewsPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="bg-white shadow-lg rounded-2xl p-8 md:p-12 mt-10"
+          className="bg-white shadow-lg rounded-2xl p-8 md:p-12 mt-10 flex-1"
         >
           <h2
             className={`${playfair.className} text-3xl md:text-4xl text-[#b68d40] font-bold`}
@@ -209,7 +210,7 @@ export default function NewsPage() {
       </div>
 
       {/* NEWS ARTICLE 3— NEWLY ADDED */}
-      <div className="max-w-4xl mx-auto px-6 mt-20">
+      <div className="w-full flex flex-col h-full">
         {/* Cover Image (Add your image name here) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -230,7 +231,7 @@ export default function NewsPage() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="bg-white shadow-lg rounded-2xl p-8 md:p-12 mt-10"
+          className="bg-white shadow-lg rounded-2xl p-8 md:p-12 mt-10 flex-1"
         >
           <h2
             className={`${playfair.className} text-3xl md:text-4xl text-[#b68d40] font-bold`}
@@ -284,7 +285,7 @@ export default function NewsPage() {
       </div>
 
       {/* NEWS ARTICLE 4 — NEWLY ADDED */}
-      <div className="max-w-4xl mx-auto px-6 mt-20">
+      <div className="w-full flex flex-col h-full">
         {/* Cover Image (Add your image name here) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -305,7 +306,7 @@ export default function NewsPage() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="bg-white shadow-lg rounded-2xl p-8 md:p-12 mt-10"
+          className="bg-white shadow-lg rounded-2xl p-8 md:p-12 mt-10 flex-1"
         >
           <h2
             className={`${playfair.className} text-3xl uppercase md:text-4xl text-[#b68d40] font-bold`}
@@ -364,7 +365,7 @@ export default function NewsPage() {
       </div>
 
       {/* NEWS ARTICLE 5— NEWLY ADDED */}
-      <div className="max-w-4xl mx-auto px-6 mt-20">
+      <div className="w-full flex flex-col h-full">
         {/* Cover Image (Add your image name here) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -385,7 +386,7 @@ export default function NewsPage() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="bg-white shadow-lg rounded-2xl p-8 md:p-12 mt-10"
+          className="bg-white shadow-lg rounded-2xl p-8 md:p-12 mt-10 flex-1"
         >
           <h2
             className={`${playfair.className} text-3xl md:text-4xl text-[#b68d40] font-bold uppercase`}
@@ -467,6 +468,7 @@ export default function NewsPage() {
             Media Aide, Olubadan of Ibadanland.
           </p>
         </motion.div>
+      </div>
       </div>
     </div>
   );
