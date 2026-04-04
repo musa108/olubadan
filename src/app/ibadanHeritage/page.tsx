@@ -42,12 +42,11 @@ export default function page() {
           viewport={{ once: true }}
           className="md:w-1/2"
         >
-          <div className="relative rounded-lg overflow-hidden shadow-lg">
+          <div className="relative w-full h-[350px] md:h-[450px] rounded-lg overflow-hidden shadow-lg">
             <Image
               src="/ibadan.jpg"
               alt="Ibadan City"
-              height={400}
-              width={600}
+              fill
               className="object-cover"
             />
           </div>
@@ -87,12 +86,11 @@ export default function page() {
           viewport={{ once: true }}
           className="md:w-1/2"
         >
-          <div className="relative rounded-lg overflow-hidden shadow-lg">
+          <div className="relative w-full h-[350px] md:h-[450px] rounded-lg overflow-hidden shadow-lg">
             <Image
               src="/royal_palace.jpeg"
               alt="Olubadan Palace"
-              height={400}
-              width={600}
+              fill
               className="object-cover"
             />
           </div>
@@ -131,12 +129,11 @@ export default function page() {
           viewport={{ once: true }}
           className="md:w-1/2"
         >
-          <div className="relative rounded-lg overflow-hidden shadow-lg">
+          <div className="relative w-full h-[350px] md:h-[450px] rounded-lg overflow-hidden shadow-lg">
             <Image
               src="/royal_festival.jpeg"
               alt="Ibadan Festival"
-              height={400}
-              width={600}
+              fill
               className="object-cover"
             />
           </div>
