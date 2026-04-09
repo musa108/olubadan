@@ -469,6 +469,97 @@ export default function NewsPage() {
           </p>
         </motion.div>
       </div>
+      <div className="w-full flex flex-col h-full">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative w-full h-72 md:h-[420px] rounded-2xl overflow-hidden shadow-lg"
+        >
+          <Image
+            src="/oluband-with-garri.jpeg"
+            alt="Olubadan inaugurates Ibadan Community Guard"
+            fill
+            className="object-cover"
+          />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="bg-white shadow-lg rounded-2xl p-8 md:p-12 mt-10 flex-1"
+        >
+          <h2
+            className={`${playfair.className} text-3xl md:text-4xl text-[#b68d40] font-bold uppercase`}
+          >
+            Olubadan Inaugurates Ibadan Community Guard, Unveils Gaari Ibadan Initiative
+          </h2>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-6 leading-relaxed text-[17px]`}
+          >
+            Oba Rashidi Adewolu Ladoja on Tuesday formally inaugurated the Ibadan
+            Community Guard, a strategic grassroots security initiative designed
+            to collaborate with relevant security agencies in strengthening
+            surveillance and ensuring effective policing across the eleven Local
+            Government Areas of Ibadanland.
+          </p>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
+          >
+            The historic event, held at the Palace of the Olubadan, Oke Aremo in
+            Ibadan, marked a significant step toward enhancing community-based
+            security architecture in response to prevailing challenges in parts
+            of the ancient city.
+          </p>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
+          >
+            Speaking at the ceremony, the revered monarch emphasized the
+            importance of collective responsibility in safeguarding lives and
+            property, noting that the Community Guard will be strategically
+            deployed across all eleven Local Government Areas to complement the
+            efforts of conventional security agencies.
+          </p>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
+          >
+            In a related development, the event also featured the official
+            unveiling of Gaari Ibadan, an economic and food security initiative
+            driven by the Ibadan Economic Investment and Business Development
+            Desk in collaboration with the Ibadan Food Security Initiative. The
+            programme is aimed at promoting local production, boosting economic
+            growth, and ensuring food sustainability within the metropolis.
+          </p>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
+          >
+            The ceremony attracted notable dignitaries including members of the
+            Olubadan-in-Council, former Minister of Industry and Iyalaje Iyalode
+            of Ibadanland, Onikepo Akande, Senator Sharafadeen Alli, CP. Fatai
+            Owoseni, prominent entrepreneur Jubril Dotun Sanusi, and the
+            President-General of the Central Council of Ibadanland, Ajeniyi
+            Ajewole, among other distinguished guests.
+          </p>
+
+          <p
+            className={`${poppins.className} text-gray-700 mt-4 leading-relaxed text-[17px]`}
+          >
+            The inauguration underscores the commitment of the Olubadan to
+            peace, security, and sustainable development across Ibadanland.
+          </p>
+
+          <p className={`${poppins.className} font-medium text-gray-800 mt-8`}>
+            <strong>Signed:</strong> <br />
+            Palace of the Olubadan of Ibadanland.
+          </p>
+        </motion.div>
+      </div>
       </div>
     </div>
   );
