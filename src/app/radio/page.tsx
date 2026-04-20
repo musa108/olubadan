@@ -70,7 +70,7 @@ export default function RadioPage() {
           title="Olubadan Live Radio Stream"
           description="Tune in to exclusive live radio broadcasts featuring cultural conversations, Yoruba heritage stories, and special announcements from the Olubadan Palace. Experience the voice of tradition."
           image="/HisMajesty.jpeg"
-          youtubeChannelOrVideoId="YOUR_YOUTUBE_RADIO_CHANNEL_ID"
+          youtubeChannelOrVideoId="UCX3zNcZlGgx48zQmsXnX0IQ"
           isLive={true}
         />
       ) : (

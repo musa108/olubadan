@@ -7,10 +7,8 @@ export default function VideoPage() {
       title="Olubadan Live Video Stream"
       description="Join us for live events, cultural celebrations, and exclusive broadcasts from the Olubadan Palace. Watch ceremonies, inaugurations, and important announcements in real-time."
       image="/HisMajesty.jpeg"
-      youtubeChannelOrVideoId="YOUR_YOUTUBE_CHANNEL_ID"
+      youtubeChannelOrVideoId="UCX3zNcZlGgx48zQmsXnX0IQ"
       isLive={true}
-      showChat={true}
-      videoId="YOUR_YOUTUBE_VIDEO_ID"
     />
   );
 }
