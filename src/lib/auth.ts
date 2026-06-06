@@ -20,6 +20,7 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password || !credentials?.role) {
+          console.warn("[auth] missing credentials fields");
           return null;
         }
 
@@ -27,18 +28,29 @@ export const authOptions: NextAuthOptions = {
           where: { email: credentials.email.toLowerCase() },
         });
 
-        if (!user) return null;
+        if (!user) {
+          console.warn("[auth] user not found for email (redacted)");
+          return null;
+        }
 
         const isValidPassword = await compare(credentials.password, user.passwordHash);
-        if (!isValidPassword) return null;
+        if (!isValidPassword) {
+          console.warn("[auth] password mismatch for email (redacted)");
+          return null;
+        }
 
         if (credentials.role === "admin" && user.role !== "SUPER_ADMIN") {
+          console.warn("[auth] role mismatch: expected SUPER_ADMIN for admin");
           return null;
         }
 
         if (credentials.role === "holder" && user.role !== "LINE_REPRESENTATIVE") {
+          console.warn("[auth] role mismatch: expected LINE_REPRESENTATIVE for holder");
           return null;
         }
+
+        // Avoid verbose logs on success; keep a minimal marker.
+        console.warn("[auth] credentials accepted (redacted)");
 
         return {
           id: user.id,
