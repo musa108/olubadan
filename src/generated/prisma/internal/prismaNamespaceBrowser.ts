@@ -110,19 +110,19 @@ export const ProfileScalarFieldEnum = {
   reviewNote: 'reviewNote',
   reviewedAt: 'reviewedAt',
   reviewedById: 'reviewedById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  currentOccupation: 'currentOccupation',
   dateOfBirth: 'dateOfBirth',
+  expertiseInterest: 'expertiseInterest',
   familyCompound: 'familyCompound',
   familyVillage: 'familyVillage',
-  localGovernment: 'localGovernment',
-  highestQualification: 'highestQualification',
   fieldSpecialization: 'fieldSpecialization',
-  otherQualifications: 'otherQualifications',
-  currentOccupation: 'currentOccupation',
-  yearInstalled: 'yearInstalled',
+  highestQualification: 'highestQualification',
   languagesSpoken: 'languagesSpoken',
-  expertiseInterest: 'expertiseInterest',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  localGovernment: 'localGovernment',
+  otherQualifications: 'otherQualifications',
+  yearInstalled: 'yearInstalled'
 } as const
 
 export type ProfileScalarFieldEnum = (typeof ProfileScalarFieldEnum)[keyof typeof ProfileScalarFieldEnum]

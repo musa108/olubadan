@@ -222,10 +222,10 @@ export type UserWhereInput = {
   positionTitle?: Prisma.StringNullableFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
-  profiles?: Prisma.ProfileListRelationFilter
-  news?: Prisma.NewsListRelationFilter
   announcements?: Prisma.AnnouncementListRelationFilter
   auditLogs?: Prisma.AuditLogListRelationFilter
+  news?: Prisma.NewsListRelationFilter
+  profiles?: Prisma.ProfileListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -239,10 +239,10 @@ export type UserOrderByWithRelationInput = {
   positionTitle?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  profiles?: Prisma.ProfileOrderByRelationAggregateInput
-  news?: Prisma.NewsOrderByRelationAggregateInput
   announcements?: Prisma.AnnouncementOrderByRelationAggregateInput
   auditLogs?: Prisma.AuditLogOrderByRelationAggregateInput
+  news?: Prisma.NewsOrderByRelationAggregateInput
+  profiles?: Prisma.ProfileOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -259,10 +259,10 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   positionTitle?: Prisma.StringNullableFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
-  profiles?: Prisma.ProfileListRelationFilter
-  news?: Prisma.NewsListRelationFilter
   announcements?: Prisma.AnnouncementListRelationFilter
   auditLogs?: Prisma.AuditLogListRelationFilter
+  news?: Prisma.NewsListRelationFilter
+  profiles?: Prisma.ProfileListRelationFilter
 }, "id" | "email">
 
 export type UserOrderByWithAggregationInput = {
@@ -308,10 +308,10 @@ export type UserCreateInput = {
   positionTitle?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  profiles?: Prisma.ProfileCreateNestedManyWithoutUserInput
-  news?: Prisma.NewsCreateNestedManyWithoutAuthorInput
   announcements?: Prisma.AnnouncementCreateNestedManyWithoutAuthorInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  news?: Prisma.NewsCreateNestedManyWithoutAuthorInput
+  profiles?: Prisma.ProfileCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -325,10 +325,10 @@ export type UserUncheckedCreateInput = {
   positionTitle?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  profiles?: Prisma.ProfileUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewsUncheckedCreateNestedManyWithoutAuthorInput
   announcements?: Prisma.AnnouncementUncheckedCreateNestedManyWithoutAuthorInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  news?: Prisma.NewsUncheckedCreateNestedManyWithoutAuthorInput
+  profiles?: Prisma.ProfileUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -342,10 +342,10 @@ export type UserUpdateInput = {
   positionTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  profiles?: Prisma.ProfileUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewsUpdateManyWithoutAuthorNestedInput
   announcements?: Prisma.AnnouncementUpdateManyWithoutAuthorNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  news?: Prisma.NewsUpdateManyWithoutAuthorNestedInput
+  profiles?: Prisma.ProfileUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -359,10 +359,10 @@ export type UserUncheckedUpdateInput = {
   positionTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  profiles?: Prisma.ProfileUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewsUncheckedUpdateManyWithoutAuthorNestedInput
   announcements?: Prisma.AnnouncementUncheckedUpdateManyWithoutAuthorNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  news?: Prisma.NewsUncheckedUpdateManyWithoutAuthorNestedInput
+  profiles?: Prisma.ProfileUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -546,9 +546,9 @@ export type UserCreateWithoutProfilesInput = {
   positionTitle?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  news?: Prisma.NewsCreateNestedManyWithoutAuthorInput
   announcements?: Prisma.AnnouncementCreateNestedManyWithoutAuthorInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  news?: Prisma.NewsCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutProfilesInput = {
@@ -562,9 +562,9 @@ export type UserUncheckedCreateWithoutProfilesInput = {
   positionTitle?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  news?: Prisma.NewsUncheckedCreateNestedManyWithoutAuthorInput
   announcements?: Prisma.AnnouncementUncheckedCreateNestedManyWithoutAuthorInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  news?: Prisma.NewsUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutProfilesInput = {
@@ -594,9 +594,9 @@ export type UserUpdateWithoutProfilesInput = {
   positionTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  news?: Prisma.NewsUpdateManyWithoutAuthorNestedInput
   announcements?: Prisma.AnnouncementUpdateManyWithoutAuthorNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  news?: Prisma.NewsUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutProfilesInput = {
@@ -610,9 +610,9 @@ export type UserUncheckedUpdateWithoutProfilesInput = {
   positionTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  news?: Prisma.NewsUncheckedUpdateManyWithoutAuthorNestedInput
   announcements?: Prisma.AnnouncementUncheckedUpdateManyWithoutAuthorNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  news?: Prisma.NewsUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutNewsInput = {
@@ -626,9 +626,9 @@ export type UserCreateWithoutNewsInput = {
   positionTitle?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  profiles?: Prisma.ProfileCreateNestedManyWithoutUserInput
   announcements?: Prisma.AnnouncementCreateNestedManyWithoutAuthorInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  profiles?: Prisma.ProfileCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutNewsInput = {
@@ -642,9 +642,9 @@ export type UserUncheckedCreateWithoutNewsInput = {
   positionTitle?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  profiles?: Prisma.ProfileUncheckedCreateNestedManyWithoutUserInput
   announcements?: Prisma.AnnouncementUncheckedCreateNestedManyWithoutAuthorInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  profiles?: Prisma.ProfileUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutNewsInput = {
@@ -674,9 +674,9 @@ export type UserUpdateWithoutNewsInput = {
   positionTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  profiles?: Prisma.ProfileUpdateManyWithoutUserNestedInput
   announcements?: Prisma.AnnouncementUpdateManyWithoutAuthorNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  profiles?: Prisma.ProfileUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutNewsInput = {
@@ -690,9 +690,9 @@ export type UserUncheckedUpdateWithoutNewsInput = {
   positionTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  profiles?: Prisma.ProfileUncheckedUpdateManyWithoutUserNestedInput
   announcements?: Prisma.AnnouncementUncheckedUpdateManyWithoutAuthorNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  profiles?: Prisma.ProfileUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutAnnouncementsInput = {
@@ -706,9 +706,9 @@ export type UserCreateWithoutAnnouncementsInput = {
   positionTitle?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  profiles?: Prisma.ProfileCreateNestedManyWithoutUserInput
-  news?: Prisma.NewsCreateNestedManyWithoutAuthorInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  news?: Prisma.NewsCreateNestedManyWithoutAuthorInput
+  profiles?: Prisma.ProfileCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutAnnouncementsInput = {
@@ -722,9 +722,9 @@ export type UserUncheckedCreateWithoutAnnouncementsInput = {
   positionTitle?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  profiles?: Prisma.ProfileUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewsUncheckedCreateNestedManyWithoutAuthorInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  news?: Prisma.NewsUncheckedCreateNestedManyWithoutAuthorInput
+  profiles?: Prisma.ProfileUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutAnnouncementsInput = {
@@ -754,9 +754,9 @@ export type UserUpdateWithoutAnnouncementsInput = {
   positionTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  profiles?: Prisma.ProfileUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewsUpdateManyWithoutAuthorNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  news?: Prisma.NewsUpdateManyWithoutAuthorNestedInput
+  profiles?: Prisma.ProfileUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAnnouncementsInput = {
@@ -770,9 +770,9 @@ export type UserUncheckedUpdateWithoutAnnouncementsInput = {
   positionTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  profiles?: Prisma.ProfileUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewsUncheckedUpdateManyWithoutAuthorNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  news?: Prisma.NewsUncheckedUpdateManyWithoutAuthorNestedInput
+  profiles?: Prisma.ProfileUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutAuditLogsInput = {
@@ -786,9 +786,9 @@ export type UserCreateWithoutAuditLogsInput = {
   positionTitle?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  profiles?: Prisma.ProfileCreateNestedManyWithoutUserInput
-  news?: Prisma.NewsCreateNestedManyWithoutAuthorInput
   announcements?: Prisma.AnnouncementCreateNestedManyWithoutAuthorInput
+  news?: Prisma.NewsCreateNestedManyWithoutAuthorInput
+  profiles?: Prisma.ProfileCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutAuditLogsInput = {
@@ -802,9 +802,9 @@ export type UserUncheckedCreateWithoutAuditLogsInput = {
   positionTitle?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  profiles?: Prisma.ProfileUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewsUncheckedCreateNestedManyWithoutAuthorInput
   announcements?: Prisma.AnnouncementUncheckedCreateNestedManyWithoutAuthorInput
+  news?: Prisma.NewsUncheckedCreateNestedManyWithoutAuthorInput
+  profiles?: Prisma.ProfileUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutAuditLogsInput = {
@@ -834,9 +834,9 @@ export type UserUpdateWithoutAuditLogsInput = {
   positionTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  profiles?: Prisma.ProfileUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewsUpdateManyWithoutAuthorNestedInput
   announcements?: Prisma.AnnouncementUpdateManyWithoutAuthorNestedInput
+  news?: Prisma.NewsUpdateManyWithoutAuthorNestedInput
+  profiles?: Prisma.ProfileUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditLogsInput = {
@@ -850,9 +850,9 @@ export type UserUncheckedUpdateWithoutAuditLogsInput = {
   positionTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  profiles?: Prisma.ProfileUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewsUncheckedUpdateManyWithoutAuthorNestedInput
   announcements?: Prisma.AnnouncementUncheckedUpdateManyWithoutAuthorNestedInput
+  news?: Prisma.NewsUncheckedUpdateManyWithoutAuthorNestedInput
+  profiles?: Prisma.ProfileUncheckedUpdateManyWithoutUserNestedInput
 }
 
 
@@ -861,17 +861,17 @@ export type UserUncheckedUpdateWithoutAuditLogsInput = {
  */
 
 export type UserCountOutputType = {
-  profiles: number
-  news: number
   announcements: number
   auditLogs: number
+  news: number
+  profiles: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  profiles?: boolean | UserCountOutputTypeCountProfilesArgs
-  news?: boolean | UserCountOutputTypeCountNewsArgs
   announcements?: boolean | UserCountOutputTypeCountAnnouncementsArgs
   auditLogs?: boolean | UserCountOutputTypeCountAuditLogsArgs
+  news?: boolean | UserCountOutputTypeCountNewsArgs
+  profiles?: boolean | UserCountOutputTypeCountProfilesArgs
 }
 
 /**
@@ -882,20 +882,6 @@ export type UserCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensi
    * Select specific fields to fetch from the UserCountOutputType
    */
   select?: Prisma.UserCountOutputTypeSelect<ExtArgs> | null
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountProfilesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ProfileWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountNewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.NewsWhereInput
 }
 
 /**
@@ -912,6 +898,20 @@ export type UserCountOutputTypeCountAuditLogsArgs<ExtArgs extends runtime.Types.
   where?: Prisma.AuditLogWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountNewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.NewsWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountProfilesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ProfileWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -924,10 +924,10 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   positionTitle?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  profiles?: boolean | Prisma.User$profilesArgs<ExtArgs>
-  news?: boolean | Prisma.User$newsArgs<ExtArgs>
   announcements?: boolean | Prisma.User$announcementsArgs<ExtArgs>
   auditLogs?: boolean | Prisma.User$auditLogsArgs<ExtArgs>
+  news?: boolean | Prisma.User$newsArgs<ExtArgs>
+  profiles?: boolean | Prisma.User$profilesArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -972,10 +972,10 @@ export type UserSelectScalar = {
 
 export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phone" | "passwordHash" | "role" | "line" | "positionTitle" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  profiles?: boolean | Prisma.User$profilesArgs<ExtArgs>
-  news?: boolean | Prisma.User$newsArgs<ExtArgs>
   announcements?: boolean | Prisma.User$announcementsArgs<ExtArgs>
   auditLogs?: boolean | Prisma.User$auditLogsArgs<ExtArgs>
+  news?: boolean | Prisma.User$newsArgs<ExtArgs>
+  profiles?: boolean | Prisma.User$profilesArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -984,10 +984,10 @@ export type UserIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
 export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "User"
   objects: {
-    profiles: Prisma.$ProfilePayload<ExtArgs>[]
-    news: Prisma.$NewsPayload<ExtArgs>[]
     announcements: Prisma.$AnnouncementPayload<ExtArgs>[]
     auditLogs: Prisma.$AuditLogPayload<ExtArgs>[]
+    news: Prisma.$NewsPayload<ExtArgs>[]
+    profiles: Prisma.$ProfilePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1394,10 +1394,10 @@ readonly fields: UserFieldRefs;
  */
 export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  profiles<T extends Prisma.User$profilesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$profilesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  news<T extends Prisma.User$newsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$newsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NewsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   announcements<T extends Prisma.User$announcementsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$announcementsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AnnouncementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   auditLogs<T extends Prisma.User$auditLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$auditLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AuditLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  news<T extends Prisma.User$newsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$newsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NewsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  profiles<T extends Prisma.User$profilesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$profilesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1830,54 +1830,6 @@ export type UserDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Internal
 }
 
 /**
- * User.profiles
- */
-export type User$profilesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Profile
-   */
-  select?: Prisma.ProfileSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Profile
-   */
-  omit?: Prisma.ProfileOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ProfileInclude<ExtArgs> | null
-  where?: Prisma.ProfileWhereInput
-  orderBy?: Prisma.ProfileOrderByWithRelationInput | Prisma.ProfileOrderByWithRelationInput[]
-  cursor?: Prisma.ProfileWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ProfileScalarFieldEnum | Prisma.ProfileScalarFieldEnum[]
-}
-
-/**
- * User.news
- */
-export type User$newsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the News
-   */
-  select?: Prisma.NewsSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the News
-   */
-  omit?: Prisma.NewsOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.NewsInclude<ExtArgs> | null
-  where?: Prisma.NewsWhereInput
-  orderBy?: Prisma.NewsOrderByWithRelationInput | Prisma.NewsOrderByWithRelationInput[]
-  cursor?: Prisma.NewsWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.NewsScalarFieldEnum | Prisma.NewsScalarFieldEnum[]
-}
-
-/**
  * User.announcements
  */
 export type User$announcementsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1923,6 +1875,54 @@ export type User$auditLogsArgs<ExtArgs extends runtime.Types.Extensions.Internal
   take?: number
   skip?: number
   distinct?: Prisma.AuditLogScalarFieldEnum | Prisma.AuditLogScalarFieldEnum[]
+}
+
+/**
+ * User.news
+ */
+export type User$newsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the News
+   */
+  select?: Prisma.NewsSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the News
+   */
+  omit?: Prisma.NewsOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.NewsInclude<ExtArgs> | null
+  where?: Prisma.NewsWhereInput
+  orderBy?: Prisma.NewsOrderByWithRelationInput | Prisma.NewsOrderByWithRelationInput[]
+  cursor?: Prisma.NewsWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.NewsScalarFieldEnum | Prisma.NewsScalarFieldEnum[]
+}
+
+/**
+ * User.profiles
+ */
+export type User$profilesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Profile
+   */
+  select?: Prisma.ProfileSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Profile
+   */
+  omit?: Prisma.ProfileOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProfileInclude<ExtArgs> | null
+  where?: Prisma.ProfileWhereInput
+  orderBy?: Prisma.ProfileOrderByWithRelationInput | Prisma.ProfileOrderByWithRelationInput[]
+  cursor?: Prisma.ProfileWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ProfileScalarFieldEnum | Prisma.ProfileScalarFieldEnum[]
 }
 
 /**

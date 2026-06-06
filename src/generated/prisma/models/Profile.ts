@@ -40,19 +40,19 @@ export type ProfileMinAggregateOutputType = {
   reviewNote: string | null
   reviewedAt: Date | null
   reviewedById: string | null
-  dateOfBirth: string | null
-  familyCompound: string | null
-  familyVillage: string | null
-  localGovernment: string | null
-  highestQualification: string | null
-  fieldSpecialization: string | null
-  otherQualifications: string | null
-  currentOccupation: string | null
-  yearInstalled: string | null
-  languagesSpoken: string | null
-  expertiseInterest: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  currentOccupation: string | null
+  dateOfBirth: string | null
+  expertiseInterest: string | null
+  familyCompound: string | null
+  familyVillage: string | null
+  fieldSpecialization: string | null
+  highestQualification: string | null
+  languagesSpoken: string | null
+  localGovernment: string | null
+  otherQualifications: string | null
+  yearInstalled: string | null
 }
 
 export type ProfileMaxAggregateOutputType = {
@@ -71,19 +71,19 @@ export type ProfileMaxAggregateOutputType = {
   reviewNote: string | null
   reviewedAt: Date | null
   reviewedById: string | null
-  dateOfBirth: string | null
-  familyCompound: string | null
-  familyVillage: string | null
-  localGovernment: string | null
-  highestQualification: string | null
-  fieldSpecialization: string | null
-  otherQualifications: string | null
-  currentOccupation: string | null
-  yearInstalled: string | null
-  languagesSpoken: string | null
-  expertiseInterest: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  currentOccupation: string | null
+  dateOfBirth: string | null
+  expertiseInterest: string | null
+  familyCompound: string | null
+  familyVillage: string | null
+  fieldSpecialization: string | null
+  highestQualification: string | null
+  languagesSpoken: string | null
+  localGovernment: string | null
+  otherQualifications: string | null
+  yearInstalled: string | null
 }
 
 export type ProfileCountAggregateOutputType = {
@@ -102,19 +102,19 @@ export type ProfileCountAggregateOutputType = {
   reviewNote: number
   reviewedAt: number
   reviewedById: number
-  dateOfBirth: number
-  familyCompound: number
-  familyVillage: number
-  localGovernment: number
-  highestQualification: number
-  fieldSpecialization: number
-  otherQualifications: number
-  currentOccupation: number
-  yearInstalled: number
-  languagesSpoken: number
-  expertiseInterest: number
   createdAt: number
   updatedAt: number
+  currentOccupation: number
+  dateOfBirth: number
+  expertiseInterest: number
+  familyCompound: number
+  familyVillage: number
+  fieldSpecialization: number
+  highestQualification: number
+  languagesSpoken: number
+  localGovernment: number
+  otherQualifications: number
+  yearInstalled: number
   _all: number
 }
 
@@ -135,19 +135,19 @@ export type ProfileMinAggregateInputType = {
   reviewNote?: true
   reviewedAt?: true
   reviewedById?: true
-  dateOfBirth?: true
-  familyCompound?: true
-  familyVillage?: true
-  localGovernment?: true
-  highestQualification?: true
-  fieldSpecialization?: true
-  otherQualifications?: true
-  currentOccupation?: true
-  yearInstalled?: true
-  languagesSpoken?: true
-  expertiseInterest?: true
   createdAt?: true
   updatedAt?: true
+  currentOccupation?: true
+  dateOfBirth?: true
+  expertiseInterest?: true
+  familyCompound?: true
+  familyVillage?: true
+  fieldSpecialization?: true
+  highestQualification?: true
+  languagesSpoken?: true
+  localGovernment?: true
+  otherQualifications?: true
+  yearInstalled?: true
 }
 
 export type ProfileMaxAggregateInputType = {
@@ -166,19 +166,19 @@ export type ProfileMaxAggregateInputType = {
   reviewNote?: true
   reviewedAt?: true
   reviewedById?: true
-  dateOfBirth?: true
-  familyCompound?: true
-  familyVillage?: true
-  localGovernment?: true
-  highestQualification?: true
-  fieldSpecialization?: true
-  otherQualifications?: true
-  currentOccupation?: true
-  yearInstalled?: true
-  languagesSpoken?: true
-  expertiseInterest?: true
   createdAt?: true
   updatedAt?: true
+  currentOccupation?: true
+  dateOfBirth?: true
+  expertiseInterest?: true
+  familyCompound?: true
+  familyVillage?: true
+  fieldSpecialization?: true
+  highestQualification?: true
+  languagesSpoken?: true
+  localGovernment?: true
+  otherQualifications?: true
+  yearInstalled?: true
 }
 
 export type ProfileCountAggregateInputType = {
@@ -197,19 +197,19 @@ export type ProfileCountAggregateInputType = {
   reviewNote?: true
   reviewedAt?: true
   reviewedById?: true
-  dateOfBirth?: true
-  familyCompound?: true
-  familyVillage?: true
-  localGovernment?: true
-  highestQualification?: true
-  fieldSpecialization?: true
-  otherQualifications?: true
-  currentOccupation?: true
-  yearInstalled?: true
-  languagesSpoken?: true
-  expertiseInterest?: true
   createdAt?: true
   updatedAt?: true
+  currentOccupation?: true
+  dateOfBirth?: true
+  expertiseInterest?: true
+  familyCompound?: true
+  familyVillage?: true
+  fieldSpecialization?: true
+  highestQualification?: true
+  languagesSpoken?: true
+  localGovernment?: true
+  otherQualifications?: true
+  yearInstalled?: true
   _all?: true
 }
 
@@ -301,19 +301,19 @@ export type ProfileGroupByOutputType = {
   reviewNote: string | null
   reviewedAt: Date | null
   reviewedById: string | null
-  dateOfBirth: string | null
-  familyCompound: string | null
-  familyVillage: string | null
-  localGovernment: string | null
-  highestQualification: string | null
-  fieldSpecialization: string | null
-  otherQualifications: string | null
-  currentOccupation: string | null
-  yearInstalled: string | null
-  languagesSpoken: string | null
-  expertiseInterest: string | null
   createdAt: Date
   updatedAt: Date
+  currentOccupation: string | null
+  dateOfBirth: string | null
+  expertiseInterest: string | null
+  familyCompound: string | null
+  familyVillage: string | null
+  fieldSpecialization: string | null
+  highestQualification: string | null
+  languagesSpoken: string | null
+  localGovernment: string | null
+  otherQualifications: string | null
+  yearInstalled: string | null
   _count: ProfileCountAggregateOutputType | null
   _min: ProfileMinAggregateOutputType | null
   _max: ProfileMaxAggregateOutputType | null
@@ -353,22 +353,22 @@ export type ProfileWhereInput = {
   reviewNote?: Prisma.StringNullableFilter<"Profile"> | string | null
   reviewedAt?: Prisma.DateTimeNullableFilter<"Profile"> | Date | string | null
   reviewedById?: Prisma.StringNullableFilter<"Profile"> | string | null
-  dateOfBirth?: Prisma.StringNullableFilter<"Profile"> | string | null
-  familyCompound?: Prisma.StringNullableFilter<"Profile"> | string | null
-  familyVillage?: Prisma.StringNullableFilter<"Profile"> | string | null
-  localGovernment?: Prisma.StringNullableFilter<"Profile"> | string | null
-  highestQualification?: Prisma.StringNullableFilter<"Profile"> | string | null
-  fieldSpecialization?: Prisma.StringNullableFilter<"Profile"> | string | null
-  otherQualifications?: Prisma.StringNullableFilter<"Profile"> | string | null
-  currentOccupation?: Prisma.StringNullableFilter<"Profile"> | string | null
-  yearInstalled?: Prisma.StringNullableFilter<"Profile"> | string | null
-  languagesSpoken?: Prisma.StringNullableFilter<"Profile"> | string | null
-  expertiseInterest?: Prisma.StringNullableFilter<"Profile"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Profile"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Profile"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  media?: Prisma.MediaAssetListRelationFilter
+  currentOccupation?: Prisma.StringNullableFilter<"Profile"> | string | null
+  dateOfBirth?: Prisma.StringNullableFilter<"Profile"> | string | null
+  expertiseInterest?: Prisma.StringNullableFilter<"Profile"> | string | null
+  familyCompound?: Prisma.StringNullableFilter<"Profile"> | string | null
+  familyVillage?: Prisma.StringNullableFilter<"Profile"> | string | null
+  fieldSpecialization?: Prisma.StringNullableFilter<"Profile"> | string | null
+  highestQualification?: Prisma.StringNullableFilter<"Profile"> | string | null
+  languagesSpoken?: Prisma.StringNullableFilter<"Profile"> | string | null
+  localGovernment?: Prisma.StringNullableFilter<"Profile"> | string | null
+  otherQualifications?: Prisma.StringNullableFilter<"Profile"> | string | null
+  yearInstalled?: Prisma.StringNullableFilter<"Profile"> | string | null
   documents?: Prisma.DocumentAssetListRelationFilter
+  media?: Prisma.MediaAssetListRelationFilter
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }
 
 export type ProfileOrderByWithRelationInput = {
@@ -387,22 +387,22 @@ export type ProfileOrderByWithRelationInput = {
   reviewNote?: Prisma.SortOrderInput | Prisma.SortOrder
   reviewedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   reviewedById?: Prisma.SortOrderInput | Prisma.SortOrder
-  dateOfBirth?: Prisma.SortOrderInput | Prisma.SortOrder
-  familyCompound?: Prisma.SortOrderInput | Prisma.SortOrder
-  familyVillage?: Prisma.SortOrderInput | Prisma.SortOrder
-  localGovernment?: Prisma.SortOrderInput | Prisma.SortOrder
-  highestQualification?: Prisma.SortOrderInput | Prisma.SortOrder
-  fieldSpecialization?: Prisma.SortOrderInput | Prisma.SortOrder
-  otherQualifications?: Prisma.SortOrderInput | Prisma.SortOrder
-  currentOccupation?: Prisma.SortOrderInput | Prisma.SortOrder
-  yearInstalled?: Prisma.SortOrderInput | Prisma.SortOrder
-  languagesSpoken?: Prisma.SortOrderInput | Prisma.SortOrder
-  expertiseInterest?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  user?: Prisma.UserOrderByWithRelationInput
-  media?: Prisma.MediaAssetOrderByRelationAggregateInput
+  currentOccupation?: Prisma.SortOrderInput | Prisma.SortOrder
+  dateOfBirth?: Prisma.SortOrderInput | Prisma.SortOrder
+  expertiseInterest?: Prisma.SortOrderInput | Prisma.SortOrder
+  familyCompound?: Prisma.SortOrderInput | Prisma.SortOrder
+  familyVillage?: Prisma.SortOrderInput | Prisma.SortOrder
+  fieldSpecialization?: Prisma.SortOrderInput | Prisma.SortOrder
+  highestQualification?: Prisma.SortOrderInput | Prisma.SortOrder
+  languagesSpoken?: Prisma.SortOrderInput | Prisma.SortOrder
+  localGovernment?: Prisma.SortOrderInput | Prisma.SortOrder
+  otherQualifications?: Prisma.SortOrderInput | Prisma.SortOrder
+  yearInstalled?: Prisma.SortOrderInput | Prisma.SortOrder
   documents?: Prisma.DocumentAssetOrderByRelationAggregateInput
+  media?: Prisma.MediaAssetOrderByRelationAggregateInput
+  user?: Prisma.UserOrderByWithRelationInput
 }
 
 export type ProfileWhereUniqueInput = Prisma.AtLeast<{
@@ -424,22 +424,22 @@ export type ProfileWhereUniqueInput = Prisma.AtLeast<{
   reviewNote?: Prisma.StringNullableFilter<"Profile"> | string | null
   reviewedAt?: Prisma.DateTimeNullableFilter<"Profile"> | Date | string | null
   reviewedById?: Prisma.StringNullableFilter<"Profile"> | string | null
-  dateOfBirth?: Prisma.StringNullableFilter<"Profile"> | string | null
-  familyCompound?: Prisma.StringNullableFilter<"Profile"> | string | null
-  familyVillage?: Prisma.StringNullableFilter<"Profile"> | string | null
-  localGovernment?: Prisma.StringNullableFilter<"Profile"> | string | null
-  highestQualification?: Prisma.StringNullableFilter<"Profile"> | string | null
-  fieldSpecialization?: Prisma.StringNullableFilter<"Profile"> | string | null
-  otherQualifications?: Prisma.StringNullableFilter<"Profile"> | string | null
-  currentOccupation?: Prisma.StringNullableFilter<"Profile"> | string | null
-  yearInstalled?: Prisma.StringNullableFilter<"Profile"> | string | null
-  languagesSpoken?: Prisma.StringNullableFilter<"Profile"> | string | null
-  expertiseInterest?: Prisma.StringNullableFilter<"Profile"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Profile"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Profile"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  media?: Prisma.MediaAssetListRelationFilter
+  currentOccupation?: Prisma.StringNullableFilter<"Profile"> | string | null
+  dateOfBirth?: Prisma.StringNullableFilter<"Profile"> | string | null
+  expertiseInterest?: Prisma.StringNullableFilter<"Profile"> | string | null
+  familyCompound?: Prisma.StringNullableFilter<"Profile"> | string | null
+  familyVillage?: Prisma.StringNullableFilter<"Profile"> | string | null
+  fieldSpecialization?: Prisma.StringNullableFilter<"Profile"> | string | null
+  highestQualification?: Prisma.StringNullableFilter<"Profile"> | string | null
+  languagesSpoken?: Prisma.StringNullableFilter<"Profile"> | string | null
+  localGovernment?: Prisma.StringNullableFilter<"Profile"> | string | null
+  otherQualifications?: Prisma.StringNullableFilter<"Profile"> | string | null
+  yearInstalled?: Prisma.StringNullableFilter<"Profile"> | string | null
   documents?: Prisma.DocumentAssetListRelationFilter
+  media?: Prisma.MediaAssetListRelationFilter
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }, "id">
 
 export type ProfileOrderByWithAggregationInput = {
@@ -458,19 +458,19 @@ export type ProfileOrderByWithAggregationInput = {
   reviewNote?: Prisma.SortOrderInput | Prisma.SortOrder
   reviewedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   reviewedById?: Prisma.SortOrderInput | Prisma.SortOrder
-  dateOfBirth?: Prisma.SortOrderInput | Prisma.SortOrder
-  familyCompound?: Prisma.SortOrderInput | Prisma.SortOrder
-  familyVillage?: Prisma.SortOrderInput | Prisma.SortOrder
-  localGovernment?: Prisma.SortOrderInput | Prisma.SortOrder
-  highestQualification?: Prisma.SortOrderInput | Prisma.SortOrder
-  fieldSpecialization?: Prisma.SortOrderInput | Prisma.SortOrder
-  otherQualifications?: Prisma.SortOrderInput | Prisma.SortOrder
-  currentOccupation?: Prisma.SortOrderInput | Prisma.SortOrder
-  yearInstalled?: Prisma.SortOrderInput | Prisma.SortOrder
-  languagesSpoken?: Prisma.SortOrderInput | Prisma.SortOrder
-  expertiseInterest?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  currentOccupation?: Prisma.SortOrderInput | Prisma.SortOrder
+  dateOfBirth?: Prisma.SortOrderInput | Prisma.SortOrder
+  expertiseInterest?: Prisma.SortOrderInput | Prisma.SortOrder
+  familyCompound?: Prisma.SortOrderInput | Prisma.SortOrder
+  familyVillage?: Prisma.SortOrderInput | Prisma.SortOrder
+  fieldSpecialization?: Prisma.SortOrderInput | Prisma.SortOrder
+  highestQualification?: Prisma.SortOrderInput | Prisma.SortOrder
+  languagesSpoken?: Prisma.SortOrderInput | Prisma.SortOrder
+  localGovernment?: Prisma.SortOrderInput | Prisma.SortOrder
+  otherQualifications?: Prisma.SortOrderInput | Prisma.SortOrder
+  yearInstalled?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.ProfileCountOrderByAggregateInput
   _max?: Prisma.ProfileMaxOrderByAggregateInput
   _min?: Prisma.ProfileMinOrderByAggregateInput
@@ -495,19 +495,19 @@ export type ProfileScalarWhereWithAggregatesInput = {
   reviewNote?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
   reviewedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Profile"> | Date | string | null
   reviewedById?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
-  dateOfBirth?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
-  familyCompound?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
-  familyVillage?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
-  localGovernment?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
-  highestQualification?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
-  fieldSpecialization?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
-  otherQualifications?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
-  currentOccupation?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
-  yearInstalled?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
-  languagesSpoken?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
-  expertiseInterest?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Profile"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Profile"> | Date | string
+  currentOccupation?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  dateOfBirth?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  expertiseInterest?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  familyCompound?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  familyVillage?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  fieldSpecialization?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  highestQualification?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  languagesSpoken?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  localGovernment?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  otherQualifications?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  yearInstalled?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
 }
 
 export type ProfileCreateInput = {
@@ -525,22 +525,22 @@ export type ProfileCreateInput = {
   reviewNote?: string | null
   reviewedAt?: Date | string | null
   reviewedById?: string | null
-  dateOfBirth?: string | null
-  familyCompound?: string | null
-  familyVillage?: string | null
-  localGovernment?: string | null
-  highestQualification?: string | null
-  fieldSpecialization?: string | null
-  otherQualifications?: string | null
-  currentOccupation?: string | null
-  yearInstalled?: string | null
-  languagesSpoken?: string | null
-  expertiseInterest?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutProfilesInput
-  media?: Prisma.MediaAssetCreateNestedManyWithoutProfileInput
+  currentOccupation?: string | null
+  dateOfBirth?: string | null
+  expertiseInterest?: string | null
+  familyCompound?: string | null
+  familyVillage?: string | null
+  fieldSpecialization?: string | null
+  highestQualification?: string | null
+  languagesSpoken?: string | null
+  localGovernment?: string | null
+  otherQualifications?: string | null
+  yearInstalled?: string | null
   documents?: Prisma.DocumentAssetCreateNestedManyWithoutProfileInput
+  media?: Prisma.MediaAssetCreateNestedManyWithoutProfileInput
+  user: Prisma.UserCreateNestedOneWithoutProfilesInput
 }
 
 export type ProfileUncheckedCreateInput = {
@@ -559,21 +559,21 @@ export type ProfileUncheckedCreateInput = {
   reviewNote?: string | null
   reviewedAt?: Date | string | null
   reviewedById?: string | null
-  dateOfBirth?: string | null
-  familyCompound?: string | null
-  familyVillage?: string | null
-  localGovernment?: string | null
-  highestQualification?: string | null
-  fieldSpecialization?: string | null
-  otherQualifications?: string | null
-  currentOccupation?: string | null
-  yearInstalled?: string | null
-  languagesSpoken?: string | null
-  expertiseInterest?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  media?: Prisma.MediaAssetUncheckedCreateNestedManyWithoutProfileInput
+  currentOccupation?: string | null
+  dateOfBirth?: string | null
+  expertiseInterest?: string | null
+  familyCompound?: string | null
+  familyVillage?: string | null
+  fieldSpecialization?: string | null
+  highestQualification?: string | null
+  languagesSpoken?: string | null
+  localGovernment?: string | null
+  otherQualifications?: string | null
+  yearInstalled?: string | null
   documents?: Prisma.DocumentAssetUncheckedCreateNestedManyWithoutProfileInput
+  media?: Prisma.MediaAssetUncheckedCreateNestedManyWithoutProfileInput
 }
 
 export type ProfileUpdateInput = {
@@ -591,22 +591,22 @@ export type ProfileUpdateInput = {
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutProfilesNestedInput
-  media?: Prisma.MediaAssetUpdateManyWithoutProfileNestedInput
+  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   documents?: Prisma.DocumentAssetUpdateManyWithoutProfileNestedInput
+  media?: Prisma.MediaAssetUpdateManyWithoutProfileNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutProfilesNestedInput
 }
 
 export type ProfileUncheckedUpdateInput = {
@@ -625,21 +625,21 @@ export type ProfileUncheckedUpdateInput = {
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  media?: Prisma.MediaAssetUncheckedUpdateManyWithoutProfileNestedInput
+  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   documents?: Prisma.DocumentAssetUncheckedUpdateManyWithoutProfileNestedInput
+  media?: Prisma.MediaAssetUncheckedUpdateManyWithoutProfileNestedInput
 }
 
 export type ProfileCreateManyInput = {
@@ -658,19 +658,19 @@ export type ProfileCreateManyInput = {
   reviewNote?: string | null
   reviewedAt?: Date | string | null
   reviewedById?: string | null
-  dateOfBirth?: string | null
-  familyCompound?: string | null
-  familyVillage?: string | null
-  localGovernment?: string | null
-  highestQualification?: string | null
-  fieldSpecialization?: string | null
-  otherQualifications?: string | null
-  currentOccupation?: string | null
-  yearInstalled?: string | null
-  languagesSpoken?: string | null
-  expertiseInterest?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  currentOccupation?: string | null
+  dateOfBirth?: string | null
+  expertiseInterest?: string | null
+  familyCompound?: string | null
+  familyVillage?: string | null
+  fieldSpecialization?: string | null
+  highestQualification?: string | null
+  languagesSpoken?: string | null
+  localGovernment?: string | null
+  otherQualifications?: string | null
+  yearInstalled?: string | null
 }
 
 export type ProfileUpdateManyMutationInput = {
@@ -688,19 +688,19 @@ export type ProfileUpdateManyMutationInput = {
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ProfileUncheckedUpdateManyInput = {
@@ -719,19 +719,19 @@ export type ProfileUncheckedUpdateManyInput = {
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ProfileListRelationFilter = {
@@ -760,19 +760,19 @@ export type ProfileCountOrderByAggregateInput = {
   reviewNote?: Prisma.SortOrder
   reviewedAt?: Prisma.SortOrder
   reviewedById?: Prisma.SortOrder
-  dateOfBirth?: Prisma.SortOrder
-  familyCompound?: Prisma.SortOrder
-  familyVillage?: Prisma.SortOrder
-  localGovernment?: Prisma.SortOrder
-  highestQualification?: Prisma.SortOrder
-  fieldSpecialization?: Prisma.SortOrder
-  otherQualifications?: Prisma.SortOrder
-  currentOccupation?: Prisma.SortOrder
-  yearInstalled?: Prisma.SortOrder
-  languagesSpoken?: Prisma.SortOrder
-  expertiseInterest?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  currentOccupation?: Prisma.SortOrder
+  dateOfBirth?: Prisma.SortOrder
+  expertiseInterest?: Prisma.SortOrder
+  familyCompound?: Prisma.SortOrder
+  familyVillage?: Prisma.SortOrder
+  fieldSpecialization?: Prisma.SortOrder
+  highestQualification?: Prisma.SortOrder
+  languagesSpoken?: Prisma.SortOrder
+  localGovernment?: Prisma.SortOrder
+  otherQualifications?: Prisma.SortOrder
+  yearInstalled?: Prisma.SortOrder
 }
 
 export type ProfileMaxOrderByAggregateInput = {
@@ -791,19 +791,19 @@ export type ProfileMaxOrderByAggregateInput = {
   reviewNote?: Prisma.SortOrder
   reviewedAt?: Prisma.SortOrder
   reviewedById?: Prisma.SortOrder
-  dateOfBirth?: Prisma.SortOrder
-  familyCompound?: Prisma.SortOrder
-  familyVillage?: Prisma.SortOrder
-  localGovernment?: Prisma.SortOrder
-  highestQualification?: Prisma.SortOrder
-  fieldSpecialization?: Prisma.SortOrder
-  otherQualifications?: Prisma.SortOrder
-  currentOccupation?: Prisma.SortOrder
-  yearInstalled?: Prisma.SortOrder
-  languagesSpoken?: Prisma.SortOrder
-  expertiseInterest?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  currentOccupation?: Prisma.SortOrder
+  dateOfBirth?: Prisma.SortOrder
+  expertiseInterest?: Prisma.SortOrder
+  familyCompound?: Prisma.SortOrder
+  familyVillage?: Prisma.SortOrder
+  fieldSpecialization?: Prisma.SortOrder
+  highestQualification?: Prisma.SortOrder
+  languagesSpoken?: Prisma.SortOrder
+  localGovernment?: Prisma.SortOrder
+  otherQualifications?: Prisma.SortOrder
+  yearInstalled?: Prisma.SortOrder
 }
 
 export type ProfileMinOrderByAggregateInput = {
@@ -822,19 +822,19 @@ export type ProfileMinOrderByAggregateInput = {
   reviewNote?: Prisma.SortOrder
   reviewedAt?: Prisma.SortOrder
   reviewedById?: Prisma.SortOrder
-  dateOfBirth?: Prisma.SortOrder
-  familyCompound?: Prisma.SortOrder
-  familyVillage?: Prisma.SortOrder
-  localGovernment?: Prisma.SortOrder
-  highestQualification?: Prisma.SortOrder
-  fieldSpecialization?: Prisma.SortOrder
-  otherQualifications?: Prisma.SortOrder
-  currentOccupation?: Prisma.SortOrder
-  yearInstalled?: Prisma.SortOrder
-  languagesSpoken?: Prisma.SortOrder
-  expertiseInterest?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  currentOccupation?: Prisma.SortOrder
+  dateOfBirth?: Prisma.SortOrder
+  expertiseInterest?: Prisma.SortOrder
+  familyCompound?: Prisma.SortOrder
+  familyVillage?: Prisma.SortOrder
+  fieldSpecialization?: Prisma.SortOrder
+  highestQualification?: Prisma.SortOrder
+  languagesSpoken?: Prisma.SortOrder
+  localGovernment?: Prisma.SortOrder
+  otherQualifications?: Prisma.SortOrder
+  yearInstalled?: Prisma.SortOrder
 }
 
 export type ProfileNullableScalarRelationFilter = {
@@ -946,21 +946,21 @@ export type ProfileCreateWithoutUserInput = {
   reviewNote?: string | null
   reviewedAt?: Date | string | null
   reviewedById?: string | null
-  dateOfBirth?: string | null
-  familyCompound?: string | null
-  familyVillage?: string | null
-  localGovernment?: string | null
-  highestQualification?: string | null
-  fieldSpecialization?: string | null
-  otherQualifications?: string | null
-  currentOccupation?: string | null
-  yearInstalled?: string | null
-  languagesSpoken?: string | null
-  expertiseInterest?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  media?: Prisma.MediaAssetCreateNestedManyWithoutProfileInput
+  currentOccupation?: string | null
+  dateOfBirth?: string | null
+  expertiseInterest?: string | null
+  familyCompound?: string | null
+  familyVillage?: string | null
+  fieldSpecialization?: string | null
+  highestQualification?: string | null
+  languagesSpoken?: string | null
+  localGovernment?: string | null
+  otherQualifications?: string | null
+  yearInstalled?: string | null
   documents?: Prisma.DocumentAssetCreateNestedManyWithoutProfileInput
+  media?: Prisma.MediaAssetCreateNestedManyWithoutProfileInput
 }
 
 export type ProfileUncheckedCreateWithoutUserInput = {
@@ -978,21 +978,21 @@ export type ProfileUncheckedCreateWithoutUserInput = {
   reviewNote?: string | null
   reviewedAt?: Date | string | null
   reviewedById?: string | null
-  dateOfBirth?: string | null
-  familyCompound?: string | null
-  familyVillage?: string | null
-  localGovernment?: string | null
-  highestQualification?: string | null
-  fieldSpecialization?: string | null
-  otherQualifications?: string | null
-  currentOccupation?: string | null
-  yearInstalled?: string | null
-  languagesSpoken?: string | null
-  expertiseInterest?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  media?: Prisma.MediaAssetUncheckedCreateNestedManyWithoutProfileInput
+  currentOccupation?: string | null
+  dateOfBirth?: string | null
+  expertiseInterest?: string | null
+  familyCompound?: string | null
+  familyVillage?: string | null
+  fieldSpecialization?: string | null
+  highestQualification?: string | null
+  languagesSpoken?: string | null
+  localGovernment?: string | null
+  otherQualifications?: string | null
+  yearInstalled?: string | null
   documents?: Prisma.DocumentAssetUncheckedCreateNestedManyWithoutProfileInput
+  media?: Prisma.MediaAssetUncheckedCreateNestedManyWithoutProfileInput
 }
 
 export type ProfileCreateOrConnectWithoutUserInput = {
@@ -1040,19 +1040,19 @@ export type ProfileScalarWhereInput = {
   reviewNote?: Prisma.StringNullableFilter<"Profile"> | string | null
   reviewedAt?: Prisma.DateTimeNullableFilter<"Profile"> | Date | string | null
   reviewedById?: Prisma.StringNullableFilter<"Profile"> | string | null
-  dateOfBirth?: Prisma.StringNullableFilter<"Profile"> | string | null
-  familyCompound?: Prisma.StringNullableFilter<"Profile"> | string | null
-  familyVillage?: Prisma.StringNullableFilter<"Profile"> | string | null
-  localGovernment?: Prisma.StringNullableFilter<"Profile"> | string | null
-  highestQualification?: Prisma.StringNullableFilter<"Profile"> | string | null
-  fieldSpecialization?: Prisma.StringNullableFilter<"Profile"> | string | null
-  otherQualifications?: Prisma.StringNullableFilter<"Profile"> | string | null
-  currentOccupation?: Prisma.StringNullableFilter<"Profile"> | string | null
-  yearInstalled?: Prisma.StringNullableFilter<"Profile"> | string | null
-  languagesSpoken?: Prisma.StringNullableFilter<"Profile"> | string | null
-  expertiseInterest?: Prisma.StringNullableFilter<"Profile"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Profile"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Profile"> | Date | string
+  currentOccupation?: Prisma.StringNullableFilter<"Profile"> | string | null
+  dateOfBirth?: Prisma.StringNullableFilter<"Profile"> | string | null
+  expertiseInterest?: Prisma.StringNullableFilter<"Profile"> | string | null
+  familyCompound?: Prisma.StringNullableFilter<"Profile"> | string | null
+  familyVillage?: Prisma.StringNullableFilter<"Profile"> | string | null
+  fieldSpecialization?: Prisma.StringNullableFilter<"Profile"> | string | null
+  highestQualification?: Prisma.StringNullableFilter<"Profile"> | string | null
+  languagesSpoken?: Prisma.StringNullableFilter<"Profile"> | string | null
+  localGovernment?: Prisma.StringNullableFilter<"Profile"> | string | null
+  otherQualifications?: Prisma.StringNullableFilter<"Profile"> | string | null
+  yearInstalled?: Prisma.StringNullableFilter<"Profile"> | string | null
 }
 
 export type ProfileCreateWithoutMediaInput = {
@@ -1070,21 +1070,21 @@ export type ProfileCreateWithoutMediaInput = {
   reviewNote?: string | null
   reviewedAt?: Date | string | null
   reviewedById?: string | null
-  dateOfBirth?: string | null
-  familyCompound?: string | null
-  familyVillage?: string | null
-  localGovernment?: string | null
-  highestQualification?: string | null
-  fieldSpecialization?: string | null
-  otherQualifications?: string | null
-  currentOccupation?: string | null
-  yearInstalled?: string | null
-  languagesSpoken?: string | null
-  expertiseInterest?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutProfilesInput
+  currentOccupation?: string | null
+  dateOfBirth?: string | null
+  expertiseInterest?: string | null
+  familyCompound?: string | null
+  familyVillage?: string | null
+  fieldSpecialization?: string | null
+  highestQualification?: string | null
+  languagesSpoken?: string | null
+  localGovernment?: string | null
+  otherQualifications?: string | null
+  yearInstalled?: string | null
   documents?: Prisma.DocumentAssetCreateNestedManyWithoutProfileInput
+  user: Prisma.UserCreateNestedOneWithoutProfilesInput
 }
 
 export type ProfileUncheckedCreateWithoutMediaInput = {
@@ -1103,19 +1103,19 @@ export type ProfileUncheckedCreateWithoutMediaInput = {
   reviewNote?: string | null
   reviewedAt?: Date | string | null
   reviewedById?: string | null
-  dateOfBirth?: string | null
-  familyCompound?: string | null
-  familyVillage?: string | null
-  localGovernment?: string | null
-  highestQualification?: string | null
-  fieldSpecialization?: string | null
-  otherQualifications?: string | null
-  currentOccupation?: string | null
-  yearInstalled?: string | null
-  languagesSpoken?: string | null
-  expertiseInterest?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  currentOccupation?: string | null
+  dateOfBirth?: string | null
+  expertiseInterest?: string | null
+  familyCompound?: string | null
+  familyVillage?: string | null
+  fieldSpecialization?: string | null
+  highestQualification?: string | null
+  languagesSpoken?: string | null
+  localGovernment?: string | null
+  otherQualifications?: string | null
+  yearInstalled?: string | null
   documents?: Prisma.DocumentAssetUncheckedCreateNestedManyWithoutProfileInput
 }
 
@@ -1150,21 +1150,21 @@ export type ProfileUpdateWithoutMediaInput = {
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutProfilesNestedInput
+  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   documents?: Prisma.DocumentAssetUpdateManyWithoutProfileNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutProfilesNestedInput
 }
 
 export type ProfileUncheckedUpdateWithoutMediaInput = {
@@ -1183,19 +1183,19 @@ export type ProfileUncheckedUpdateWithoutMediaInput = {
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   documents?: Prisma.DocumentAssetUncheckedUpdateManyWithoutProfileNestedInput
 }
 
@@ -1214,21 +1214,21 @@ export type ProfileCreateWithoutDocumentsInput = {
   reviewNote?: string | null
   reviewedAt?: Date | string | null
   reviewedById?: string | null
-  dateOfBirth?: string | null
-  familyCompound?: string | null
-  familyVillage?: string | null
-  localGovernment?: string | null
-  highestQualification?: string | null
-  fieldSpecialization?: string | null
-  otherQualifications?: string | null
-  currentOccupation?: string | null
-  yearInstalled?: string | null
-  languagesSpoken?: string | null
-  expertiseInterest?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutProfilesInput
+  currentOccupation?: string | null
+  dateOfBirth?: string | null
+  expertiseInterest?: string | null
+  familyCompound?: string | null
+  familyVillage?: string | null
+  fieldSpecialization?: string | null
+  highestQualification?: string | null
+  languagesSpoken?: string | null
+  localGovernment?: string | null
+  otherQualifications?: string | null
+  yearInstalled?: string | null
   media?: Prisma.MediaAssetCreateNestedManyWithoutProfileInput
+  user: Prisma.UserCreateNestedOneWithoutProfilesInput
 }
 
 export type ProfileUncheckedCreateWithoutDocumentsInput = {
@@ -1247,19 +1247,19 @@ export type ProfileUncheckedCreateWithoutDocumentsInput = {
   reviewNote?: string | null
   reviewedAt?: Date | string | null
   reviewedById?: string | null
-  dateOfBirth?: string | null
-  familyCompound?: string | null
-  familyVillage?: string | null
-  localGovernment?: string | null
-  highestQualification?: string | null
-  fieldSpecialization?: string | null
-  otherQualifications?: string | null
-  currentOccupation?: string | null
-  yearInstalled?: string | null
-  languagesSpoken?: string | null
-  expertiseInterest?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  currentOccupation?: string | null
+  dateOfBirth?: string | null
+  expertiseInterest?: string | null
+  familyCompound?: string | null
+  familyVillage?: string | null
+  fieldSpecialization?: string | null
+  highestQualification?: string | null
+  languagesSpoken?: string | null
+  localGovernment?: string | null
+  otherQualifications?: string | null
+  yearInstalled?: string | null
   media?: Prisma.MediaAssetUncheckedCreateNestedManyWithoutProfileInput
 }
 
@@ -1294,21 +1294,21 @@ export type ProfileUpdateWithoutDocumentsInput = {
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutProfilesNestedInput
+  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   media?: Prisma.MediaAssetUpdateManyWithoutProfileNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutProfilesNestedInput
 }
 
 export type ProfileUncheckedUpdateWithoutDocumentsInput = {
@@ -1327,19 +1327,19 @@ export type ProfileUncheckedUpdateWithoutDocumentsInput = {
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   media?: Prisma.MediaAssetUncheckedUpdateManyWithoutProfileNestedInput
 }
 
@@ -1358,19 +1358,19 @@ export type ProfileCreateManyUserInput = {
   reviewNote?: string | null
   reviewedAt?: Date | string | null
   reviewedById?: string | null
-  dateOfBirth?: string | null
-  familyCompound?: string | null
-  familyVillage?: string | null
-  localGovernment?: string | null
-  highestQualification?: string | null
-  fieldSpecialization?: string | null
-  otherQualifications?: string | null
-  currentOccupation?: string | null
-  yearInstalled?: string | null
-  languagesSpoken?: string | null
-  expertiseInterest?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  currentOccupation?: string | null
+  dateOfBirth?: string | null
+  expertiseInterest?: string | null
+  familyCompound?: string | null
+  familyVillage?: string | null
+  fieldSpecialization?: string | null
+  highestQualification?: string | null
+  languagesSpoken?: string | null
+  localGovernment?: string | null
+  otherQualifications?: string | null
+  yearInstalled?: string | null
 }
 
 export type ProfileUpdateWithoutUserInput = {
@@ -1388,21 +1388,21 @@ export type ProfileUpdateWithoutUserInput = {
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  media?: Prisma.MediaAssetUpdateManyWithoutProfileNestedInput
+  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   documents?: Prisma.DocumentAssetUpdateManyWithoutProfileNestedInput
+  media?: Prisma.MediaAssetUpdateManyWithoutProfileNestedInput
 }
 
 export type ProfileUncheckedUpdateWithoutUserInput = {
@@ -1420,21 +1420,21 @@ export type ProfileUncheckedUpdateWithoutUserInput = {
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  media?: Prisma.MediaAssetUncheckedUpdateManyWithoutProfileNestedInput
+  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   documents?: Prisma.DocumentAssetUncheckedUpdateManyWithoutProfileNestedInput
+  media?: Prisma.MediaAssetUncheckedUpdateManyWithoutProfileNestedInput
 }
 
 export type ProfileUncheckedUpdateManyWithoutUserInput = {
@@ -1452,19 +1452,19 @@ export type ProfileUncheckedUpdateManyWithoutUserInput = {
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  currentOccupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  expertiseInterest?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyCompound?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  familyVillage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fieldSpecialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  highestQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languagesSpoken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -1473,13 +1473,13 @@ export type ProfileUncheckedUpdateManyWithoutUserInput = {
  */
 
 export type ProfileCountOutputType = {
-  media: number
   documents: number
+  media: number
 }
 
 export type ProfileCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  media?: boolean | ProfileCountOutputTypeCountMediaArgs
   documents?: boolean | ProfileCountOutputTypeCountDocumentsArgs
+  media?: boolean | ProfileCountOutputTypeCountMediaArgs
 }
 
 /**
@@ -1495,15 +1495,15 @@ export type ProfileCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Exte
 /**
  * ProfileCountOutputType without action
  */
-export type ProfileCountOutputTypeCountMediaArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.MediaAssetWhereInput
+export type ProfileCountOutputTypeCountDocumentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.DocumentAssetWhereInput
 }
 
 /**
  * ProfileCountOutputType without action
  */
-export type ProfileCountOutputTypeCountDocumentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.DocumentAssetWhereInput
+export type ProfileCountOutputTypeCountMediaArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.MediaAssetWhereInput
 }
 
 
@@ -1523,22 +1523,22 @@ export type ProfileSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   reviewNote?: boolean
   reviewedAt?: boolean
   reviewedById?: boolean
-  dateOfBirth?: boolean
-  familyCompound?: boolean
-  familyVillage?: boolean
-  localGovernment?: boolean
-  highestQualification?: boolean
-  fieldSpecialization?: boolean
-  otherQualifications?: boolean
-  currentOccupation?: boolean
-  yearInstalled?: boolean
-  languagesSpoken?: boolean
-  expertiseInterest?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  media?: boolean | Prisma.Profile$mediaArgs<ExtArgs>
+  currentOccupation?: boolean
+  dateOfBirth?: boolean
+  expertiseInterest?: boolean
+  familyCompound?: boolean
+  familyVillage?: boolean
+  fieldSpecialization?: boolean
+  highestQualification?: boolean
+  languagesSpoken?: boolean
+  localGovernment?: boolean
+  otherQualifications?: boolean
+  yearInstalled?: boolean
   documents?: boolean | Prisma.Profile$documentsArgs<ExtArgs>
+  media?: boolean | Prisma.Profile$mediaArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.ProfileCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["profile"]>
 
@@ -1558,19 +1558,19 @@ export type ProfileSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   reviewNote?: boolean
   reviewedAt?: boolean
   reviewedById?: boolean
-  dateOfBirth?: boolean
-  familyCompound?: boolean
-  familyVillage?: boolean
-  localGovernment?: boolean
-  highestQualification?: boolean
-  fieldSpecialization?: boolean
-  otherQualifications?: boolean
-  currentOccupation?: boolean
-  yearInstalled?: boolean
-  languagesSpoken?: boolean
-  expertiseInterest?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  currentOccupation?: boolean
+  dateOfBirth?: boolean
+  expertiseInterest?: boolean
+  familyCompound?: boolean
+  familyVillage?: boolean
+  fieldSpecialization?: boolean
+  highestQualification?: boolean
+  languagesSpoken?: boolean
+  localGovernment?: boolean
+  otherQualifications?: boolean
+  yearInstalled?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["profile"]>
 
@@ -1590,19 +1590,19 @@ export type ProfileSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   reviewNote?: boolean
   reviewedAt?: boolean
   reviewedById?: boolean
-  dateOfBirth?: boolean
-  familyCompound?: boolean
-  familyVillage?: boolean
-  localGovernment?: boolean
-  highestQualification?: boolean
-  fieldSpecialization?: boolean
-  otherQualifications?: boolean
-  currentOccupation?: boolean
-  yearInstalled?: boolean
-  languagesSpoken?: boolean
-  expertiseInterest?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  currentOccupation?: boolean
+  dateOfBirth?: boolean
+  expertiseInterest?: boolean
+  familyCompound?: boolean
+  familyVillage?: boolean
+  fieldSpecialization?: boolean
+  highestQualification?: boolean
+  languagesSpoken?: boolean
+  localGovernment?: boolean
+  otherQualifications?: boolean
+  yearInstalled?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["profile"]>
 
@@ -1622,26 +1622,26 @@ export type ProfileSelectScalar = {
   reviewNote?: boolean
   reviewedAt?: boolean
   reviewedById?: boolean
-  dateOfBirth?: boolean
-  familyCompound?: boolean
-  familyVillage?: boolean
-  localGovernment?: boolean
-  highestQualification?: boolean
-  fieldSpecialization?: boolean
-  otherQualifications?: boolean
-  currentOccupation?: boolean
-  yearInstalled?: boolean
-  languagesSpoken?: boolean
-  expertiseInterest?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  currentOccupation?: boolean
+  dateOfBirth?: boolean
+  expertiseInterest?: boolean
+  familyCompound?: boolean
+  familyVillage?: boolean
+  fieldSpecialization?: boolean
+  highestQualification?: boolean
+  languagesSpoken?: boolean
+  localGovernment?: boolean
+  otherQualifications?: boolean
+  yearInstalled?: boolean
 }
 
-export type ProfileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "line" | "title" | "fullTraditionalName" | "currentPosition" | "biography" | "familyHistory" | "achievements" | "palaceResponsibilities" | "profilePictureUrl" | "status" | "reviewNote" | "reviewedAt" | "reviewedById" | "dateOfBirth" | "familyCompound" | "familyVillage" | "localGovernment" | "highestQualification" | "fieldSpecialization" | "otherQualifications" | "currentOccupation" | "yearInstalled" | "languagesSpoken" | "expertiseInterest" | "createdAt" | "updatedAt", ExtArgs["result"]["profile"]>
+export type ProfileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "line" | "title" | "fullTraditionalName" | "currentPosition" | "biography" | "familyHistory" | "achievements" | "palaceResponsibilities" | "profilePictureUrl" | "status" | "reviewNote" | "reviewedAt" | "reviewedById" | "createdAt" | "updatedAt" | "currentOccupation" | "dateOfBirth" | "expertiseInterest" | "familyCompound" | "familyVillage" | "fieldSpecialization" | "highestQualification" | "languagesSpoken" | "localGovernment" | "otherQualifications" | "yearInstalled", ExtArgs["result"]["profile"]>
 export type ProfileInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  media?: boolean | Prisma.Profile$mediaArgs<ExtArgs>
   documents?: boolean | Prisma.Profile$documentsArgs<ExtArgs>
+  media?: boolean | Prisma.Profile$mediaArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.ProfileCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ProfileIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1654,9 +1654,9 @@ export type ProfileIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
 export type $ProfilePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Profile"
   objects: {
-    user: Prisma.$UserPayload<ExtArgs>
-    media: Prisma.$MediaAssetPayload<ExtArgs>[]
     documents: Prisma.$DocumentAssetPayload<ExtArgs>[]
+    media: Prisma.$MediaAssetPayload<ExtArgs>[]
+    user: Prisma.$UserPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1674,19 +1674,19 @@ export type $ProfilePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     reviewNote: string | null
     reviewedAt: Date | null
     reviewedById: string | null
-    dateOfBirth: string | null
-    familyCompound: string | null
-    familyVillage: string | null
-    localGovernment: string | null
-    highestQualification: string | null
-    fieldSpecialization: string | null
-    otherQualifications: string | null
-    currentOccupation: string | null
-    yearInstalled: string | null
-    languagesSpoken: string | null
-    expertiseInterest: string | null
     createdAt: Date
     updatedAt: Date
+    currentOccupation: string | null
+    dateOfBirth: string | null
+    expertiseInterest: string | null
+    familyCompound: string | null
+    familyVillage: string | null
+    fieldSpecialization: string | null
+    highestQualification: string | null
+    languagesSpoken: string | null
+    localGovernment: string | null
+    otherQualifications: string | null
+    yearInstalled: string | null
   }, ExtArgs["result"]["profile"]>
   composites: {}
 }
@@ -2081,9 +2081,9 @@ readonly fields: ProfileFieldRefs;
  */
 export interface Prisma__ProfileClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  media<T extends Prisma.Profile$mediaArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Profile$mediaArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MediaAssetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   documents<T extends Prisma.Profile$documentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Profile$documentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DocumentAssetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  media<T extends Prisma.Profile$mediaArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Profile$mediaArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MediaAssetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2128,19 +2128,19 @@ export interface ProfileFieldRefs {
   readonly reviewNote: Prisma.FieldRef<"Profile", 'String'>
   readonly reviewedAt: Prisma.FieldRef<"Profile", 'DateTime'>
   readonly reviewedById: Prisma.FieldRef<"Profile", 'String'>
-  readonly dateOfBirth: Prisma.FieldRef<"Profile", 'String'>
-  readonly familyCompound: Prisma.FieldRef<"Profile", 'String'>
-  readonly familyVillage: Prisma.FieldRef<"Profile", 'String'>
-  readonly localGovernment: Prisma.FieldRef<"Profile", 'String'>
-  readonly highestQualification: Prisma.FieldRef<"Profile", 'String'>
-  readonly fieldSpecialization: Prisma.FieldRef<"Profile", 'String'>
-  readonly otherQualifications: Prisma.FieldRef<"Profile", 'String'>
-  readonly currentOccupation: Prisma.FieldRef<"Profile", 'String'>
-  readonly yearInstalled: Prisma.FieldRef<"Profile", 'String'>
-  readonly languagesSpoken: Prisma.FieldRef<"Profile", 'String'>
-  readonly expertiseInterest: Prisma.FieldRef<"Profile", 'String'>
   readonly createdAt: Prisma.FieldRef<"Profile", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Profile", 'DateTime'>
+  readonly currentOccupation: Prisma.FieldRef<"Profile", 'String'>
+  readonly dateOfBirth: Prisma.FieldRef<"Profile", 'String'>
+  readonly expertiseInterest: Prisma.FieldRef<"Profile", 'String'>
+  readonly familyCompound: Prisma.FieldRef<"Profile", 'String'>
+  readonly familyVillage: Prisma.FieldRef<"Profile", 'String'>
+  readonly fieldSpecialization: Prisma.FieldRef<"Profile", 'String'>
+  readonly highestQualification: Prisma.FieldRef<"Profile", 'String'>
+  readonly languagesSpoken: Prisma.FieldRef<"Profile", 'String'>
+  readonly localGovernment: Prisma.FieldRef<"Profile", 'String'>
+  readonly otherQualifications: Prisma.FieldRef<"Profile", 'String'>
+  readonly yearInstalled: Prisma.FieldRef<"Profile", 'String'>
 }
     
 
@@ -2542,30 +2542,6 @@ export type ProfileDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inter
 }
 
 /**
- * Profile.media
- */
-export type Profile$mediaArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the MediaAsset
-   */
-  select?: Prisma.MediaAssetSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the MediaAsset
-   */
-  omit?: Prisma.MediaAssetOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.MediaAssetInclude<ExtArgs> | null
-  where?: Prisma.MediaAssetWhereInput
-  orderBy?: Prisma.MediaAssetOrderByWithRelationInput | Prisma.MediaAssetOrderByWithRelationInput[]
-  cursor?: Prisma.MediaAssetWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.MediaAssetScalarFieldEnum | Prisma.MediaAssetScalarFieldEnum[]
-}
-
-/**
  * Profile.documents
  */
 export type Profile$documentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2587,6 +2563,30 @@ export type Profile$documentsArgs<ExtArgs extends runtime.Types.Extensions.Inter
   take?: number
   skip?: number
   distinct?: Prisma.DocumentAssetScalarFieldEnum | Prisma.DocumentAssetScalarFieldEnum[]
+}
+
+/**
+ * Profile.media
+ */
+export type Profile$mediaArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the MediaAsset
+   */
+  select?: Prisma.MediaAssetSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the MediaAsset
+   */
+  omit?: Prisma.MediaAssetOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.MediaAssetInclude<ExtArgs> | null
+  where?: Prisma.MediaAssetWhereInput
+  orderBy?: Prisma.MediaAssetOrderByWithRelationInput | Prisma.MediaAssetOrderByWithRelationInput[]
+  cursor?: Prisma.MediaAssetWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.MediaAssetScalarFieldEnum | Prisma.MediaAssetScalarFieldEnum[]
 }
 
 /**
