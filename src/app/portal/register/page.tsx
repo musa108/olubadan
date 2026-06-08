@@ -147,7 +147,7 @@ export default function RegisterRepresentative() {
           </div>
           <h1 className={`${playfair.className} text-3xl font-bold text-[#191714]`}>Registration Submitted</h1>
           <p className="mt-4 text-sm leading-7 text-gray-600">
-            Your chieftaincy representative profile has been successfully registered. The Palace Administration team will review your details and documents. 
+            Your chieftaincy representative profile has been successfully registered. The Palace Administration team will review your details and documents.
           </p>
           <div className="mt-6 rounded-2xl bg-[#faf8f3] border border-[#e8e3da] p-4 text-xs text-gray-500 text-left">
             <p className="font-semibold text-[#191714] mb-1">What happens next?</p>
@@ -261,7 +261,7 @@ export default function RegisterRepresentative() {
             <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3">1. Personal Information</p>
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                Representative Legal Name *
+                Full Name *
                 <input
                   name="fullName"
                   required
@@ -395,7 +395,7 @@ export default function RegisterRepresentative() {
               ) : null}
 
               <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                Representative Position Title *
+                Position Title *
                 <input
                   name="positionTitle"
                   required
