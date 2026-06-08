@@ -110,7 +110,7 @@ interface AdminProfile {
     email: string;
     phone?: string | null;
   } | null;
-  
+
   // New Compact Bio Data Fields
   dateOfBirth?: string | null;
   familyCompound?: string | null;
@@ -607,7 +607,7 @@ function AdminContent({ session }: { session: Session }) {
     const documentUrls = adminChiefCertificateUrl
       ? [{ title: "Certificate of Installation", url: adminChiefCertificateUrl }]
       : [];
-    
+
     const payload = {
       fullName: String(formData.get("fullName")),
       email: String(formData.get("email")),
@@ -668,7 +668,7 @@ function AdminContent({ session }: { session: Session }) {
 
   return (
     <main className={`${poppins.className} min-h-screen bg-[#f4f1ea] text-[#191714] pb-20 flex flex-col`}>
-      
+
       {/* Toast Alert System */}
       <AnimatePresence>
         {success && (
@@ -696,7 +696,7 @@ function AdminContent({ session }: { session: Session }) {
       </AnimatePresence>
 
       <div className="mx-auto w-full max-w-7xl grid gap-0 lg:grid-cols-[260px_1fr] flex-1">
-        
+
         {/* Sidebar */}
         <aside className="relative bg-[#191714] text-white lg:sticky lg:top-0 lg:h-screen flex flex-col overflow-hidden shrink-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(214,177,91,0.07),transparent_60%)] pointer-events-none" />
@@ -738,11 +738,10 @@ function AdminContent({ session }: { session: Session }) {
                     setIsAddingUser(false);
                     setIsAddingChief(false);
                   }}
-                  className={`w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-all duration-150 ${
-                    isActive
+                  className={`w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-all duration-150 ${isActive
                       ? "bg-[#d6b15b]/15 text-[#d6b15b] border border-[#d6b15b]/20"
                       : "text-white/60 hover:bg-white/5 hover:text-white"
-                  }`}
+                    }`}
                 >
                   <Icon className={`h-4 w-4 shrink-0 ${isActive ? "text-[#d6b15b]" : "text-white/40"}`} />
                   <span className="font-medium">{item.label}</span>
@@ -767,7 +766,7 @@ function AdminContent({ session }: { session: Session }) {
 
         {/* Main Content Area */}
         <section className="min-w-0 space-y-6 px-4 py-6 md:px-8 flex-1">
-          
+
           {/* Dashboard Dynamic Header */}
           <div className="rounded-2xl overflow-hidden relative bg-[#191714] px-8 py-7 shadow-xl">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_right,rgba(214,177,91,0.08),transparent_55%)]" />
@@ -822,7 +821,7 @@ function AdminContent({ session }: { session: Session }) {
                 transition={{ duration: 0.2 }}
                 className="space-y-6"
               >
-                
+
                 {/* 1. OVERVIEW VIEW */}
                 {activeNav === "Overview" && (
                   <>
@@ -891,9 +890,8 @@ function AdminContent({ session }: { session: Session }) {
                                 <h4 className="text-xs font-bold">{stream.title}</h4>
                                 <p className="text-[10px] text-gray-400 truncate max-w-xs mt-0.5">{stream.streamUrl}</p>
                               </div>
-                              <span className={`px-2.5 py-0.5 text-[10px] font-bold rounded-full border ${
-                                stream.isActive ? "bg-green-50 text-green-700 border-green-200" : "bg-gray-100 text-gray-500 border-gray-200"
-                              }`}>
+                              <span className={`px-2.5 py-0.5 text-[10px] font-bold rounded-full border ${stream.isActive ? "bg-green-50 text-green-700 border-green-200" : "bg-gray-100 text-gray-500 border-gray-200"
+                                }`}>
                                 {stream.isActive ? "Active" : "Inactive"}
                               </span>
                             </div>
@@ -930,7 +928,7 @@ function AdminContent({ session }: { session: Session }) {
                     {isAddingChief ? (
                       <form onSubmit={handleRegisterChief} className="bg-white rounded-2xl border border-[#e8e3da] p-6 shadow-sm space-y-6">
                         <h3 className={`${playfair.className} text-xl font-bold border-b border-[#f0ece2] pb-3 text-[#191714]`}>New Chieftaincy Representative Registration</h3>
-                        
+
                         {/* 0. Profile Picture (AT THE TOP) */}
                         <div>
                           <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3">Profile Portrait</p>
@@ -972,7 +970,7 @@ function AdminContent({ session }: { session: Session }) {
                           <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3">1. Personal Information</p>
                           <div className="grid gap-4 md:grid-cols-2">
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Representative Legal Name *
+                              Full Name *
                               <input name="fullName" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Kola Kazeem" />
                             </label>
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
@@ -1043,7 +1041,7 @@ function AdminContent({ session }: { session: Session }) {
                               <input name="currentOccupation" className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Civil Engineer" />
                             </label>
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Representative Position Title *
+                              Position Title *
                               <input name="positionTitle" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Osi Olubadan Secretariat" />
                             </label>
                           </div>
@@ -1065,7 +1063,7 @@ function AdminContent({ session }: { session: Session }) {
                                 <option value="HONORARY">Honorary Chieftaincy</option>
                               </select>
                             </label>
-                            
+
                             {/* Conditional Title Display - ONLY for BAALE */}
                             {registerLine === "BAALE" ? (
                               <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
@@ -1083,7 +1081,7 @@ function AdminContent({ session }: { session: Session }) {
                               <input name="fullTraditionalName" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Oba Abiodun Kola-Daisi" />
                             </label>
                           </div>
-                          
+
                           <div className="grid gap-4 md:grid-cols-2 mt-4">
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
                               Current Position (Clan Head / Representative) *
@@ -1159,7 +1157,7 @@ function AdminContent({ session }: { session: Session }) {
                               <input name="expertiseInterest" className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Agriculture, Heritage" />
                             </label>
                           </div>
-                          
+
                           <div className="grid gap-4 md:grid-cols-2 mt-4">
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
                               Notable Achievements (newline separated) *
@@ -1605,9 +1603,8 @@ function AdminContent({ session }: { session: Session }) {
                             {stream.type === "RADIO" ? <Radio className="h-5 w-5 text-[#d6b15b]" /> : <Video className="h-5 w-5 text-[#d6b15b]" />}
                             <h3 className={`${playfair.className} font-bold text-base`}>{stream.type} FEED</h3>
                           </div>
-                          <span className={`px-2.5 py-0.5 rounded-full border text-[10px] font-bold ${
-                            stream.isActive ? "bg-green-400/10 text-green-400 border-green-400/20" : "bg-white/5 text-white/40 border-white/8"
-                          }`}>
+                          <span className={`px-2.5 py-0.5 rounded-full border text-[10px] font-bold ${stream.isActive ? "bg-green-400/10 text-green-400 border-green-400/20" : "bg-white/5 text-white/40 border-white/8"
+                            }`}>
                             {stream.isActive ? "Active" : "Disabled"}
                           </span>
                         </div>
@@ -1742,9 +1739,8 @@ function AdminContent({ session }: { session: Session }) {
                                 <td className="p-4">{user.email}</td>
                                 <td className="p-4 text-xs font-mono">{user.phone || "—"}</td>
                                 <td className="p-4 text-xs">
-                                  <span className={`px-2 py-0.5 rounded font-bold ${
-                                    user.role === "SUPER_ADMIN" ? "bg-red-50 text-red-700 border border-red-200" : "bg-[#faf8f3] text-gray-600 border border-gray-250"
-                                  }`}>
+                                  <span className={`px-2 py-0.5 rounded font-bold ${user.role === "SUPER_ADMIN" ? "bg-red-50 text-red-700 border border-red-200" : "bg-[#faf8f3] text-gray-600 border border-gray-250"
+                                    }`}>
                                     {user.role}
                                   </span>
                                 </td>
@@ -1927,7 +1923,7 @@ function AdminContent({ session }: { session: Session }) {
                     <p className="font-bold text-[#191714] text-sm mt-1">{selectedProfile.expertiseInterest || "—"}</p>
                   </div>
                 </div>
-                
+
                 <div className="space-y-4">
                   <div>
                     <span className="text-[10px] text-gray-400 font-bold block uppercase tracking-wider">Notable Achievements</span>

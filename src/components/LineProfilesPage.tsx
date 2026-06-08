@@ -130,9 +130,6 @@ export default function LineProfilesPage({ line }: { line: LineKey }) {
           transition={{ duration: 0.7 }}
           className="mx-auto max-w-6xl"
         >
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9b762f] bg-[#fffaf0] border border-[#e8ddc8] px-3.5 py-1.5 rounded-full inline-block mb-4">
-            Palace of the Olubadan of Ibadanland
-          </p>
           <h1 className={`${playfair.className} mt-4 text-4xl font-bold text-gray-950 md:text-5xl`}>
             {label}
           </h1>
