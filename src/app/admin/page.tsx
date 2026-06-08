@@ -203,6 +203,7 @@ function AdminContent({ session }: { session: Session }) {
   const [success, setSuccess] = useState("");
   const [activeNav, setActiveNav] = useState("Overview");
   const [registerLine, setRegisterLine] = useState("OTUN");
+  const [adminChiefCertificateUrl, setAdminChiefCertificateUrl] = useState("");
 
   // Selection / Form states
   const [selectedProfile, setSelectedProfile] = useState<AdminProfile | null>(null);
@@ -582,6 +583,30 @@ function AdminContent({ session }: { session: Session }) {
     e.preventDefault();
     setActionLoading(true);
     const formData = new FormData(e.currentTarget);
+    const line = String(formData.get("line"));
+
+    // Certificate validation for MOGAJI and BAALE
+    if ((line === "MOGAJI" || line === "BAALE") && !adminChiefCertificateUrl) {
+      triggerAlert("error", "Certificate upload is required for Mogaji and Baale lines.");
+      setActionLoading(false);
+      return;
+    }
+
+    // Determine dynamic title
+    let title = "";
+    if (line === "BAALE") {
+      title = String(formData.get("title")) || "Part Two (Baale)";
+    } else if (line === "MOGAJI") {
+      title = "Mogaji";
+    } else if (line === "IYALODE") {
+      title = "Iyalode";
+    } else {
+      title = "Chief";
+    }
+
+    const documentUrls = adminChiefCertificateUrl
+      ? [{ title: "Certificate of Installation", url: adminChiefCertificateUrl }]
+      : [];
     
     const payload = {
       fullName: String(formData.get("fullName")),
@@ -589,15 +614,16 @@ function AdminContent({ session }: { session: Session }) {
       phone: String(formData.get("phone")),
       password: String(formData.get("password")) || "change-this-password",
       positionTitle: String(formData.get("positionTitle")),
-      line: String(formData.get("line")),
-      title: String(formData.get("title")),
+      line,
+      title,
       fullTraditionalName: String(formData.get("fullTraditionalName")),
-      currentPosition: String(formData.get("currentPosition")),
+      currentPosition: String(formData.get("currentPosition") || "Community Head"),
       biography: String(formData.get("biography")),
       familyHistory: String(formData.get("familyHistory")),
       achievements: String(formData.get("achievements")),
       palaceResponsibilities: String(formData.get("palaceResponsibilities")),
       profilePictureUrl: String(formData.get("profilePictureUrl")) || undefined,
+      documentUrls,
       // New Compact Bio Data Fields
       dateOfBirth: String(formData.get("dateOfBirth") || ""),
       familyCompound: String(formData.get("familyCompound") || ""),
@@ -607,7 +633,9 @@ function AdminContent({ session }: { session: Session }) {
       fieldSpecialization: String(formData.get("fieldSpecialization") || ""),
       otherQualifications: String(formData.get("otherQualifications") || ""),
       currentOccupation: String(formData.get("currentOccupation") || ""),
-      yearInstalled: String(formData.get("yearInstalled") || ""),
+      yearInstalled: ["BAALE", "IYALODE", "HONORARY"].includes(line) ? String(formData.get("yearInstalled") || "") : "",
+      yearInstalledAsMagaji: ["ADVISORY_COUNCIL", "OTUN", "BALOGUN", "MOGAJI"].includes(line) ? String(formData.get("yearInstalledAsMagaji") || "") : "",
+      yearPromotedLine: ["ADVISORY_COUNCIL", "OTUN", "BALOGUN"].includes(line) ? String(formData.get("yearPromotedLine") || "") : "",
       languagesSpoken: String(formData.get("languagesSpoken") || ""),
       expertiseInterest: String(formData.get("expertiseInterest") || ""),
     };
@@ -621,6 +649,7 @@ function AdminContent({ session }: { session: Session }) {
 
       if (res.ok) {
         triggerAlert("success", "Title Holder record & access credentials created successfully!");
+        setAdminChiefCertificateUrl("");
         setIsAddingChief(false);
         fetchData();
       } else {
@@ -902,35 +931,50 @@ function AdminContent({ session }: { session: Session }) {
                       <form onSubmit={handleRegisterChief} className="bg-white rounded-2xl border border-[#e8e3da] p-6 shadow-sm space-y-6">
                         <h3 className={`${playfair.className} text-xl font-bold border-b border-[#f0ece2] pb-3 text-[#191714]`}>New Chieftaincy Representative Registration</h3>
                         
+                        {/* 0. Profile Picture (AT THE TOP) */}
+                        <div>
+                          <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3">Profile Portrait</p>
+                          <div className="max-w-md">
+                            <input type="hidden" id="adminChiefProfilePictureUrl" name="profilePictureUrl" />
+                            <FileUploadWidget
+                              label="Profile Picture (Formal Royal Attire)"
+                              accept="image/*"
+                              buttonText="Upload Photo"
+                              onUploadComplete={(url) => {
+                                const input = document.getElementById("adminChiefProfilePictureUrl") as HTMLInputElement;
+                                if (input) input.value = url;
+                              }}
+                            />
+                          </div>
+                        </div>
+
+                        <hr className="border-[#f0ece2]" />
+
                         {/* Account Access Credentials */}
                         <div>
                           <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3">Login Access Credentials</p>
                           <div className="grid gap-4 md:grid-cols-2">
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Representative Legal Name
-                              <input name="fullName" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Kola Kazeem" />
-                            </label>
-                            <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Email (Access Login)
+                              Email (Access Login) *
                               <input name="email" type="email" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. chief.kola@olubadan.org" />
                             </label>
-                          </div>
-                          <div className="grid gap-4 md:grid-cols-2 mt-4">
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Access Password (Temporary)
+                              Access Password (Temporary) *
                               <input name="password" type="password" className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="Defaults to 'change-this-password'" />
-                            </label>
-                            <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Representative Position Title
-                              <input name="positionTitle" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Osi Olubadan Secretariat" />
                             </label>
                           </div>
                         </div>
+
+                        <hr className="border-[#f0ece2]" />
 
                         {/* 1. Personal Information */}
                         <div>
                           <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3">1. Personal Information</p>
                           <div className="grid gap-4 md:grid-cols-2">
+                            <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
+                              Representative Legal Name *
+                              <input name="fullName" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Kola Kazeem" />
+                            </label>
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
                               Date of Birth (DD/MM/YYYY)
                               <input name="dateOfBirth" className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. 15/03/1965" />
@@ -939,18 +983,20 @@ function AdminContent({ session }: { session: Session }) {
                               Family Compound
                               <input name="familyCompound" className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Aleshinloye Compound" />
                             </label>
-                          </div>
-                          <div className="grid gap-4 md:grid-cols-2 mt-4">
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
                               Family Village
                               <input name="familyVillage" className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Oja-Oba" />
                             </label>
+                          </div>
+                          <div className="grid gap-4 md:grid-cols-2 mt-4">
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
                               Local Government Area
                               <input name="localGovernment" className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Ibadan North" />
                             </label>
                           </div>
                         </div>
+
+                        <hr className="border-[#f0ece2]" />
 
                         {/* 2. Contact Details */}
                         <div>
@@ -962,6 +1008,8 @@ function AdminContent({ session }: { session: Session }) {
                             </label>
                           </div>
                         </div>
+
+                        <hr className="border-[#f0ece2]" />
 
                         {/* 3. Qualifications */}
                         <div>
@@ -984,6 +1032,8 @@ function AdminContent({ session }: { session: Session }) {
                           </div>
                         </div>
 
+                        <hr className="border-[#f0ece2]" />
+
                         {/* 4. Occupation & Leadership */}
                         <div>
                           <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3">4. Occupation &amp; Leadership</p>
@@ -993,13 +1043,13 @@ function AdminContent({ session }: { session: Session }) {
                               <input name="currentOccupation" className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Civil Engineer" />
                             </label>
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Year Installed as Baale
-                              <input name="yearInstalled" className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. 2018 (if applicable)" />
+                              Representative Position Title *
+                              <input name="positionTitle" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Osi Olubadan Secretariat" />
                             </label>
                           </div>
                           <div className="grid gap-4 md:grid-cols-3 mt-4">
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Line Type
+                              Line Type *
                               <select
                                 name="line"
                                 value={registerLine}
@@ -1015,46 +1065,90 @@ function AdminContent({ session }: { session: Session }) {
                                 <option value="HONORARY">Honorary Chieftaincy</option>
                               </select>
                             </label>
-                            <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Chieftaincy Title
-                              {registerLine === "BAALE" ? (
+                            
+                            {/* Conditional Title Display - ONLY for BAALE */}
+                            {registerLine === "BAALE" ? (
+                              <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
+                                Chieftaincy Title *
                                 <select name="title" className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition">
                                   <option value="His Royal Highness">His Royal Highness</option>
                                   <option value="Part Two (Baale)">Part Two (Baale)</option>
                                   <option value="Part Three (Baale)">Part Three (Baale)</option>
                                 </select>
-                              ) : (
-                                <input name="title" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Oba, Mogaji, Chief" />
-                              )}
-                            </label>
+                              </label>
+                            ) : null}
+
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Full Traditional Title Name
+                              Full Traditional Title Name *
                               <input name="fullTraditionalName" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Oba Abiodun Kola-Daisi" />
                             </label>
                           </div>
+                          
                           <div className="grid gap-4 md:grid-cols-2 mt-4">
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Current Traditional Position
+                              Current Position (Clan Head / Representative) *
                               <input name="currentPosition" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Osi Olubadan of Ibadanland" />
                             </label>
-                            <div className="space-y-1">
-                              <input type="hidden" id="adminChiefProfilePictureUrl" name="profilePictureUrl" />
-                              <FileUploadWidget
-                                label="Profile Picture"
-                                accept="image/*"
-                                buttonText="Upload Photo"
-                                onUploadComplete={(url) => {
-                                  const input = document.getElementById("adminChiefProfilePictureUrl") as HTMLInputElement;
-                                  if (input) input.value = url;
-                                }}
-                              />
-                            </div>
+                          </div>
+
+                          {/* Conditional Installation & Promotion Years */}
+                          <div className="grid gap-4 md:grid-cols-2 mt-4">
+                            {/* Years Installed as Magaji - Show for ADVISORY_COUNCIL, OTUN, BALOGUN, MOGAJI */}
+                            {["ADVISORY_COUNCIL", "OTUN", "BALOGUN", "MOGAJI"].includes(registerLine) ? (
+                              <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
+                                Year Installed as Mogaji *
+                                <input name="yearInstalledAsMagaji" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. 2015" />
+                              </label>
+                            ) : null}
+
+                            {/* Years Installed as Baale - Show for BAALE */}
+                            {registerLine === "BAALE" ? (
+                              <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
+                                Year Installed as Baale *
+                                <input name="yearInstalled" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. 2018" />
+                              </label>
+                            ) : null}
+
+                            {/* Year Installed - Show for IYALODE, HONORARY */}
+                            {["IYALODE", "HONORARY"].includes(registerLine) ? (
+                              <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
+                                Year Installed *
+                                <input name="yearInstalled" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. 2020" />
+                              </label>
+                            ) : null}
+
+                            {/* Year Promoted to Chieftaincy Line - Show for ADVISORY_COUNCIL, OTUN, BALOGUN */}
+                            {["ADVISORY_COUNCIL", "OTUN", "BALOGUN"].includes(registerLine) ? (
+                              <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
+                                Year Promoted in to Chieftaincy Line *
+                                <input name="yearPromotedLine" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. 2022" />
+                              </label>
+                            ) : null}
                           </div>
                         </div>
 
+                        <hr className="border-[#f0ece2]" />
+
+                        {/* Certificate Upload section */}
+                        <div>
+                          <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3">
+                            Support Documentation {["MOGAJI", "BAALE"].includes(registerLine) ? " * (Required)" : " (Optional)"}
+                          </p>
+                          <div className="max-w-md">
+                            <FileUploadWidget
+                              label="Installation Certificate (PDF, Image)"
+                              accept="application/pdf,image/*"
+                              buttonText="Upload Certificate"
+                              onUploadComplete={(url) => setAdminChiefCertificateUrl(url)}
+                            />
+                          </div>
+                        </div>
+
+                        <hr className="border-[#f0ece2]" />
+
                         {/* 5. Additional Information & History */}
                         <div>
-                          <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3">5. Additional Information</p>
+                          <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3">5. History &amp; Biography Dossier</p>
                           <div className="grid gap-4 md:grid-cols-2">
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
                               Languages Spoken
@@ -1068,24 +1162,24 @@ function AdminContent({ session }: { session: Session }) {
                           
                           <div className="grid gap-4 md:grid-cols-2 mt-4">
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Notable Achievements (newline separated)
+                              Notable Achievements (newline separated) *
                               <textarea name="achievements" required className="mt-2 min-h-20 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition resize-none" placeholder="Council representation&#10;Community mediation" />
                             </label>
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Palace Responsibilities (newline separated)
+                              Palace Responsibilities (newline separated) *
                               <textarea name="palaceResponsibilities" required className="mt-2 min-h-20 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition resize-none" placeholder="Palace advisory duties&#10;Line representation" />
                             </label>
                           </div>
 
                           <div className="mt-4">
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Biography
+                              Biography *
                               <textarea name="biography" required className="mt-2 min-h-20 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition resize-none" placeholder="Enter short bio details..." />
                             </label>
                           </div>
                           <div className="mt-4">
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Family History &amp; Ancestral Deeds
+                              Family History &amp; Ancestral Deeds *
                               <textarea name="familyHistory" required className="mt-2 min-h-20 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition resize-none" placeholder="Enter compound deeds, lineages background..." />
                             </label>
                           </div>

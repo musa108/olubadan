@@ -122,7 +122,9 @@ export const ProfileScalarFieldEnum = {
   languagesSpoken: 'languagesSpoken',
   localGovernment: 'localGovernment',
   otherQualifications: 'otherQualifications',
-  yearInstalled: 'yearInstalled'
+  yearInstalled: 'yearInstalled',
+  yearInstalledAsMagaji: 'yearInstalledAsMagaji',
+  yearPromotedLine: 'yearPromotedLine'
 } as const
 
 export type ProfileScalarFieldEnum = (typeof ProfileScalarFieldEnum)[keyof typeof ProfileScalarFieldEnum]

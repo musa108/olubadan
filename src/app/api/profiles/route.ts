@@ -39,6 +39,8 @@ const profileRegistrationSchema = z.object({
   otherQualifications: z.string().optional().nullable(),
   currentOccupation: z.string().optional().nullable(),
   yearInstalled: z.string().optional().nullable(),
+  yearInstalledAsMagaji: z.string().optional().nullable(),
+  yearPromotedLine: z.string().optional().nullable(),
   languagesSpoken: z.string().optional().nullable(),
   expertiseInterest: z.string().optional().nullable(),
 });
@@ -114,7 +116,8 @@ export async function POST(request: Request) {
   const result = profileRegistrationSchema.safeParse(json);
 
   if (!result.success) {
-    return apiError("Invalid profile submission.", 422);
+    // Return Zod field-level errors to make 422 actionable.
+    return apiError(JSON.stringify(result.error.flatten()), 422);
   }
 
   const data = result.data;
@@ -162,6 +165,8 @@ export async function POST(request: Request) {
           otherQualifications: data.otherQualifications,
           currentOccupation: data.currentOccupation,
           yearInstalled: data.yearInstalled,
+          yearInstalledAsMagaji: data.yearInstalledAsMagaji,
+          yearPromotedLine: data.yearPromotedLine,
           languagesSpoken: data.languagesSpoken,
           expertiseInterest: data.expertiseInterest,
           media: {

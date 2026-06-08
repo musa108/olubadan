@@ -53,6 +53,8 @@ model Profile {
   localGovernment        String?
   otherQualifications    String?
   yearInstalled          String?
+  yearInstalledAsMagaji  String?
+  yearPromotedLine       String?
   documents              DocumentAsset[]
   media                  MediaAsset[]
   user                   User            @relation(fields: [userId], references: [id], onDelete: Cascade)

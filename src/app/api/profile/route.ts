@@ -58,6 +58,7 @@ export async function PUT(request: NextRequest) {
     achievements,
     palaceResponsibilities,
     profilePictureUrl,
+    documentUrls,
     // New compact bio data fields
     dateOfBirth,
     familyCompound,
@@ -68,9 +69,11 @@ export async function PUT(request: NextRequest) {
     otherQualifications,
     currentOccupation,
     yearInstalled,
+    yearInstalledAsMagaji,
+    yearPromotedLine,
     languagesSpoken,
     expertiseInterest,
-  } = body as Record<string, string | undefined>;
+  } = body as any;
 
   // Update profile and optionally user name/phone in parallel
   const [updated] = await Promise.all([
@@ -85,6 +88,12 @@ export async function PUT(request: NextRequest) {
         ...(achievements !== undefined && { achievements }),
         ...(palaceResponsibilities !== undefined && { palaceResponsibilities }),
         ...(profilePictureUrl !== undefined && { profilePictureUrl }),
+        ...(documentUrls !== undefined && {
+          documents: {
+            deleteMany: {},
+            create: documentUrls,
+          },
+        }),
         // New compact bio data fields
         ...(dateOfBirth !== undefined && { dateOfBirth }),
         ...(familyCompound !== undefined && { familyCompound }),
@@ -95,6 +104,8 @@ export async function PUT(request: NextRequest) {
         ...(otherQualifications !== undefined && { otherQualifications }),
         ...(currentOccupation !== undefined && { currentOccupation }),
         ...(yearInstalled !== undefined && { yearInstalled }),
+        ...(yearInstalledAsMagaji !== undefined && { yearInstalledAsMagaji }),
+        ...(yearPromotedLine !== undefined && { yearPromotedLine }),
         ...(languagesSpoken !== undefined && { languagesSpoken }),
         ...(expertiseInterest !== undefined && { expertiseInterest }),
         // Reset status to Pending Review so admin can re-review the updated record

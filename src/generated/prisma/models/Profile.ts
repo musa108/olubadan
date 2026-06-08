@@ -53,6 +53,8 @@ export type ProfileMinAggregateOutputType = {
   localGovernment: string | null
   otherQualifications: string | null
   yearInstalled: string | null
+  yearInstalledAsMagaji: string | null
+  yearPromotedLine: string | null
 }
 
 export type ProfileMaxAggregateOutputType = {
@@ -84,6 +86,8 @@ export type ProfileMaxAggregateOutputType = {
   localGovernment: string | null
   otherQualifications: string | null
   yearInstalled: string | null
+  yearInstalledAsMagaji: string | null
+  yearPromotedLine: string | null
 }
 
 export type ProfileCountAggregateOutputType = {
@@ -115,6 +119,8 @@ export type ProfileCountAggregateOutputType = {
   localGovernment: number
   otherQualifications: number
   yearInstalled: number
+  yearInstalledAsMagaji: number
+  yearPromotedLine: number
   _all: number
 }
 
@@ -148,6 +154,8 @@ export type ProfileMinAggregateInputType = {
   localGovernment?: true
   otherQualifications?: true
   yearInstalled?: true
+  yearInstalledAsMagaji?: true
+  yearPromotedLine?: true
 }
 
 export type ProfileMaxAggregateInputType = {
@@ -179,6 +187,8 @@ export type ProfileMaxAggregateInputType = {
   localGovernment?: true
   otherQualifications?: true
   yearInstalled?: true
+  yearInstalledAsMagaji?: true
+  yearPromotedLine?: true
 }
 
 export type ProfileCountAggregateInputType = {
@@ -210,6 +220,8 @@ export type ProfileCountAggregateInputType = {
   localGovernment?: true
   otherQualifications?: true
   yearInstalled?: true
+  yearInstalledAsMagaji?: true
+  yearPromotedLine?: true
   _all?: true
 }
 
@@ -314,6 +326,8 @@ export type ProfileGroupByOutputType = {
   localGovernment: string | null
   otherQualifications: string | null
   yearInstalled: string | null
+  yearInstalledAsMagaji: string | null
+  yearPromotedLine: string | null
   _count: ProfileCountAggregateOutputType | null
   _min: ProfileMinAggregateOutputType | null
   _max: ProfileMaxAggregateOutputType | null
@@ -366,6 +380,8 @@ export type ProfileWhereInput = {
   localGovernment?: Prisma.StringNullableFilter<"Profile"> | string | null
   otherQualifications?: Prisma.StringNullableFilter<"Profile"> | string | null
   yearInstalled?: Prisma.StringNullableFilter<"Profile"> | string | null
+  yearInstalledAsMagaji?: Prisma.StringNullableFilter<"Profile"> | string | null
+  yearPromotedLine?: Prisma.StringNullableFilter<"Profile"> | string | null
   documents?: Prisma.DocumentAssetListRelationFilter
   media?: Prisma.MediaAssetListRelationFilter
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -400,6 +416,8 @@ export type ProfileOrderByWithRelationInput = {
   localGovernment?: Prisma.SortOrderInput | Prisma.SortOrder
   otherQualifications?: Prisma.SortOrderInput | Prisma.SortOrder
   yearInstalled?: Prisma.SortOrderInput | Prisma.SortOrder
+  yearInstalledAsMagaji?: Prisma.SortOrderInput | Prisma.SortOrder
+  yearPromotedLine?: Prisma.SortOrderInput | Prisma.SortOrder
   documents?: Prisma.DocumentAssetOrderByRelationAggregateInput
   media?: Prisma.MediaAssetOrderByRelationAggregateInput
   user?: Prisma.UserOrderByWithRelationInput
@@ -437,6 +455,8 @@ export type ProfileWhereUniqueInput = Prisma.AtLeast<{
   localGovernment?: Prisma.StringNullableFilter<"Profile"> | string | null
   otherQualifications?: Prisma.StringNullableFilter<"Profile"> | string | null
   yearInstalled?: Prisma.StringNullableFilter<"Profile"> | string | null
+  yearInstalledAsMagaji?: Prisma.StringNullableFilter<"Profile"> | string | null
+  yearPromotedLine?: Prisma.StringNullableFilter<"Profile"> | string | null
   documents?: Prisma.DocumentAssetListRelationFilter
   media?: Prisma.MediaAssetListRelationFilter
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -471,6 +491,8 @@ export type ProfileOrderByWithAggregationInput = {
   localGovernment?: Prisma.SortOrderInput | Prisma.SortOrder
   otherQualifications?: Prisma.SortOrderInput | Prisma.SortOrder
   yearInstalled?: Prisma.SortOrderInput | Prisma.SortOrder
+  yearInstalledAsMagaji?: Prisma.SortOrderInput | Prisma.SortOrder
+  yearPromotedLine?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.ProfileCountOrderByAggregateInput
   _max?: Prisma.ProfileMaxOrderByAggregateInput
   _min?: Prisma.ProfileMinOrderByAggregateInput
@@ -508,6 +530,8 @@ export type ProfileScalarWhereWithAggregatesInput = {
   localGovernment?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
   otherQualifications?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
   yearInstalled?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  yearInstalledAsMagaji?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  yearPromotedLine?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
 }
 
 export type ProfileCreateInput = {
@@ -538,6 +562,8 @@ export type ProfileCreateInput = {
   localGovernment?: string | null
   otherQualifications?: string | null
   yearInstalled?: string | null
+  yearInstalledAsMagaji?: string | null
+  yearPromotedLine?: string | null
   documents?: Prisma.DocumentAssetCreateNestedManyWithoutProfileInput
   media?: Prisma.MediaAssetCreateNestedManyWithoutProfileInput
   user: Prisma.UserCreateNestedOneWithoutProfilesInput
@@ -572,6 +598,8 @@ export type ProfileUncheckedCreateInput = {
   localGovernment?: string | null
   otherQualifications?: string | null
   yearInstalled?: string | null
+  yearInstalledAsMagaji?: string | null
+  yearPromotedLine?: string | null
   documents?: Prisma.DocumentAssetUncheckedCreateNestedManyWithoutProfileInput
   media?: Prisma.MediaAssetUncheckedCreateNestedManyWithoutProfileInput
 }
@@ -604,6 +632,8 @@ export type ProfileUpdateInput = {
   localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalledAsMagaji?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearPromotedLine?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   documents?: Prisma.DocumentAssetUpdateManyWithoutProfileNestedInput
   media?: Prisma.MediaAssetUpdateManyWithoutProfileNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutProfilesNestedInput
@@ -638,6 +668,8 @@ export type ProfileUncheckedUpdateInput = {
   localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalledAsMagaji?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearPromotedLine?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   documents?: Prisma.DocumentAssetUncheckedUpdateManyWithoutProfileNestedInput
   media?: Prisma.MediaAssetUncheckedUpdateManyWithoutProfileNestedInput
 }
@@ -671,6 +703,8 @@ export type ProfileCreateManyInput = {
   localGovernment?: string | null
   otherQualifications?: string | null
   yearInstalled?: string | null
+  yearInstalledAsMagaji?: string | null
+  yearPromotedLine?: string | null
 }
 
 export type ProfileUpdateManyMutationInput = {
@@ -701,6 +735,8 @@ export type ProfileUpdateManyMutationInput = {
   localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalledAsMagaji?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearPromotedLine?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ProfileUncheckedUpdateManyInput = {
@@ -732,6 +768,8 @@ export type ProfileUncheckedUpdateManyInput = {
   localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalledAsMagaji?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearPromotedLine?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ProfileListRelationFilter = {
@@ -773,6 +811,8 @@ export type ProfileCountOrderByAggregateInput = {
   localGovernment?: Prisma.SortOrder
   otherQualifications?: Prisma.SortOrder
   yearInstalled?: Prisma.SortOrder
+  yearInstalledAsMagaji?: Prisma.SortOrder
+  yearPromotedLine?: Prisma.SortOrder
 }
 
 export type ProfileMaxOrderByAggregateInput = {
@@ -804,6 +844,8 @@ export type ProfileMaxOrderByAggregateInput = {
   localGovernment?: Prisma.SortOrder
   otherQualifications?: Prisma.SortOrder
   yearInstalled?: Prisma.SortOrder
+  yearInstalledAsMagaji?: Prisma.SortOrder
+  yearPromotedLine?: Prisma.SortOrder
 }
 
 export type ProfileMinOrderByAggregateInput = {
@@ -835,6 +877,8 @@ export type ProfileMinOrderByAggregateInput = {
   localGovernment?: Prisma.SortOrder
   otherQualifications?: Prisma.SortOrder
   yearInstalled?: Prisma.SortOrder
+  yearInstalledAsMagaji?: Prisma.SortOrder
+  yearPromotedLine?: Prisma.SortOrder
 }
 
 export type ProfileNullableScalarRelationFilter = {
@@ -959,6 +1003,8 @@ export type ProfileCreateWithoutUserInput = {
   localGovernment?: string | null
   otherQualifications?: string | null
   yearInstalled?: string | null
+  yearInstalledAsMagaji?: string | null
+  yearPromotedLine?: string | null
   documents?: Prisma.DocumentAssetCreateNestedManyWithoutProfileInput
   media?: Prisma.MediaAssetCreateNestedManyWithoutProfileInput
 }
@@ -991,6 +1037,8 @@ export type ProfileUncheckedCreateWithoutUserInput = {
   localGovernment?: string | null
   otherQualifications?: string | null
   yearInstalled?: string | null
+  yearInstalledAsMagaji?: string | null
+  yearPromotedLine?: string | null
   documents?: Prisma.DocumentAssetUncheckedCreateNestedManyWithoutProfileInput
   media?: Prisma.MediaAssetUncheckedCreateNestedManyWithoutProfileInput
 }
@@ -1053,6 +1101,8 @@ export type ProfileScalarWhereInput = {
   localGovernment?: Prisma.StringNullableFilter<"Profile"> | string | null
   otherQualifications?: Prisma.StringNullableFilter<"Profile"> | string | null
   yearInstalled?: Prisma.StringNullableFilter<"Profile"> | string | null
+  yearInstalledAsMagaji?: Prisma.StringNullableFilter<"Profile"> | string | null
+  yearPromotedLine?: Prisma.StringNullableFilter<"Profile"> | string | null
 }
 
 export type ProfileCreateWithoutMediaInput = {
@@ -1083,6 +1133,8 @@ export type ProfileCreateWithoutMediaInput = {
   localGovernment?: string | null
   otherQualifications?: string | null
   yearInstalled?: string | null
+  yearInstalledAsMagaji?: string | null
+  yearPromotedLine?: string | null
   documents?: Prisma.DocumentAssetCreateNestedManyWithoutProfileInput
   user: Prisma.UserCreateNestedOneWithoutProfilesInput
 }
@@ -1116,6 +1168,8 @@ export type ProfileUncheckedCreateWithoutMediaInput = {
   localGovernment?: string | null
   otherQualifications?: string | null
   yearInstalled?: string | null
+  yearInstalledAsMagaji?: string | null
+  yearPromotedLine?: string | null
   documents?: Prisma.DocumentAssetUncheckedCreateNestedManyWithoutProfileInput
 }
 
@@ -1163,6 +1217,8 @@ export type ProfileUpdateWithoutMediaInput = {
   localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalledAsMagaji?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearPromotedLine?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   documents?: Prisma.DocumentAssetUpdateManyWithoutProfileNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutProfilesNestedInput
 }
@@ -1196,6 +1252,8 @@ export type ProfileUncheckedUpdateWithoutMediaInput = {
   localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalledAsMagaji?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearPromotedLine?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   documents?: Prisma.DocumentAssetUncheckedUpdateManyWithoutProfileNestedInput
 }
 
@@ -1227,6 +1285,8 @@ export type ProfileCreateWithoutDocumentsInput = {
   localGovernment?: string | null
   otherQualifications?: string | null
   yearInstalled?: string | null
+  yearInstalledAsMagaji?: string | null
+  yearPromotedLine?: string | null
   media?: Prisma.MediaAssetCreateNestedManyWithoutProfileInput
   user: Prisma.UserCreateNestedOneWithoutProfilesInput
 }
@@ -1260,6 +1320,8 @@ export type ProfileUncheckedCreateWithoutDocumentsInput = {
   localGovernment?: string | null
   otherQualifications?: string | null
   yearInstalled?: string | null
+  yearInstalledAsMagaji?: string | null
+  yearPromotedLine?: string | null
   media?: Prisma.MediaAssetUncheckedCreateNestedManyWithoutProfileInput
 }
 
@@ -1307,6 +1369,8 @@ export type ProfileUpdateWithoutDocumentsInput = {
   localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalledAsMagaji?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearPromotedLine?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   media?: Prisma.MediaAssetUpdateManyWithoutProfileNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutProfilesNestedInput
 }
@@ -1340,6 +1404,8 @@ export type ProfileUncheckedUpdateWithoutDocumentsInput = {
   localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalledAsMagaji?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearPromotedLine?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   media?: Prisma.MediaAssetUncheckedUpdateManyWithoutProfileNestedInput
 }
 
@@ -1371,6 +1437,8 @@ export type ProfileCreateManyUserInput = {
   localGovernment?: string | null
   otherQualifications?: string | null
   yearInstalled?: string | null
+  yearInstalledAsMagaji?: string | null
+  yearPromotedLine?: string | null
 }
 
 export type ProfileUpdateWithoutUserInput = {
@@ -1401,6 +1469,8 @@ export type ProfileUpdateWithoutUserInput = {
   localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalledAsMagaji?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearPromotedLine?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   documents?: Prisma.DocumentAssetUpdateManyWithoutProfileNestedInput
   media?: Prisma.MediaAssetUpdateManyWithoutProfileNestedInput
 }
@@ -1433,6 +1503,8 @@ export type ProfileUncheckedUpdateWithoutUserInput = {
   localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalledAsMagaji?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearPromotedLine?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   documents?: Prisma.DocumentAssetUncheckedUpdateManyWithoutProfileNestedInput
   media?: Prisma.MediaAssetUncheckedUpdateManyWithoutProfileNestedInput
 }
@@ -1465,6 +1537,8 @@ export type ProfileUncheckedUpdateManyWithoutUserInput = {
   localGovernment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   otherQualifications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   yearInstalled?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearInstalledAsMagaji?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  yearPromotedLine?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -1536,6 +1610,8 @@ export type ProfileSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   localGovernment?: boolean
   otherQualifications?: boolean
   yearInstalled?: boolean
+  yearInstalledAsMagaji?: boolean
+  yearPromotedLine?: boolean
   documents?: boolean | Prisma.Profile$documentsArgs<ExtArgs>
   media?: boolean | Prisma.Profile$mediaArgs<ExtArgs>
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -1571,6 +1647,8 @@ export type ProfileSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   localGovernment?: boolean
   otherQualifications?: boolean
   yearInstalled?: boolean
+  yearInstalledAsMagaji?: boolean
+  yearPromotedLine?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["profile"]>
 
@@ -1603,6 +1681,8 @@ export type ProfileSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   localGovernment?: boolean
   otherQualifications?: boolean
   yearInstalled?: boolean
+  yearInstalledAsMagaji?: boolean
+  yearPromotedLine?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["profile"]>
 
@@ -1635,9 +1715,11 @@ export type ProfileSelectScalar = {
   localGovernment?: boolean
   otherQualifications?: boolean
   yearInstalled?: boolean
+  yearInstalledAsMagaji?: boolean
+  yearPromotedLine?: boolean
 }
 
-export type ProfileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "line" | "title" | "fullTraditionalName" | "currentPosition" | "biography" | "familyHistory" | "achievements" | "palaceResponsibilities" | "profilePictureUrl" | "status" | "reviewNote" | "reviewedAt" | "reviewedById" | "createdAt" | "updatedAt" | "currentOccupation" | "dateOfBirth" | "expertiseInterest" | "familyCompound" | "familyVillage" | "fieldSpecialization" | "highestQualification" | "languagesSpoken" | "localGovernment" | "otherQualifications" | "yearInstalled", ExtArgs["result"]["profile"]>
+export type ProfileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "line" | "title" | "fullTraditionalName" | "currentPosition" | "biography" | "familyHistory" | "achievements" | "palaceResponsibilities" | "profilePictureUrl" | "status" | "reviewNote" | "reviewedAt" | "reviewedById" | "createdAt" | "updatedAt" | "currentOccupation" | "dateOfBirth" | "expertiseInterest" | "familyCompound" | "familyVillage" | "fieldSpecialization" | "highestQualification" | "languagesSpoken" | "localGovernment" | "otherQualifications" | "yearInstalled" | "yearInstalledAsMagaji" | "yearPromotedLine", ExtArgs["result"]["profile"]>
 export type ProfileInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   documents?: boolean | Prisma.Profile$documentsArgs<ExtArgs>
   media?: boolean | Prisma.Profile$mediaArgs<ExtArgs>
@@ -1687,6 +1769,8 @@ export type $ProfilePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     localGovernment: string | null
     otherQualifications: string | null
     yearInstalled: string | null
+    yearInstalledAsMagaji: string | null
+    yearPromotedLine: string | null
   }, ExtArgs["result"]["profile"]>
   composites: {}
 }
@@ -2141,6 +2225,8 @@ export interface ProfileFieldRefs {
   readonly localGovernment: Prisma.FieldRef<"Profile", 'String'>
   readonly otherQualifications: Prisma.FieldRef<"Profile", 'String'>
   readonly yearInstalled: Prisma.FieldRef<"Profile", 'String'>
+  readonly yearInstalledAsMagaji: Prisma.FieldRef<"Profile", 'String'>
+  readonly yearPromotedLine: Prisma.FieldRef<"Profile", 'String'>
 }
     
 

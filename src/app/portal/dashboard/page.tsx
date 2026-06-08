@@ -72,6 +72,8 @@ type DashboardProfile = {
   otherQualifications?: string;
   currentOccupation?: string;
   yearInstalled?: string;
+  yearInstalledAsMagaji?: string;
+  yearPromotedLine?: string;
   languagesSpoken?: string;
   expertiseInterest?: string;
   media?: { id: string; url: string; type: string }[];
@@ -82,6 +84,7 @@ export default function RepresentativeDashboard() {
   const { data: session, status: sessionStatus } = useSession();
 
   const [profile, setProfile] = useState<DashboardProfile | null>(null);
+  const [dashboardCertificateUrl, setDashboardCertificateUrl] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -131,12 +134,15 @@ export default function RepresentativeDashboard() {
             otherQualifications: p.otherQualifications ?? "",
             currentOccupation: p.currentOccupation ?? "",
             yearInstalled: p.yearInstalled ?? "",
+            yearInstalledAsMagaji: p.yearInstalledAsMagaji ?? "",
+            yearPromotedLine: p.yearPromotedLine ?? "",
             languagesSpoken: p.languagesSpoken ?? "",
             expertiseInterest: p.expertiseInterest ?? "",
             media: p.media ?? [],
             documents: p.documents ?? [],
           };
           setProfile(mapped);
+          setDashboardCertificateUrl(p.documents?.[0]?.url || "");
           // Auto-open modal only for Request Changes or Rejected statuses
           if (p.status === "REQUEST_CHANGES" || p.status === "REJECTED") {
             setIsModalOpen(true);
@@ -207,6 +213,31 @@ export default function RepresentativeDashboard() {
     const fd = new FormData(e.currentTarget);
     const getString = (key: string) => String(fd.get(key) || "").trim();
 
+    const currentLine = (profile?.line || "baale").toUpperCase();
+
+    // Certificate validation for MOGAJI and BAALE
+    if ((currentLine === "MOGAJI" || currentLine === "BAALE") && !dashboardCertificateUrl) {
+      setSubmitError("Certificate / Supporting Document upload is required for Mogaji and Baale lines.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Determine dynamic title
+    let titleVal = "";
+    if (currentLine === "BAALE") {
+      titleVal = getString("title") || "Part Two (Baale)";
+    } else if (currentLine === "MOGAJI") {
+      titleVal = "Mogaji";
+    } else if (currentLine === "IYALODE") {
+      titleVal = "Iyalode";
+    } else {
+      titleVal = "Chief";
+    }
+
+    const documentUrls = dashboardCertificateUrl
+      ? [{ title: "Certificate of Installation", url: dashboardCertificateUrl }]
+      : [];
+
     // Determine whether this is a first-time POST or an update PUT
     const isUpdate = !!profile && profile.status !== undefined;
 
@@ -214,8 +245,8 @@ export default function RepresentativeDashboard() {
       fullName: getString("fullName"),
       phone: getString("phone"),
       email: session?.user?.email || "",
-      line: getString("line") || "BAALE",
-      title: getString("title") || "Baale",
+      line: currentLine,
+      title: titleVal,
       fullTraditionalName: getString("fullTraditionalName") || getString("fullName"),
       currentPosition: getString("currentPosition") || "Community Head",
       biography: getString("biography"),
@@ -223,6 +254,7 @@ export default function RepresentativeDashboard() {
       achievements: getString("achievements"),
       palaceResponsibilities: getString("palaceResponsibilities"),
       profilePictureUrl: getString("profilePictureUrl") || undefined,
+      documentUrls,
       // Compact Bio Data
       dateOfBirth: getString("dateOfBirth"),
       familyCompound: getString("familyCompound"),
@@ -232,7 +264,9 @@ export default function RepresentativeDashboard() {
       fieldSpecialization: getString("fieldSpecialization"),
       otherQualifications: getString("otherQualifications"),
       currentOccupation: getString("currentOccupation"),
-      yearInstalled: getString("yearInstalled"),
+      yearInstalled: ["BAALE", "IYALODE", "HONORARY"].includes(currentLine) ? getString("yearInstalled") : "",
+      yearInstalledAsMagaji: ["ADVISORY_COUNCIL", "OTUN", "BALOGUN", "MOGAJI"].includes(currentLine) ? getString("yearInstalledAsMagaji") : "",
+      yearPromotedLine: ["ADVISORY_COUNCIL", "OTUN", "BALOGUN"].includes(currentLine) ? getString("yearPromotedLine") : "",
       languagesSpoken: getString("languagesSpoken"),
       expertiseInterest: getString("expertiseInterest"),
     };
@@ -390,6 +424,22 @@ export default function RepresentativeDashboard() {
                   {/* Hidden field for Line to submit correct value */}
                   <input type="hidden" name="line" value={profile?.line ? profile.line.toUpperCase() : "BAALE"} />
 
+                  {/* ── 0. Profile Picture (AT THE TOP) ── */}
+                  <div className="space-y-1">
+                    <input type="hidden" id="portalProfilePictureUrl" name="profilePictureUrl" defaultValue={profile?.profilePictureUrl || ""} />
+                    <FileUploadWidget
+                      label="Profile Picture (Formal Royal Attire)"
+                      accept="image/*"
+                      defaultValue={profile?.profilePictureUrl || ""}
+                      onUploadComplete={(url) => {
+                        const input = document.getElementById("portalProfilePictureUrl") as HTMLInputElement;
+                        if (input) input.value = url;
+                      }}
+                    />
+                  </div>
+
+                  <hr className="border-[#f0ece2]" />
+
                   {/* ── Personal Information ── */}
                   <div>
                     <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3 flex items-center gap-1.5">
@@ -424,6 +474,8 @@ export default function RepresentativeDashboard() {
                     </div>
                   </div>
 
+                  <hr className="border-[#f0ece2]" />
+
                   {/* ── Contact Details ── */}
                   <div>
                     <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3 flex items-center gap-1.5">
@@ -443,6 +495,8 @@ export default function RepresentativeDashboard() {
                       </label>
                     </div>
                   </div>
+
+                  <hr className="border-[#f0ece2]" />
 
                   {/* ── Qualifications ── */}
                   <div>
@@ -468,6 +522,8 @@ export default function RepresentativeDashboard() {
                     </div>
                   </div>
 
+                  <hr className="border-[#f0ece2]" />
+
                   {/* ── Occupation & Leadership ── */}
                   <div>
                     <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3 flex items-center gap-1.5">
@@ -479,25 +535,20 @@ export default function RepresentativeDashboard() {
                         <input name="currentOccupation" placeholder="e.g. Civil Engineer" defaultValue={profile?.currentOccupation || ""}
                           className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 text-sm focus:border-[#d6b15b] outline-none" />
                       </label>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                        Year Installed as Baale
-                        <input name="yearInstalled" placeholder="e.g. 2018" defaultValue={profile?.yearInstalled || ""}
-                          className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 text-sm focus:border-[#d6b15b] outline-none" />
-                      </label>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                        Chieftaincy Title *
-                        {profile?.line === "baale" ? (
+
+                      {/* Chieftaincy Title * (Conditional displaying for baale) */}
+                      {profile?.line === "baale" ? (
+                        <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
+                          Chieftaincy Title *
                           <select name="title" defaultValue={profile?.title || "Part Two (Baale)"}
                             className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 text-sm focus:border-[#d6b15b] outline-none">
                             <option value="His Royal Highness">His Royal Highness</option>
                             <option value="Part Two (Baale)">Part Two (Baale)</option>
                             <option value="Part Three (Baale)">Part Three (Baale)</option>
                           </select>
-                        ) : (
-                          <input name="title" required placeholder="e.g. Mogaji, Chief" defaultValue={profile?.title || ""}
-                            className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 text-sm focus:border-[#d6b15b] outline-none" />
-                        )}
-                      </label>
+                        </label>
+                      ) : null}
+
                       <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
                         Position Title *
                         <input name="currentPosition" required defaultValue={profile?.currentPosition || "Community Head"}
@@ -509,7 +560,65 @@ export default function RepresentativeDashboard() {
                           className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 text-sm focus:border-[#d6b15b] outline-none" />
                       </label>
                     </div>
+
+                    {/* Conditional installation / promotion years */}
+                    <div className="grid gap-4 md:grid-cols-2 mt-4">
+                      {/* Year Installed as Magaji - Show for advisory-council, otun, balogun, mogaji */}
+                      {profile?.line && ["advisory-council", "otun", "balogun", "mogaji"].includes(profile.line) ? (
+                        <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
+                          Year Installed as Mogaji *
+                          <input name="yearInstalledAsMagaji" required defaultValue={profile?.yearInstalledAsMagaji || ""}
+                            className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 text-sm focus:border-[#d6b15b] outline-none" />
+                        </label>
+                      ) : null}
+
+                      {/* Year Installed as Baale - Show for baale */}
+                      {profile?.line === "baale" ? (
+                        <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
+                          Year Installed as Baale *
+                          <input name="yearInstalled" required defaultValue={profile?.yearInstalled || ""}
+                            className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 text-sm focus:border-[#d6b15b] outline-none" />
+                        </label>
+                      ) : null}
+
+                      {/* Year Installed - Show for iyalode, honorary */}
+                      {profile?.line && ["iyalode", "honorary"].includes(profile.line) ? (
+                        <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
+                          Year Installed *
+                          <input name="yearInstalled" required defaultValue={profile?.yearInstalled || ""}
+                            className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 text-sm focus:border-[#d6b15b] outline-none" />
+                        </label>
+                      ) : null}
+
+                      {/* Year Promoted to Chieftaincy Line - Show for advisory-council, otun, balogun */}
+                      {profile?.line && ["advisory-council", "otun", "balogun"].includes(profile.line) ? (
+                        <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
+                          Year Promoted in to Chieftaincy Line *
+                          <input name="yearPromotedLine" required defaultValue={profile?.yearPromotedLine || ""}
+                            className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 text-sm focus:border-[#d6b15b] outline-none" />
+                        </label>
+                      ) : null}
+                    </div>
                   </div>
+
+                  <hr className="border-[#f0ece2]" />
+
+                  {/* ── Certificate Upload Section ── */}
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3">
+                      Support Documentation {profile?.line && ["mogaji", "baale"].includes(profile.line) ? " * (Required)" : " (Optional)"}
+                    </p>
+                    <div className="max-w-md">
+                      <FileUploadWidget
+                        label="Installation Certificate (PDF, Image)"
+                        accept="application/pdf,image/*"
+                        defaultValue={dashboardCertificateUrl}
+                        onUploadComplete={(url) => setDashboardCertificateUrl(url)}
+                      />
+                    </div>
+                  </div>
+
+                  <hr className="border-[#f0ece2]" />
 
                   {/* ── Additional Information ── */}
                   <div>
@@ -530,6 +639,8 @@ export default function RepresentativeDashboard() {
                     </div>
                   </div>
 
+                  <hr className="border-[#f0ece2]" />
+
                   {/* ── Narrative Fields ── */}
                   <div>
                     <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3 flex items-center gap-1.5">
@@ -549,6 +660,8 @@ export default function RepresentativeDashboard() {
                     </div>
                   </div>
 
+                  <hr className="border-[#f0ece2]" />
+
                   {/* ── Achievements & Responsibilities ── */}
                   <div>
                     <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3 flex items-center gap-1.5">
@@ -566,20 +679,6 @@ export default function RepresentativeDashboard() {
                           className="mt-2 min-h-20 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 text-sm focus:border-[#d6b15b] outline-none" />
                       </label>
                     </div>
-                  </div>
-
-                  {/* ── Profile Picture ── */}
-                  <div className="space-y-1">
-                    <input type="hidden" id="portalProfilePictureUrl" name="profilePictureUrl" defaultValue={profile?.profilePictureUrl || ""} />
-                    <FileUploadWidget
-                      label="Profile Picture"
-                      accept="image/*"
-                      defaultValue={profile?.profilePictureUrl || ""}
-                      onUploadComplete={(url) => {
-                        const input = document.getElementById("portalProfilePictureUrl") as HTMLInputElement;
-                        if (input) input.value = url;
-                      }}
-                    />
                   </div>
 
                   {/* Actions */}
