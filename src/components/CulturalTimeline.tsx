@@ -43,11 +43,11 @@ const timelineData = [
 
 export default function CulturalTimeline() {
   return (
-    <section className="bg-[#faf7f2] py-20 px-6 md:px-16">
+    <section className="bg-[#faf7f2] py-12 sm:py-20 px-4 sm:px-6 md:px-16">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h2
-            className={`${playfair.className} text-3xl md:text-5xl font-bold text-gray-900`}
+            className={`${playfair.className} text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900`}
           >
             Cultural Timeline
           </h2>
@@ -58,7 +58,7 @@ export default function CulturalTimeline() {
         </div>
 
         {/* Timeline */}
-        <div className="relative border-l-4 border-[#d4a373] ml-6 md:ml-16 space-y-16">
+        <div className="relative border-l-4 border-[#d4a373] ml-4 sm:ml-6 md:ml-16 space-y-10 sm:space-y-16">
           {timelineData.map((item, index) => (
             <motion.div
               key={index}

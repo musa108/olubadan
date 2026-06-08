@@ -48,7 +48,7 @@ export default function LivePlayer({
     : "";
 
   return (
-    <section className="bg-linear-to-b from-[#fffaf4] to-[#f9f3e8] py-20 px-6 md:px-16">
+    <section className="bg-linear-to-b from-[#fffaf4] to-[#f9f3e8] py-12 sm:py-20 px-4 sm:px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -64,7 +64,7 @@ export default function LivePlayer({
               <Radio size={32} className="text-[#b68d40]" />
             )}
             <h1
-              className={`${playfair.className} text-4xl md:text-5xl font-bold text-[#3B2F2F]`}
+              className={`${playfair.className} text-3xl sm:text-4xl md:text-5xl font-bold text-[#3B2F2F]`}
             >
               {title}
             </h1>
@@ -90,7 +90,7 @@ export default function LivePlayer({
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className={`grid gap-8 ${showChat ? "md:grid-cols-4" : "md:grid-cols-3"} items-start`}
+          className={`grid gap-6 sm:gap-8 ${showChat ? "md:grid-cols-4" : "md:grid-cols-3"} items-start`}
         >
           {/* Main Player */}
           <div className={showChat ? "md:col-span-3" : "md:col-span-2"}>

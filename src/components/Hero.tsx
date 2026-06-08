@@ -58,7 +58,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-radial-at-c from-transparent via-black/30 to-black/90 z-1"></div>
         <div className="absolute inset-0 bg-linear-to-t from-[#191714] via-transparent to-transparent h-48 bottom-0 z-2"></div>
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 md:px-12 flex flex-col justify-center min-h-[90vh]">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 py-16 sm:py-24 md:px-12 flex flex-col justify-center min-h-[90vh]">
           <div className="max-w-3xl">
             {/* Crown sub-badge */}
             <motion.div
@@ -76,7 +76,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className={`${playfair.className} text-5xl font-bold leading-tight text-white md:text-7xl lg:text-7xl`}
+              className={`${playfair.className} text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl`}
             >
               Preserving Ibadanland&apos;s <span className="text-transparent bg-clip-text bg-linear-to-r from-[#e1bd62] via-[#f7dfa3] to-[#d6b15b]">Royal Heritage</span> and Public Record
             </motion.h1>
@@ -85,7 +85,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className={`${poppins.className} mt-6 max-w-xl text-lg leading-relaxed text-white/80 font-normal md:text-xl`}
+              className={`${poppins.className} mt-5 max-w-xl text-base leading-relaxed text-white/80 font-normal md:text-lg lg:text-xl`}
             >
               Access verified news bulletins, traditional council decrees, historical biographies, and ancestral line compound profiles directly from the Royal Cabinet.
             </motion.p>

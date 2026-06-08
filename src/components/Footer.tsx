@@ -22,7 +22,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={`${poppins.className} bg-[#191714] text-[#f4f1ea]/80 pt-16 pb-8 px-6 md:px-12 lg:px-16 border-t border-[#d6b15b]/15 relative overflow-hidden`}>
+    <footer className={`${poppins.className} bg-[#191714] text-[#f4f1ea]/80 pt-12 sm:pt-16 pb-8 px-4 sm:px-6 md:px-12 lg:px-16 border-t border-[#d6b15b]/15 relative overflow-hidden`}>
       {/* Background Accent Gradients */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(214,177,91,0.05),transparent_60%)] pointer-events-none" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_top,rgba(214,177,91,0.02),transparent)] pointer-events-none" />
@@ -30,7 +30,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-[#d6b15b]/10">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 pb-12 border-b border-[#d6b15b]/10">
           
           {/* Brand Column */}
           <div className="space-y-4">

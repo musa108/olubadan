@@ -87,7 +87,7 @@ export function PortalGatewayContent() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col justify-between rounded-2xl border border-white/8 bg-white/3 p-8 backdrop-blur-sm"
+            className="hidden md:flex flex-col justify-between rounded-2xl border border-white/8 bg-white/3 p-8 backdrop-blur-sm"
           >
             <div>
               {/* Crown icon */}
@@ -133,7 +133,7 @@ export function PortalGatewayContent() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md"
+            className="rounded-2xl border border-white/10 bg-white/5 p-5 sm:p-8 backdrop-blur-md"
           >
             <div className="mb-7">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d6b15b]/70">

@@ -114,23 +114,23 @@ export default function LineProfilesPage({ line }: { line: LineKey }) {
     <main className={`${poppins.className} min-h-screen bg-[#f7f4ee] pb-20`}>
       {/* Admin-only notice strip */}
       {isAdmin && (
-        <div className="bg-[#191714] border-b border-[#d6b15b]/20 px-6 py-2.5">
-          <div className="max-w-7xl mx-auto flex items-center gap-2 text-[11px] font-bold text-[#d6b15b] uppercase tracking-[0.18em]">
-            <ShieldCheck className="h-3.5 w-3.5" />
-            Admin View — Full profile details are visible. Public users see a simplified view only.
+        <div className="bg-[#191714] border-b border-[#d6b15b]/20 px-4 py-2.5">
+          <div className="max-w-7xl mx-auto flex items-start gap-2 text-[11px] font-bold text-[#d6b15b] uppercase tracking-[0.18em]">
+            <ShieldCheck className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+            <span>Admin View — Full profile details are visible. Public users see a simplified view only.</span>
           </div>
         </div>
       )}
 
       {/* Page Header */}
-      <section className="bg-white px-6 py-16 shadow-sm border-b border-[#eae6db]">
+      <section className="bg-white px-4 sm:px-6 py-10 sm:py-16 shadow-sm border-b border-[#eae6db]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           className="mx-auto max-w-6xl"
         >
-          <h1 className={`${playfair.className} mt-4 text-4xl font-bold text-gray-950 md:text-5xl`}>
+          <h1 className={`${playfair.className} mt-2 text-3xl font-bold text-gray-950 sm:text-4xl md:text-5xl`}>
             {label}
           </h1>
           {!isAdmin && (
@@ -138,21 +138,21 @@ export default function LineProfilesPage({ line }: { line: LineKey }) {
               Title-holder directory (public preview). Full verified dossiers are available to Palace Super Admin only.
             </p>
           )}
-          <p className="mt-4 max-w-3xl text-base leading-8 text-gray-600 md:text-lg font-medium">
+          <p className="mt-4 max-w-3xl text-sm sm:text-base leading-7 sm:leading-8 text-gray-600 md:text-lg font-medium">
             {description}
           </p>
         </motion.div>
       </section>
 
       {/* Profile Grid */}
-      <section className="mx-auto max-w-7xl px-6 py-14">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-14">
         {loading ? (
-          <div className="flex flex-col items-center justify-center rounded-2xl border border-gray-100 bg-white p-20 text-center">
+          <div className="flex flex-col items-center justify-center rounded-2xl border border-gray-100 bg-white p-12 sm:p-20 text-center">
             <div className="h-8 w-8 rounded-full border-2 border-[#d6b15b] border-t-transparent animate-spin mb-4" />
             <p className="text-sm font-medium text-gray-500">Loading chieftaincy records...</p>
           </div>
         ) : profiles.length > 0 ? (
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {profiles.map((profile, index) => (
               <motion.article
                 key={profile.id}
@@ -162,7 +162,7 @@ export default function LineProfilesPage({ line }: { line: LineKey }) {
                 viewport={{ once: true }}
                 className="flex flex-col overflow-hidden rounded-2xl bg-white border border-[#eae6db] shadow-md hover:shadow-xl transition-all duration-300 group"
               >
-                <div className="relative h-72 w-full bg-gray-100 overflow-hidden shrink-0">
+                <div className="relative h-56 sm:h-64 md:h-72 w-full bg-gray-100 overflow-hidden shrink-0">
                   <Image
                     src={profile.image || "/the king.jpeg"}
                     alt={profile.name}
@@ -256,11 +256,11 @@ export default function LineProfilesPage({ line }: { line: LineKey }) {
             ))}
           </div>
         ) : (
-          <div className="rounded-2xl border border-dashed border-[#e8ddc8] bg-white p-20 text-center">
+          <div className="rounded-2xl border border-dashed border-[#e8ddc8] bg-white p-10 sm:p-20 text-center">
             <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#fffaf0] border border-[#e8ddc8]">
               <Users className="h-8 w-8 text-[#c4a45e]" />
             </div>
-            <h2 className={`${playfair.className} text-2xl font-bold text-gray-950`}>Records Coming Soon</h2>
+            <h2 className={`${playfair.className} text-xl sm:text-2xl font-bold text-gray-950`}>Records Coming Soon</h2>
             <p className="mx-auto mt-3 max-w-xl text-gray-500 font-medium text-sm leading-relaxed">
               Verified representative records for the <strong>{label}</strong> will be published here following palace review and formal documentation.
             </p>
@@ -271,12 +271,12 @@ export default function LineProfilesPage({ line }: { line: LineKey }) {
       {/* Public information modal */}
       <AnimatePresence>
         {selectedProfile && (
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 z-50">
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4 z-50">
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-white border border-[#eae6db] rounded-2xl max-w-md w-full shadow-2xl relative overflow-hidden"
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 40, opacity: 0 }}
+              className="bg-white border border-[#eae6db] rounded-t-2xl sm:rounded-2xl max-w-md w-full shadow-2xl relative overflow-hidden max-h-[90dvh] flex flex-col"
             >
               <div className="bg-[#191714] px-6 py-5 relative">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_right,rgba(214,177,91,0.06),transparent_60%)]" />
@@ -291,7 +291,7 @@ export default function LineProfilesPage({ line }: { line: LineKey }) {
                 <p className="text-xs text-white/50 mt-0.5 font-medium">{selectedProfile.position}</p>
               </div>
 
-              <div className="p-6">
+              <div className="p-5 sm:p-6 overflow-y-auto flex-1">
                 <p className="text-sm leading-relaxed text-gray-600 font-medium">{selectedProfile.biography}</p>
 
                 <div className="mt-5 p-4 bg-[#faf8f3] border border-[#e8ddc8] rounded-xl text-xs text-gray-600 leading-relaxed font-medium">

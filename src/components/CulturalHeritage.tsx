@@ -17,10 +17,10 @@ const poppins = Poppins({
 
 export default function CulturalHeritage() {
   return (
-    <section className="bg-[#f8f5f0] py-20 px-6 md:px-16">
+    <section className="bg-[#f8f5f0] py-12 sm:py-20 px-5 sm:px-6 md:px-16">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h2
-          className={`${playfair.className} text-3xl md:text-5xl font-bold text-gray-900`}
+          className={`${playfair.className} text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900`}
         >
           The Cultural Heritage of Ibadan
         </h2>
@@ -42,7 +42,7 @@ export default function CulturalHeritage() {
           viewport={{ once: true }}
           className="md:w-1/2 w-full"
         >
-          <div className="relative w-full h-[350px] md:h-[450px] rounded-lg overflow-hidden shadow-lg">
+          <div className="relative w-full h-[280px] sm:h-[350px] md:h-[450px] rounded-lg overflow-hidden shadow-lg">
             <Image
               src="/royal_festival.jpeg"
               alt="Ibadan Festival"
@@ -60,7 +60,7 @@ export default function CulturalHeritage() {
           className="md:w-1/2 text-left"
         >
           <h3
-            className={`${playfair.className} text-2xl md:text-3xl font-semibold mb-4 text-gray-900`}
+            className={`${playfair.className} text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-gray-900`}
           >
             Royal Festivals & Traditions
           </h3>
@@ -93,7 +93,7 @@ export default function CulturalHeritage() {
           viewport={{ once: true }}
           className="md:w-1/2 w-full"
         >
-          <div className="relative w-full h-[350px] md:h-[450px] rounded-lg overflow-hidden shadow-lg">
+          <div className="relative w-full h-[280px] sm:h-[350px] md:h-[450px] rounded-lg overflow-hidden shadow-lg">
             <Image
               src="/royal_palace.jpeg"
               alt="Olubadan Palace"

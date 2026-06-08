@@ -17,7 +17,7 @@ const poppins = Poppins({
 
 export default function AboutSection() {
   return (
-    <section className="py-20 bg-white flex flex-col md:flex-row items-center justify-between px-8 md:px-16 gap-10">
+    <section className="py-12 sm:py-20 bg-white flex flex-col md:flex-row items-center justify-between px-5 sm:px-8 md:px-16 gap-8 sm:gap-10">
       {/* Image Section */}
       <motion.div
         initial={{ x: -100, opacity: 0 }}
@@ -26,7 +26,7 @@ export default function AboutSection() {
         viewport={{ once: true }}
         className="w-full md:w-1/2 flex justify-center"
       >
-        <div className="relative w-full md:w-[400px] h-[500px] rounded-lg overflow-hidden shadow-lg">
+        <div className="relative w-full md:w-[400px] h-[320px] sm:h-[420px] md:h-[500px] rounded-lg overflow-hidden shadow-lg">
           <Image
             src="/HisMajesty.jpeg"
             alt="Olubadan Ladoja"
@@ -45,7 +45,7 @@ export default function AboutSection() {
         className="w-full md:w-1/2 text-left"
       >
         <h2
-          className={`${playfair.className} text-3xl md:text-5xl font-bold text-gray-900 mb-4`}
+          className={`${playfair.className} text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 mb-4`}
         >
           His Imperial Majesty, Oba Rashidi Adewolu Ladoja
         </h2>

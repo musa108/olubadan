@@ -59,7 +59,7 @@ export default function NewsPage() {
 
   return (
     <main className={`${poppins.className} min-h-screen bg-gray-50 pb-20`}>
-      <section className="w-full bg-white px-6 py-16 shadow-sm">
+      <section className="w-full bg-white px-4 sm:px-6 py-10 sm:py-16 shadow-sm">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ export default function NewsPage() {
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9b762f]">
             Official updates
           </p>
-          <h1 className={`${playfair.className} mt-3 text-4xl font-bold text-gray-950 md:text-5xl`}>
+          <h1 className={`${playfair.className} mt-3 text-3xl sm:text-4xl font-bold text-gray-950 md:text-5xl`}>
             Latest Palace News
           </h1>
           <p className="mt-4 text-lg leading-8 text-gray-600">
@@ -79,7 +79,7 @@ export default function NewsPage() {
         </motion.div>
       </section>
 
-      <section className="mx-auto mt-14 grid max-w-7xl grid-cols-1 gap-8 px-6 lg:grid-cols-2">
+      <section className="mx-auto mt-8 sm:mt-14 grid max-w-7xl grid-cols-1 gap-6 sm:gap-8 px-4 sm:px-6 lg:grid-cols-2">
         {publishedNews.map((article, index) => (
           <motion.article
             key={article.id}
@@ -89,10 +89,10 @@ export default function NewsPage() {
             viewport={{ once: true }}
             className="overflow-hidden rounded-lg bg-white shadow-md"
           >
-            <div className="relative h-72 w-full md:h-96">
+            <div className="relative h-48 sm:h-72 w-full md:h-96">
               <Image src={article.image} alt={article.headline} fill className="object-cover" />
             </div>
-            <div className="p-7 md:p-9">
+            <div className="p-5 sm:p-7 md:p-9">
               <div className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#8f6c2c]">
                 <span className="inline-flex items-center gap-2">
                   <Tag className="h-4 w-4" />

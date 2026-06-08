@@ -95,7 +95,7 @@ export default function LatestNewsSection() {
   }, []);
 
   return (
-    <section className={`${poppins.className} py-24 px-6 md:px-16 bg-[#faf8f4] text-gray-900`}>
+    <section className={`${poppins.className} py-14 sm:py-24 px-4 sm:px-6 md:px-16 bg-[#faf8f4] text-gray-900`}>
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <motion.div
@@ -108,7 +108,7 @@ export default function LatestNewsSection() {
             <span className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9b762f] bg-[#fdfaf3] border border-[#e8ddc8] px-3.5 py-1.5 rounded-full inline-block mb-4 shadow-xs">
               Palace Chronicles
             </span>
-            <h2 className={`${playfair.className} text-4xl md:text-5xl font-bold text-[#191714] leading-tight`}>
+            <h2 className={`${playfair.className} text-3xl sm:text-4xl md:text-5xl font-bold text-[#191714] leading-tight`}>
               Latest From the Royal Seat
             </h2>
             <p className="mt-4 text-gray-600 text-lg leading-relaxed">
@@ -132,7 +132,7 @@ export default function LatestNewsSection() {
         </div>
 
         {news.length > 0 ? (
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {news.map((item, index) => (
               <motion.article
                 key={item.id}

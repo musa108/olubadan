@@ -71,7 +71,7 @@ export default function PalaceGallery() {
     : items.filter(item => item.category === activeTab);
 
   return (
-    <section className={`${poppins.className} bg-[#faf7f2] py-24 px-6 md:px-16 border-t border-b border-[#eae6db]`}>
+    <section className={`${poppins.className} bg-[#faf7f2] py-14 sm:py-24 px-4 sm:px-6 md:px-16 border-t border-b border-[#eae6db]`}>
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
@@ -79,7 +79,7 @@ export default function PalaceGallery() {
           <span className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9b762f] bg-[#fffaf0] border border-[#e8ddc8] px-3.5 py-1.5 rounded-full inline-block mb-4 shadow-xs">
             Digital Archives
           </span>
-          <h2 className={`${playfair.className} text-4xl md:text-5xl font-bold text-gray-900 leading-tight`}>
+          <h2 className={`${playfair.className} text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight`}>
             The Royal Palace Gallery
           </h2>
           <p className="text-gray-600 text-lg mt-4 max-w-3xl mx-auto leading-relaxed font-medium">
@@ -172,14 +172,14 @@ export default function PalaceGallery() {
       <AnimatePresence>
         {selectedImage && (
           <motion.div
-            className="fixed inset-0 bg-black/90 backdrop-blur-xs flex items-center justify-center p-4 z-50"
+            className="fixed inset-0 bg-black/90 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4 z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
           >
             <motion.div
-              className="relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col"
+              className="relative max-w-4xl w-full bg-white rounded-t-2xl sm:rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col max-h-[95dvh]"
               initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.95 }}
@@ -194,7 +194,7 @@ export default function PalaceGallery() {
                 <X className="h-5 w-5" />
               </button>
 
-              <div className="relative h-[65vh] w-full bg-[#0c0a09] flex items-center justify-center">
+              <div className="relative h-[45vh] sm:h-[55vh] md:h-[65vh] w-full bg-[#0c0a09] flex items-center justify-center">
                 <Image
                   src={selectedImage.url}
                   alt={selectedImage.title}
@@ -203,7 +203,7 @@ export default function PalaceGallery() {
                 />
               </div>
 
-              <div className="p-6 bg-white">
+              <div className="p-4 sm:p-6 bg-white overflow-y-auto">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="inline-flex items-center gap-1.5 rounded-lg bg-[#faf8f3] border border-[#e8ddc8] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#9b762f]">
                     {selectedImage.category.replace(/_/g, " ")}
