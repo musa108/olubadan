@@ -264,13 +264,7 @@ export default function Header() {
                 >
                   News
                 </Link>
-                <Link
-                  href="/speeches"
-                  onClick={() => setIsOpen(false)}
-                  className="px-3 py-2.5 rounded-lg text-sm font-semibold text-gray-700 hover:bg-[#fffaf0] hover:text-[#9b762f] transition"
-                >
-                  Speeches
-                </Link>
+
 
                 {/* Mobile Chieftaincy Lines */}
                 <div>
