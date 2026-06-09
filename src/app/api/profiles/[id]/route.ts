@@ -35,7 +35,6 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
 
   return NextResponse.json({ profile });
 }
-
 export async function PATCH(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const authError = await requireAdminSession(request);
   if (authError) return authError;
