@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, Crown } from "lucide-react";
 import { Playfair_Display, Poppins } from "next/font/google";
 import FadeInSection from "@/components/FadeInSection";
@@ -39,18 +39,18 @@ export default function Hero() {
     <FadeInSection>
       <section className="relative min-h-[90vh] overflow-hidden bg-[#0c0a09] flex items-center">
         {/* Cinematic Fading & Ken Burns Zoom Background */}
-        <div className="absolute inset-0 z-0">
-          <AnimatePresence mode="popLayout">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, scale: 1.05, filter: "blur(2px)" }}
-              animate={{ opacity: 1, scale: 1.15, filter: "blur(0px)" }}
-              exit={{ opacity: 0, transition: { duration: 1.5 } }}
-              transition={{ duration: 6, ease: "easeOut" }}
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${heroImages[current]})` }}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {heroImages.map((img, index) => (
+            <div
+              key={img}
+              className="absolute inset-0 bg-cover bg-center transition-all duration-[2500ms] ease-in-out"
+              style={{
+                backgroundImage: `url(${img})`,
+                opacity: index === current ? 1 : 0,
+                transform: index === current ? "scale(1.08)" : "scale(1.02)",
+              }}
             />
-          </AnimatePresence>
+          ))}
         </div>
 
         {/* Premium Multi-Layer Gradient Overlays */}

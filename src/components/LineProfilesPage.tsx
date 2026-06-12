@@ -12,6 +12,7 @@ import {
   Users,
   ChevronRight,
   ShieldCheck,
+  Search,
 } from "lucide-react";
 import { Playfair_Display, Poppins } from "next/font/google";
 import { useSession } from "next-auth/react";
@@ -64,6 +65,76 @@ function parseList(v: unknown): string[] {
   return [];
 }
 
+// Compute traditional ranking rank for sorting (lower means higher traditional standing)
+function getHierarchyRank(profile: ProfileData, line: LineKey): number {
+  const position = profile.position.toLowerCase();
+  const name = profile.name.toLowerCase();
+  const title = profile.title.toLowerCase();
+
+  if (line === "baale") {
+    // 1st Order: His Majesty
+    if (title.includes("majesty") || title.includes("imperial") || position.includes("majesty")) return 1;
+    // 2nd Order: 2nd Baale
+    if (position.includes("2nd") || name.includes("2nd") || position.includes("second")) return 2;
+    // 3rd Order: 3rd Baale
+    if (position.includes("3rd") || name.includes("3rd") || position.includes("third")) return 3;
+    return 4; // default rank for other Baales
+  }
+
+  if (line === "otun") {
+    if (position.includes("otun olubadan")) return 1;
+    if (position.includes("osi olubadan")) return 2;
+    if (position.includes("asipa olubadan") || position.includes("ashipa olubadan")) return 3;
+    if (position.includes("ekerin olubadan")) return 4;
+    if (position.includes("ekarun olubadan")) return 5;
+    if (position.includes("abese olubadan")) return 6;
+    if (position.includes("maye olubadan")) return 7;
+    if (position.includes("ekefa olubadan")) return 8;
+    if (position.includes("agbaakin olubadan")) return 9;
+    if (position.includes("aare alasa olubadan")) return 10;
+    if (position.includes("ikolaba olubadan")) return 11;
+    if (position.includes("asaju olubadan")) return 12;
+    if (position.includes("jagun olubadan")) return 13;
+    return 14;
+  }
+
+  if (line === "balogun") {
+    if (position.includes("balogun of ibadanland") || (position.includes("balogun") && !position.includes("otun") && !position.includes("osi") && !position.includes("asipa") && !position.includes("ashipa") && !position.includes("ekerin") && !position.includes("ekarun"))) return 1;
+    if (position.includes("otun balogun")) return 2;
+    if (position.includes("osi balogun")) return 3;
+    if (position.includes("asipa balogun") || position.includes("ashipa balogun")) return 4;
+    if (position.includes("ekerin balogun")) return 5;
+    if (position.includes("ekarun balogun")) return 6;
+    if (position.includes("abese balogun")) return 7;
+    if (position.includes("maye balogun")) return 8;
+    if (position.includes("ekefa balogun")) return 9;
+    if (position.includes("agbaakin balogun")) return 10;
+    if (position.includes("aare alasa balogun")) return 11;
+    if (position.includes("ikolaba balogun")) return 12;
+    if (position.includes("asaju balogun")) return 13;
+    if (position.includes("jagun balogun")) return 14;
+    return 15;
+  }
+
+  if (line === "iyalode") {
+    if (position.includes("iyalode of ibadanland") || (position.includes("iyalode") && !position.includes("otun") && !position.includes("osi") && !position.includes("asipa") && !position.includes("ashipa") && !position.includes("ekerin") && !position.includes("ekarun"))) return 1;
+    if (position.includes("otun iyalode")) return 2;
+    if (position.includes("osi iyalode")) return 3;
+    if (position.includes("asipa iyalode") || position.includes("ashipa iyalode")) return 4;
+    if (position.includes("ekerin iyalode")) return 5;
+    if (position.includes("ekarun iyalode")) return 6;
+    return 7;
+  }
+
+  if (line === "advisory-council") {
+    if (position.includes("chairman")) return 1;
+    if (position.includes("secretary")) return 2;
+    return 3;
+  }
+
+  return 100; // default low rank
+}
+
 export default function LineProfilesPage({ line }: { line: LineKey }) {
   const { data: session } = useSession();
   const isAdmin = (session?.user as { role?: string } | undefined)?.role === "SUPER_ADMIN";
@@ -71,6 +142,8 @@ export default function LineProfilesPage({ line }: { line: LineKey }) {
   const [profiles, setProfiles] = useState<ProfileData[]>([]);
   const [selectedProfile, setSelectedProfile] = useState<ProfileData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [sortBy, setSortBy] = useState<"hierarchy" | "alphabetical">("hierarchy");
 
   useEffect(() => {
     const fetchProfiles = async () => {
@@ -110,6 +183,30 @@ export default function LineProfilesPage({ line }: { line: LineKey }) {
   const label = lineLabels[line];
   const description = lineDescriptions[line];
 
+  // Perform search and traditional/alphabetical sorting
+  const filteredProfiles = profiles
+    .filter((p) => {
+      const q = searchQuery.toLowerCase();
+      return (
+        p.name.toLowerCase().includes(q) ||
+        p.title.toLowerCase().includes(q) ||
+        p.position.toLowerCase().includes(q) ||
+        p.biography.toLowerCase().includes(q)
+      );
+    })
+    .sort((a, b) => {
+      if (sortBy === "hierarchy") {
+        const rankA = getHierarchyRank(a, line);
+        const rankB = getHierarchyRank(b, line);
+        if (rankA !== rankB) {
+          return rankA - rankB;
+        }
+        return a.name.localeCompare(b.name);
+      } else {
+        return a.name.localeCompare(b.name);
+      }
+    });
+
   return (
     <main className={`${poppins.className} min-h-screen bg-[#f7f4ee] pb-20`}>
       {/* Admin-only notice strip */}
@@ -144,24 +241,69 @@ export default function LineProfilesPage({ line }: { line: LineKey }) {
         </motion.div>
       </section>
 
+      {/* Search and Sort Toolbar */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-2">
+        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 bg-white border border-[#eae6db] rounded-2xl p-5 shadow-xs">
+          <div className="relative flex-1">
+            <span className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+              <Search className="h-5 w-5 text-gray-400" />
+            </span>
+            <input
+              type="text"
+              placeholder={`Search ${label} by name, title, or position...`}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-[#faf8f4] border border-[#e8ddc8] rounded-xl py-3 pl-12 pr-4 text-sm font-semibold text-gray-900 placeholder-gray-400 focus:outline-hidden focus:ring-2 focus:ring-[#d6b15b]/40 focus:border-[#d6b15b]"
+            />
+          </div>
+
+          <div className="flex items-center gap-3 shrink-0">
+            <span className="text-xs font-bold uppercase tracking-wider text-gray-400">Sort By:</span>
+            <div className="flex rounded-xl border border-[#e8ddc8] bg-[#faf8f4] p-1">
+              <button
+                onClick={() => setSortBy("hierarchy")}
+                className={`rounded-lg px-4 py-2 text-xs font-bold transition-all ${
+                  sortBy === "hierarchy"
+                    ? "bg-[#191714] text-[#d6b15b] shadow-sm"
+                    : "text-gray-500 hover:text-gray-900"
+                }`}
+              >
+                Traditional Rank
+              </button>
+              <button
+                onClick={() => setSortBy("alphabetical")}
+                className={`rounded-lg px-4 py-2 text-xs font-bold transition-all ${
+                  sortBy === "alphabetical"
+                    ? "bg-[#191714] text-[#d6b15b] shadow-sm"
+                    : "text-gray-500 hover:text-gray-900"
+                }`}
+              >
+                Alphabetical (A-Z)
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Profile Grid */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-14">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-6 sm:py-10">
         {loading ? (
           <div className="flex flex-col items-center justify-center rounded-2xl border border-gray-100 bg-white p-12 sm:p-20 text-center">
             <div className="h-8 w-8 rounded-full border-2 border-[#d6b15b] border-t-transparent animate-spin mb-4" />
             <p className="text-sm font-medium text-gray-500">Loading chieftaincy records...</p>
           </div>
         ) : profiles.length > 0 ? (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {profiles.map((profile, index) => (
-              <motion.article
-                key={profile.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="flex flex-col overflow-hidden rounded-2xl bg-white border border-[#eae6db] shadow-md hover:shadow-xl transition-all duration-300 group"
-              >
+          filteredProfiles.length > 0 ? (
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredProfiles.map((profile, index) => (
+                <motion.article
+                  key={profile.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                  className="flex flex-col overflow-hidden rounded-2xl bg-white border border-[#eae6db] shadow-md hover:shadow-xl transition-all duration-300 group"
+                >
                 <div className="relative h-56 sm:h-64 md:h-72 w-full bg-gray-100 overflow-hidden shrink-0">
                   <Image
                     src={profile.image || "/the king.jpeg"}
@@ -255,6 +397,17 @@ export default function LineProfilesPage({ line }: { line: LineKey }) {
               </motion.article>
             ))}
           </div>
+          ) : (
+            <div className="rounded-2xl border border-dashed border-[#e8ddc8] bg-white p-10 sm:p-20 text-center">
+              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#fffaf0] border border-[#e8ddc8]">
+                <Users className="h-8 w-8 text-[#c4a45e]" />
+              </div>
+              <h2 className={`${playfair.className} text-xl sm:text-2xl font-bold text-gray-950`}>No Profiles Found</h2>
+              <p className="mx-auto mt-3 max-w-xl text-gray-500 font-medium text-sm leading-relaxed">
+                No title-holder records matched your query. Try searching for a different name, title, or position.
+              </p>
+            </div>
+          )
         ) : (
           <div className="rounded-2xl border border-dashed border-[#e8ddc8] bg-white p-10 sm:p-20 text-center">
             <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#fffaf0] border border-[#e8ddc8]">

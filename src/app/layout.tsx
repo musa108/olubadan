@@ -57,6 +57,9 @@ export const metadata: Metadata = {
     description:
       "The official digital home of the Olubadan of Ibadanland. Discover royal history, chieftaincy traditions, and palace news.",
   },
+  verification: {
+    google: "KeIcM4KzduDPCi0sjVxjIHa4n51lIoAnUGBjH_XCtlk",
+  },
 };
 
 export default function RootLayout({
@@ -66,6 +69,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="KeIcM4KzduDPCi0sjVxjIHa4n51lIoAnUGBjH_XCtlk" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

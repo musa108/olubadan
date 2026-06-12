@@ -21,18 +21,41 @@ export const metadata: Metadata = {
     "Nigerian culture",
     "palace",
   ],
-  openGraph: {
-    title: "Olubadan of Ibadanland | Official Royal Palace Website",
-    description:
-      "Discover the history, chieftaincy lines, royal heritage, and cultural traditions of Ibadanland.",
-    type: "website",
-    locale: "en_NG",
-  },
-};
+    openGraph: {
+      title: "Olubadan of Ibadanland | Official Royal Palace Website",
+      description:
+        "Discover the history, chieftaincy lines, royal heritage, and cultural traditions of Ibadanland.",
+      type: "website",
+      locale: "en_NG",
+    },
+    verification: {
+      google: "KeIcM4KzduDPCi0sjVxjIHa4n51lIoAnUGBjH_XCtlk",
+    },
+  };
 
 export default function Home() {
   return (
     <div className="overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "GovernmentOrganization",
+            "name": "The Royal Cabinet of Ibadanland",
+            "alternateName": "Olubadan of Ibadanland Palace",
+            "url": "https://www.olubadanofibadan.com",
+            "logo": "https://www.olubadanofibadan.com/the%20king.jpeg",
+            "description": "The official digital headquarters of the Olubadan of Ibadanland, paramount traditional ruler of Ibadan. Discover history, royal lines, and news.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Ibadan",
+              "addressRegion": "Oyo State",
+              "addressCountry": "NG"
+            }
+          })
+        }}
+      />
       <Hero />
       <AboutSection />
       <CulturalHeritage />

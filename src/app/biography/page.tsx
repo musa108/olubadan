@@ -15,5 +15,34 @@ export const metadata: Metadata = {
 };
 
 export default function BiographyPage() {
-  return <BiographyClient />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Oba Rashidi Adewolu Ladoja",
+            "alternateName": ["Rashidi Ladoja", "Oba Ladoja", "Ladoja Olubadan"],
+            "jobTitle": "Olubadan of Ibadanland",
+            "birthDate": "1944-09-25",
+            "birthPlace": {
+              "@type": "Place",
+              "name": "Gambari, Oyo State, Nigeria"
+            },
+            "description": "Chemical engineer, former Oyo State Senator, former Oyo State Governor, and the 44th Olubadan of Ibadanland.",
+            "memberOf": {
+              "@type": "Organization",
+              "name": "Olubadan Traditional Chieftaincy Council"
+            },
+            "sameAs": [
+              "https://en.wikipedia.org/wiki/Rashidi_Ladoja"
+            ]
+          })
+        }}
+      />
+      <BiographyClient />
+    </>
+  );
 }
