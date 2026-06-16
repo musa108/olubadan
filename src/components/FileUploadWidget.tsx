@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Upload, FileText, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Upload, FileText, CheckCircle2, AlertCircle, Loader2, Video } from "lucide-react";
 
 interface FileUploadWidgetProps {
   onUploadComplete: (url: string) => void;
@@ -82,6 +82,13 @@ export default function FileUploadWidget({
     );
   };
 
+  const isVideo = (fileUrl: string) => {
+    return (
+      fileUrl.match(/\.(mp4|webm|ogg|mov|mkv|3gp|wmv)/i) != null ||
+      fileUrl.includes("video/upload")
+    );
+  };
+
   return (
     <div className="space-y-2">
       {label && (
@@ -112,6 +119,13 @@ export default function FileUploadWidget({
               <div className="relative h-24 w-24 rounded-lg overflow-hidden border border-[#e8e3da] bg-white">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={url} alt="Uploaded preview" className="h-full w-full object-cover" />
+              </div>
+            ) : isVideo(url) ? (
+              <div className="relative h-24 w-32 rounded-lg overflow-hidden border border-[#e8e3da] bg-black flex items-center justify-center">
+                <video src={url} className="h-full w-full object-contain" muted playsInline />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                  <Video className="h-6 w-6 text-white" />
+                </div>
               </div>
             ) : (
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#d6b15b]/10 text-[#d6b15b]">

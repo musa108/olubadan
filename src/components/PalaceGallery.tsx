@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Playfair_Display, Poppins } from "next/font/google";
-import { Maximize2, Tag, Calendar, X } from "lucide-react";
+import { Maximize2, Tag, Calendar, X, Play } from "lucide-react";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -37,6 +37,7 @@ interface GalleryItem {
   id: string;
   title: string;
   url: string;
+  type?: string;
   category: string;
   description?: string | null;
   createdAt?: string | Date;
@@ -122,12 +123,35 @@ export default function PalaceGallery() {
                 className="group relative cursor-pointer overflow-hidden rounded-2xl bg-white border border-[#eae6db] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
               >
                 <div className="relative h-64 w-full overflow-hidden bg-gray-100">
-                  <Image
-                    src={item.url}
-                    alt={item.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                  {item.type === "VIDEO" ? (
+                    <>
+                      <video
+                        src={item.url}
+                        className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        muted
+                        playsInline
+                        loop
+                        onMouseOver={(e) => {
+                          const v = e.target as HTMLVideoElement;
+                          v.play().catch(() => {});
+                        }}
+                        onMouseOut={(e) => {
+                          const v = e.target as HTMLVideoElement;
+                          v.pause();
+                        }}
+                      />
+                      <div className="absolute bottom-4 right-4 z-10 bg-black/60 backdrop-blur-md p-2 rounded-full border border-white/10 text-[#e1bd62]">
+                        <Play className="h-4 w-4 fill-[#e1bd62] text-[#e1bd62]" />
+                      </div>
+                    </>
+                  ) : (
+                    <Image
+                      src={item.url}
+                      alt={item.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  )}
                   {/* Hover overlay with zoom icon */}
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="rounded-full bg-white/10 backdrop-blur-md p-3.5 border border-white/20 text-[#e1bd62] scale-90 group-hover:scale-100 transition-transform duration-300">
@@ -195,12 +219,21 @@ export default function PalaceGallery() {
               </button>
 
               <div className="relative h-[45vh] sm:h-[55vh] md:h-[65vh] w-full bg-[#0c0a09] flex items-center justify-center">
-                <Image
-                  src={selectedImage.url}
-                  alt={selectedImage.title}
-                  fill
-                  className="object-contain"
-                />
+                {selectedImage.type === "VIDEO" ? (
+                  <video
+                    src={selectedImage.url}
+                    controls
+                    autoPlay
+                    className="max-h-full max-w-full object-contain"
+                  />
+                ) : (
+                  <Image
+                    src={selectedImage.url}
+                    alt={selectedImage.title}
+                    fill
+                    className="object-contain"
+                  />
+                )}
               </div>
 
               <div className="p-4 sm:p-6 bg-white overflow-y-auto">

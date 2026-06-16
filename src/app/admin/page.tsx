@@ -462,7 +462,17 @@ function AdminContent({ session }: { session: Session }) {
     const category = String(formData.get("category"));
     const status = String(formData.get("status"));
 
-    const payload = { title, description, url, category, status, type: "IMAGE" };
+    const isVideo = (fileUrl: string) => {
+      return (
+        fileUrl.match(/\.(mp4|webm|ogg|mov|mkv|3gp|wmv)/i) != null ||
+        fileUrl.includes("video/upload") ||
+        (fileUrl.includes("res.cloudinary.com") && fileUrl.includes("/video/"))
+      );
+    };
+
+    const type = isVideo(url) ? "VIDEO" : "IMAGE";
+
+    const payload = { title, description, url, category, status, type };
 
     try {
       const endpoint = editingGallery ? `/api/gallery/${editingGallery.id}` : "/api/gallery";
@@ -1565,7 +1575,11 @@ function AdminContent({ session }: { session: Session }) {
                           galleryList.map((item) => (
                             <div key={item.id} className="group relative rounded-xl border border-[#e8e3da] bg-[#faf8f3] overflow-hidden flex flex-col justify-between">
                               <div className="relative h-44 bg-gray-200">
-                                <Image src={item.url} alt={item.title} fill className="object-cover" />
+                                {item.type === "VIDEO" ? (
+                                  <video src={item.url} className="h-full w-full object-cover" muted playsInline />
+                                ) : (
+                                  <Image src={item.url} alt={item.title} fill className="object-cover" />
+                                )}
                                 <div className="absolute top-2 left-2 z-10 bg-black/60 text-[#d6b15b] border border-white/10 px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider">
                                   {item.category}
                                 </div>
