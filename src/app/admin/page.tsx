@@ -93,12 +93,9 @@ interface AdminProfile {
   userId: string;
   line: string;
   title: string;
-  fullTraditionalName: string;
-  currentPosition: string;
   biography: string;
   familyHistory: string;
   achievements: string;
-  palaceResponsibilities: string;
   profilePictureUrl?: string | null;
   status: string;
   reviewNote?: string | null;
@@ -109,6 +106,7 @@ interface AdminProfile {
     name: string;
     email: string;
     phone?: string | null;
+    positionTitle?: string | null;
   } | null;
 
   // New Compact Bio Data Fields
@@ -626,12 +624,9 @@ function AdminContent({ session }: { session: Session }) {
       positionTitle: String(formData.get("positionTitle")),
       line,
       title,
-      fullTraditionalName: String(formData.get("fullTraditionalName")),
-      currentPosition: String(formData.get("currentPosition") || "Community Head"),
       biography: String(formData.get("biography")),
       familyHistory: String(formData.get("familyHistory")),
       achievements: String(formData.get("achievements")),
-      palaceResponsibilities: String(formData.get("palaceResponsibilities")),
       profilePictureUrl: String(formData.get("profilePictureUrl")) || undefined,
       documentUrls,
       // New Compact Bio Data Fields
@@ -865,7 +860,7 @@ function AdminContent({ session }: { session: Session }) {
                             pendingProfiles.map((p) => (
                               <div key={p.id} className="p-4 hover:bg-[#faf8f3] transition flex justify-between items-center gap-4">
                                 <div>
-                                  <p className="font-bold text-sm">{p.fullTraditionalName}</p>
+                                  <p className="font-bold text-sm">{p.user?.name || "Title Holder"}</p>
                                   <p className="text-xs text-gray-500 mt-0.5">{p.title} · {lineLabels[p.line.toLowerCase() as LineKey] || p.line}</p>
                                 </div>
                                 <button
@@ -1086,17 +1081,6 @@ function AdminContent({ session }: { session: Session }) {
                               </label>
                             ) : null}
 
-                            <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Full Traditional Title Name *
-                              <input name="fullTraditionalName" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Oba Abiodun Kola-Daisi" />
-                            </label>
-                          </div>
-
-                          <div className="grid gap-4 md:grid-cols-2 mt-4">
-                            <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Current Position (Clan Head / Representative) *
-                              <input name="currentPosition" required className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition" placeholder="e.g. Osi Olubadan of Ibadanland" />
-                            </label>
                           </div>
 
                           {/* Conditional Installation & Promotion Years */}
@@ -1168,14 +1152,10 @@ function AdminContent({ session }: { session: Session }) {
                             </label>
                           </div>
 
-                          <div className="grid gap-4 md:grid-cols-2 mt-4">
+                          <div className="grid gap-4 md:grid-cols-1 mt-4">
                             <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
                               Notable Achievements (newline separated) *
                               <textarea name="achievements" required className="mt-2 min-h-20 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition resize-none" placeholder="Council representation&#10;Community mediation" />
-                            </label>
-                            <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                              Palace Responsibilities (newline separated) *
-                              <textarea name="palaceResponsibilities" required className="mt-2 min-h-20 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition resize-none" placeholder="Palace advisory duties&#10;Line representation" />
                             </label>
                           </div>
 
@@ -1213,8 +1193,8 @@ function AdminContent({ session }: { session: Session }) {
                           pendingProfiles.map((p) => (
                             <div key={p.id} className="p-5 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:bg-[#faf8f3] transition">
                               <div>
-                                <h4 className="font-bold text-base">{p.fullTraditionalName}</h4>
-                                <p className="text-xs text-[#9b762f] font-semibold mt-0.5">{p.currentPosition} · {lineLabels[p.line.toLowerCase() as LineKey] || p.line}</p>
+                                <h4 className="font-bold text-base">{p.user?.name || "Title Holder"}</h4>
+                                <p className="text-xs text-[#9b762f] font-semibold mt-0.5">{p.user?.positionTitle || "Chieftaincy Representative"} · {lineLabels[p.line.toLowerCase() as LineKey] || p.line}</p>
                                 <p className="text-[10px] text-gray-400 mt-1">Submitted by: {p.user?.name || p.user?.email}</p>
                               </div>
                               <div className="flex gap-2">
@@ -1249,8 +1229,8 @@ function AdminContent({ session }: { session: Session }) {
                           verifiedProfiles.map((p) => (
                             <div key={p.id} className="p-5 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:bg-[#faf8f3] transition">
                               <div>
-                                <h4 className="font-bold text-base">{p.fullTraditionalName}</h4>
-                                <p className="text-xs text-green-700 font-bold mt-0.5">{p.currentPosition} · {lineLabels[p.line.toLowerCase() as LineKey] || p.line}</p>
+                                <h4 className="font-bold text-base">{p.user?.name || "Title Holder"}</h4>
+                                <p className="text-xs text-green-700 font-bold mt-0.5">{p.user?.positionTitle || "Chieftaincy Representative"} · {lineLabels[p.line.toLowerCase() as LineKey] || p.line}</p>
                                 <p className="text-[10px] text-gray-400 mt-1">Account email: {p.user?.email}</p>
                               </div>
                               <div className="flex gap-2">
@@ -1915,11 +1895,11 @@ function AdminContent({ session }: { session: Session }) {
                   </div>
                   <div>
                     <span className="text-[10px] text-gray-400 font-bold block uppercase tracking-wider">Palace Position Title</span>
-                    <p className="mt-1 text-[#191714] font-semibold">{selectedProfile.currentPosition || "—"}</p>
+                    <p className="mt-1 text-[#191714] font-semibold">{selectedProfile.user?.positionTitle || "Chieftaincy Representative"}</p>
                   </div>
                   <div>
-                    <span className="text-[10px] text-gray-400 font-bold block uppercase tracking-wider">Full Traditional Title Name</span>
-                    <p className="mt-1 text-[#191714] font-semibold">{selectedProfile.fullTraditionalName || "—"}</p>
+                    <span className="text-[10px] text-gray-400 font-bold block uppercase tracking-wider">Traditional Name</span>
+                    <p className="mt-1 text-[#191714] font-semibold">{selectedProfile.user?.name || "Title Holder"}</p>
                   </div>
                 </div>
               </div>
@@ -1942,10 +1922,6 @@ function AdminContent({ session }: { session: Session }) {
                   <div>
                     <span className="text-[10px] text-gray-400 font-bold block uppercase tracking-wider">Notable Achievements</span>
                     <p className="text-xs text-gray-650 bg-[#faf8f3] p-3 rounded-xl border border-[#e8e3da] font-medium leading-relaxed mt-1 whitespace-pre-line">{selectedProfile.achievements || "—"}</p>
-                  </div>
-                  <div>
-                    <span className="text-[10px] text-gray-400 font-bold block uppercase tracking-wider">Palace Responsibilities</span>
-                    <p className="text-xs text-gray-650 bg-[#faf8f3] p-3 rounded-xl border border-[#e8e3da] font-medium leading-relaxed mt-1 whitespace-pre-line">{selectedProfile.palaceResponsibilities || "—"}</p>
                   </div>
                   <div>
                     <span className="text-[10px] text-gray-400 font-bold block uppercase tracking-wider">Biography Background</span>

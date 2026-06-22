@@ -25,6 +25,29 @@ export async function GET() {
   return NextResponse.json({ profile, user: session.user });
 }
 
+interface UpdateProfileInput {
+  fullName?: string;
+  phone?: string;
+  biography?: string;
+  familyHistory?: string;
+  achievements?: string;
+  profilePictureUrl?: string;
+  documentUrls?: { title: string; url: string }[];
+  dateOfBirth?: string;
+  familyCompound?: string;
+  familyVillage?: string;
+  localGovernment?: string;
+  highestQualification?: string;
+  fieldSpecialization?: string;
+  otherQualifications?: string;
+  currentOccupation?: string;
+  yearInstalled?: string;
+  yearInstalledAsMagaji?: string;
+  yearPromotedLine?: string;
+  languagesSpoken?: string;
+  expertiseInterest?: string;
+}
+
 export async function PUT(request: NextRequest) {
   const session = await getServerAuthSession();
   if (!session?.user?.id) {
@@ -51,12 +74,9 @@ export async function PUT(request: NextRequest) {
     // Core fields
     fullName,
     phone,
-    fullTraditionalName,
-    currentPosition,
     biography,
     familyHistory,
     achievements,
-    palaceResponsibilities,
     profilePictureUrl,
     documentUrls,
     // New compact bio data fields
@@ -73,7 +93,7 @@ export async function PUT(request: NextRequest) {
     yearPromotedLine,
     languagesSpoken,
     expertiseInterest,
-  } = body as any;
+  } = body as unknown as UpdateProfileInput;
 
   // Update profile and optionally user name/phone in parallel
   const [updated] = await Promise.all([
@@ -81,12 +101,9 @@ export async function PUT(request: NextRequest) {
       where: { id: existing.id },
       data: {
         // Core fields — only update if provided
-        ...(fullTraditionalName !== undefined && { fullTraditionalName }),
-        ...(currentPosition !== undefined && { currentPosition }),
         ...(biography !== undefined && { biography }),
         ...(familyHistory !== undefined && { familyHistory }),
         ...(achievements !== undefined && { achievements }),
-        ...(palaceResponsibilities !== undefined && { palaceResponsibilities }),
         ...(profilePictureUrl !== undefined && { profilePictureUrl }),
         ...(documentUrls !== undefined && {
           documents: {

@@ -29,12 +29,9 @@ model Profile {
   userId                 String
   line                   LineType
   title                  String
-  fullTraditionalName    String
-  currentPosition        String
   biography              String
   familyHistory          String
   achievements           String
-  palaceResponsibilities String
   profilePictureUrl      String?
   status                 ProfileStatus   @default(PENDING_REVIEW)
   reviewNote             String?

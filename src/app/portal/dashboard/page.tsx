@@ -53,12 +53,10 @@ type DashboardProfile = {
   phone: string;
   line: LineKey;
   title: string;
-  fullTraditionalName: string;
-  currentPosition: string;
+  positionTitle?: string;
   biography: string;
   familyHistory: string;
   achievements: string[];
-  responsibilities: string[];
   status: ProfileStatus;
   reviewNotes?: string;
   profilePictureUrl?: string;
@@ -116,12 +114,10 @@ export default function RepresentativeDashboard() {
             phone: p.user?.phone ?? "",
             line: (p.line ?? "").toLowerCase() as LineKey,
             title: p.title,
-            fullTraditionalName: p.fullTraditionalName,
-            currentPosition: p.currentPosition,
+            positionTitle: p.user?.positionTitle ?? "Chieftaincy Representative",
             biography: p.biography,
             familyHistory: p.familyHistory,
             achievements: p.achievements ? p.achievements.split("\n") : [],
-            responsibilities: p.palaceResponsibilities ? p.palaceResponsibilities.split("\n") : [],
             status: p.status,
             reviewNotes: p.reviewNote,
             profilePictureUrl: p.profilePictureUrl ?? "",
@@ -247,12 +243,9 @@ export default function RepresentativeDashboard() {
       email: session?.user?.email || "",
       line: currentLine,
       title: titleVal,
-      fullTraditionalName: getString("fullTraditionalName") || getString("fullName"),
-      currentPosition: getString("currentPosition") || "Community Head",
       biography: getString("biography"),
       familyHistory: getString("familyHistory"),
       achievements: getString("achievements"),
-      palaceResponsibilities: getString("palaceResponsibilities"),
       profilePictureUrl: getString("profilePictureUrl") || undefined,
       documentUrls,
       // Compact Bio Data
@@ -549,16 +542,7 @@ export default function RepresentativeDashboard() {
                         </label>
                       ) : null}
 
-                      <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                        Position Title *
-                        <input name="currentPosition" required defaultValue={profile?.currentPosition || "Community Head"}
-                          className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 text-sm focus:border-[#d6b15b] outline-none" />
-                      </label>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 md:col-span-2">
-                        Full Traditional Title Name
-                        <input name="fullTraditionalName" defaultValue={profile?.fullTraditionalName || ""}
-                          className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 text-sm focus:border-[#d6b15b] outline-none" />
-                      </label>
+
                     </div>
 
                     {/* Conditional installation / promotion years */}
@@ -662,23 +646,16 @@ export default function RepresentativeDashboard() {
 
                   <hr className="border-[#f0ece2]" />
 
-                  {/* ── Achievements & Responsibilities ── */}
+                  {/* ── Achievements ── */}
                   <div>
                     <p className="text-[10px] font-bold uppercase tracking-widest text-[#9b762f] mb-3 flex items-center gap-1.5">
-                      <Star className="h-3 w-3" /> Achievements &amp; Responsibilities
+                      <Star className="h-3 w-3" /> Achievements
                     </p>
-                    <div className="grid gap-4 md:grid-cols-2">
-                      <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                        Notable Achievements (one per line)
-                        <textarea name="achievements" defaultValue={profile?.achievements?.join("\n") || ""}
-                          className="mt-2 min-h-20 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 text-sm focus:border-[#d6b15b] outline-none" />
-                      </label>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                        Palace Responsibilities (one per line)
-                        <textarea name="palaceResponsibilities" defaultValue={profile?.responsibilities?.join("\n") || ""}
-                          className="mt-2 min-h-20 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 text-sm focus:border-[#d6b15b] outline-none" />
-                      </label>
-                    </div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
+                      Notable Achievements (one per line)
+                      <textarea name="achievements" defaultValue={profile?.achievements?.join("\n") || ""}
+                        className="mt-2 min-h-20 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 text-sm focus:border-[#d6b15b] outline-none" />
+                    </label>
                   </div>
 
                   {/* Actions */}
@@ -874,13 +851,7 @@ export default function RepresentativeDashboard() {
                         </div>
                       )}
 
-                      <div className="border-t border-[#f0ece2] pt-4">
-                        <span className="text-[10px] text-gray-400 font-bold block uppercase tracking-wider">Full Traditional Title</span>
-                        <p className="text-sm font-semibold mt-1.5 flex items-center gap-2 text-[#9b762f]">
-                          <Crown className="h-4 w-4 text-[#9b762f] shrink-0" />
-                          {profile.fullTraditionalName}
-                        </p>
-                      </div>
+
 
                       <div>
                         <span className="text-[10px] text-gray-400 font-bold block uppercase tracking-wider">Family Compound History</span>
@@ -901,17 +872,7 @@ export default function RepresentativeDashboard() {
                         </ul>
                       </div>
 
-                      <div>
-                        <span className="text-[10px] text-gray-400 font-bold block uppercase tracking-wider">Palace Responsibilities</span>
-                        <ul className="mt-2 space-y-1.5 text-xs text-gray-600">
-                          {profile.responsibilities.map((res, i) => (
-                            <li key={i} className="flex gap-2 items-start">
-                              <CheckCircle2 className="h-3.5 w-3.5 text-[#9b762f] shrink-0 mt-0.5" />
-                              <span>{res}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+
 
                       {profile.documents && profile.documents.length > 0 && (
                         <div>
@@ -984,7 +945,7 @@ export default function RepresentativeDashboard() {
                           </div>
                         </div>
                         <div className="p-4 bg-white">
-                          <p className="text-[10px] font-bold text-[#9b762f] uppercase tracking-wider">{profile.currentPosition}</p>
+                          <p className="text-[10px] font-bold text-[#9b762f] uppercase tracking-wider">{profile.positionTitle || "Chieftaincy Representative"}</p>
                           <p className="mt-2 text-xs leading-relaxed text-gray-600 line-clamp-4">{profile.biography}</p>
                           <div className="mt-4 border-t border-[#f0ece2] pt-3 flex justify-between items-center">
                             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">

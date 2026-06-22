@@ -87,12 +87,9 @@ export default function RegisterRepresentative() {
       positionTitle: getVal("positionTitle"),
       line,
       title,
-      fullTraditionalName: getVal("fullTraditionalName"),
-      currentPosition: getVal("currentPosition") || "Community Head",
       biography: getVal("biography"),
       familyHistory: getVal("familyHistory"),
       achievements: getVal("achievements"),
-      palaceResponsibilities: getVal("palaceResponsibilities"),
       profilePictureUrl,
       documentUrls,
       // Compact Bio fields
@@ -412,26 +409,6 @@ export default function RegisterRepresentative() {
                   placeholder="e.g. Civil Engineer"
                 />
               </label>
-
-              <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 sm:col-span-2">
-                Full Traditional Title Name *
-                <input
-                  name="fullTraditionalName"
-                  required
-                  className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition"
-                  placeholder="e.g. Mogaji Kola Kola-Daisi"
-                />
-              </label>
-
-              <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 sm:col-span-2">
-                Current Position (e.g. Clan Head, Council Advisor) *
-                <input
-                  name="currentPosition"
-                  required
-                  className="mt-2 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition"
-                  placeholder="e.g. Head of the Aleshinloye Lineage"
-                />
-              </label>
             </div>
 
             {/* Conditional installation / promotion years */}
@@ -554,7 +531,7 @@ export default function RegisterRepresentative() {
                 />
               </label>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2 mt-4">
+            <div className="grid gap-4 sm:grid-cols-1 mt-4">
               <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
                 Notable Achievements (one per line) *
                 <textarea
@@ -562,15 +539,6 @@ export default function RegisterRepresentative() {
                   required
                   className="mt-2 min-h-24 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition resize-none"
                   placeholder="e.g. Lineage unification&#10;Community library development"
-                />
-              </label>
-              <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-                Palace Responsibilities (one per line) *
-                <textarea
-                  name="palaceResponsibilities"
-                  required
-                  className="mt-2 min-h-24 w-full rounded-xl border border-[#e8e3da] bg-[#faf8f3] px-4 py-2.5 font-normal text-sm focus:border-[#d6b15b] focus:outline-none transition resize-none"
-                  placeholder="e.g. Clan representation&#10;Council meeting participation"
                 />
               </label>
             </div>

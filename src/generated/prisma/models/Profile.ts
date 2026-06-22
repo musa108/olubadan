@@ -29,12 +29,9 @@ export type ProfileMinAggregateOutputType = {
   userId: string | null
   line: $Enums.LineType | null
   title: string | null
-  fullTraditionalName: string | null
-  currentPosition: string | null
   biography: string | null
   familyHistory: string | null
   achievements: string | null
-  palaceResponsibilities: string | null
   profilePictureUrl: string | null
   status: $Enums.ProfileStatus | null
   reviewNote: string | null
@@ -62,12 +59,9 @@ export type ProfileMaxAggregateOutputType = {
   userId: string | null
   line: $Enums.LineType | null
   title: string | null
-  fullTraditionalName: string | null
-  currentPosition: string | null
   biography: string | null
   familyHistory: string | null
   achievements: string | null
-  palaceResponsibilities: string | null
   profilePictureUrl: string | null
   status: $Enums.ProfileStatus | null
   reviewNote: string | null
@@ -95,12 +89,9 @@ export type ProfileCountAggregateOutputType = {
   userId: number
   line: number
   title: number
-  fullTraditionalName: number
-  currentPosition: number
   biography: number
   familyHistory: number
   achievements: number
-  palaceResponsibilities: number
   profilePictureUrl: number
   status: number
   reviewNote: number
@@ -130,12 +121,9 @@ export type ProfileMinAggregateInputType = {
   userId?: true
   line?: true
   title?: true
-  fullTraditionalName?: true
-  currentPosition?: true
   biography?: true
   familyHistory?: true
   achievements?: true
-  palaceResponsibilities?: true
   profilePictureUrl?: true
   status?: true
   reviewNote?: true
@@ -163,12 +151,9 @@ export type ProfileMaxAggregateInputType = {
   userId?: true
   line?: true
   title?: true
-  fullTraditionalName?: true
-  currentPosition?: true
   biography?: true
   familyHistory?: true
   achievements?: true
-  palaceResponsibilities?: true
   profilePictureUrl?: true
   status?: true
   reviewNote?: true
@@ -196,12 +181,9 @@ export type ProfileCountAggregateInputType = {
   userId?: true
   line?: true
   title?: true
-  fullTraditionalName?: true
-  currentPosition?: true
   biography?: true
   familyHistory?: true
   achievements?: true
-  palaceResponsibilities?: true
   profilePictureUrl?: true
   status?: true
   reviewNote?: true
@@ -302,12 +284,9 @@ export type ProfileGroupByOutputType = {
   userId: string
   line: $Enums.LineType
   title: string
-  fullTraditionalName: string
-  currentPosition: string
   biography: string
   familyHistory: string
   achievements: string
-  palaceResponsibilities: string
   profilePictureUrl: string | null
   status: $Enums.ProfileStatus
   reviewNote: string | null
@@ -356,12 +335,9 @@ export type ProfileWhereInput = {
   userId?: Prisma.StringFilter<"Profile"> | string
   line?: Prisma.EnumLineTypeFilter<"Profile"> | $Enums.LineType
   title?: Prisma.StringFilter<"Profile"> | string
-  fullTraditionalName?: Prisma.StringFilter<"Profile"> | string
-  currentPosition?: Prisma.StringFilter<"Profile"> | string
   biography?: Prisma.StringFilter<"Profile"> | string
   familyHistory?: Prisma.StringFilter<"Profile"> | string
   achievements?: Prisma.StringFilter<"Profile"> | string
-  palaceResponsibilities?: Prisma.StringFilter<"Profile"> | string
   profilePictureUrl?: Prisma.StringNullableFilter<"Profile"> | string | null
   status?: Prisma.EnumProfileStatusFilter<"Profile"> | $Enums.ProfileStatus
   reviewNote?: Prisma.StringNullableFilter<"Profile"> | string | null
@@ -392,12 +368,9 @@ export type ProfileOrderByWithRelationInput = {
   userId?: Prisma.SortOrder
   line?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  fullTraditionalName?: Prisma.SortOrder
-  currentPosition?: Prisma.SortOrder
   biography?: Prisma.SortOrder
   familyHistory?: Prisma.SortOrder
   achievements?: Prisma.SortOrder
-  palaceResponsibilities?: Prisma.SortOrder
   profilePictureUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
   reviewNote?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -431,12 +404,9 @@ export type ProfileWhereUniqueInput = Prisma.AtLeast<{
   userId?: Prisma.StringFilter<"Profile"> | string
   line?: Prisma.EnumLineTypeFilter<"Profile"> | $Enums.LineType
   title?: Prisma.StringFilter<"Profile"> | string
-  fullTraditionalName?: Prisma.StringFilter<"Profile"> | string
-  currentPosition?: Prisma.StringFilter<"Profile"> | string
   biography?: Prisma.StringFilter<"Profile"> | string
   familyHistory?: Prisma.StringFilter<"Profile"> | string
   achievements?: Prisma.StringFilter<"Profile"> | string
-  palaceResponsibilities?: Prisma.StringFilter<"Profile"> | string
   profilePictureUrl?: Prisma.StringNullableFilter<"Profile"> | string | null
   status?: Prisma.EnumProfileStatusFilter<"Profile"> | $Enums.ProfileStatus
   reviewNote?: Prisma.StringNullableFilter<"Profile"> | string | null
@@ -467,12 +437,9 @@ export type ProfileOrderByWithAggregationInput = {
   userId?: Prisma.SortOrder
   line?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  fullTraditionalName?: Prisma.SortOrder
-  currentPosition?: Prisma.SortOrder
   biography?: Prisma.SortOrder
   familyHistory?: Prisma.SortOrder
   achievements?: Prisma.SortOrder
-  palaceResponsibilities?: Prisma.SortOrder
   profilePictureUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
   reviewNote?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -506,12 +473,9 @@ export type ProfileScalarWhereWithAggregatesInput = {
   userId?: Prisma.StringWithAggregatesFilter<"Profile"> | string
   line?: Prisma.EnumLineTypeWithAggregatesFilter<"Profile"> | $Enums.LineType
   title?: Prisma.StringWithAggregatesFilter<"Profile"> | string
-  fullTraditionalName?: Prisma.StringWithAggregatesFilter<"Profile"> | string
-  currentPosition?: Prisma.StringWithAggregatesFilter<"Profile"> | string
   biography?: Prisma.StringWithAggregatesFilter<"Profile"> | string
   familyHistory?: Prisma.StringWithAggregatesFilter<"Profile"> | string
   achievements?: Prisma.StringWithAggregatesFilter<"Profile"> | string
-  palaceResponsibilities?: Prisma.StringWithAggregatesFilter<"Profile"> | string
   profilePictureUrl?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
   status?: Prisma.EnumProfileStatusWithAggregatesFilter<"Profile"> | $Enums.ProfileStatus
   reviewNote?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
@@ -538,12 +502,9 @@ export type ProfileCreateInput = {
   id?: string
   line: $Enums.LineType
   title: string
-  fullTraditionalName: string
-  currentPosition: string
   biography: string
   familyHistory: string
   achievements: string
-  palaceResponsibilities: string
   profilePictureUrl?: string | null
   status?: $Enums.ProfileStatus
   reviewNote?: string | null
@@ -574,12 +535,9 @@ export type ProfileUncheckedCreateInput = {
   userId: string
   line: $Enums.LineType
   title: string
-  fullTraditionalName: string
-  currentPosition: string
   biography: string
   familyHistory: string
   achievements: string
-  palaceResponsibilities: string
   profilePictureUrl?: string | null
   status?: $Enums.ProfileStatus
   reviewNote?: string | null
@@ -608,12 +566,9 @@ export type ProfileUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   line?: Prisma.EnumLineTypeFieldUpdateOperationsInput | $Enums.LineType
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  fullTraditionalName?: Prisma.StringFieldUpdateOperationsInput | string
-  currentPosition?: Prisma.StringFieldUpdateOperationsInput | string
   biography?: Prisma.StringFieldUpdateOperationsInput | string
   familyHistory?: Prisma.StringFieldUpdateOperationsInput | string
   achievements?: Prisma.StringFieldUpdateOperationsInput | string
-  palaceResponsibilities?: Prisma.StringFieldUpdateOperationsInput | string
   profilePictureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumProfileStatusFieldUpdateOperationsInput | $Enums.ProfileStatus
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -644,12 +599,9 @@ export type ProfileUncheckedUpdateInput = {
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   line?: Prisma.EnumLineTypeFieldUpdateOperationsInput | $Enums.LineType
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  fullTraditionalName?: Prisma.StringFieldUpdateOperationsInput | string
-  currentPosition?: Prisma.StringFieldUpdateOperationsInput | string
   biography?: Prisma.StringFieldUpdateOperationsInput | string
   familyHistory?: Prisma.StringFieldUpdateOperationsInput | string
   achievements?: Prisma.StringFieldUpdateOperationsInput | string
-  palaceResponsibilities?: Prisma.StringFieldUpdateOperationsInput | string
   profilePictureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumProfileStatusFieldUpdateOperationsInput | $Enums.ProfileStatus
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -679,12 +631,9 @@ export type ProfileCreateManyInput = {
   userId: string
   line: $Enums.LineType
   title: string
-  fullTraditionalName: string
-  currentPosition: string
   biography: string
   familyHistory: string
   achievements: string
-  palaceResponsibilities: string
   profilePictureUrl?: string | null
   status?: $Enums.ProfileStatus
   reviewNote?: string | null
@@ -711,12 +660,9 @@ export type ProfileUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   line?: Prisma.EnumLineTypeFieldUpdateOperationsInput | $Enums.LineType
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  fullTraditionalName?: Prisma.StringFieldUpdateOperationsInput | string
-  currentPosition?: Prisma.StringFieldUpdateOperationsInput | string
   biography?: Prisma.StringFieldUpdateOperationsInput | string
   familyHistory?: Prisma.StringFieldUpdateOperationsInput | string
   achievements?: Prisma.StringFieldUpdateOperationsInput | string
-  palaceResponsibilities?: Prisma.StringFieldUpdateOperationsInput | string
   profilePictureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumProfileStatusFieldUpdateOperationsInput | $Enums.ProfileStatus
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -744,12 +690,9 @@ export type ProfileUncheckedUpdateManyInput = {
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   line?: Prisma.EnumLineTypeFieldUpdateOperationsInput | $Enums.LineType
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  fullTraditionalName?: Prisma.StringFieldUpdateOperationsInput | string
-  currentPosition?: Prisma.StringFieldUpdateOperationsInput | string
   biography?: Prisma.StringFieldUpdateOperationsInput | string
   familyHistory?: Prisma.StringFieldUpdateOperationsInput | string
   achievements?: Prisma.StringFieldUpdateOperationsInput | string
-  palaceResponsibilities?: Prisma.StringFieldUpdateOperationsInput | string
   profilePictureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumProfileStatusFieldUpdateOperationsInput | $Enums.ProfileStatus
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -787,12 +730,9 @@ export type ProfileCountOrderByAggregateInput = {
   userId?: Prisma.SortOrder
   line?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  fullTraditionalName?: Prisma.SortOrder
-  currentPosition?: Prisma.SortOrder
   biography?: Prisma.SortOrder
   familyHistory?: Prisma.SortOrder
   achievements?: Prisma.SortOrder
-  palaceResponsibilities?: Prisma.SortOrder
   profilePictureUrl?: Prisma.SortOrder
   status?: Prisma.SortOrder
   reviewNote?: Prisma.SortOrder
@@ -820,12 +760,9 @@ export type ProfileMaxOrderByAggregateInput = {
   userId?: Prisma.SortOrder
   line?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  fullTraditionalName?: Prisma.SortOrder
-  currentPosition?: Prisma.SortOrder
   biography?: Prisma.SortOrder
   familyHistory?: Prisma.SortOrder
   achievements?: Prisma.SortOrder
-  palaceResponsibilities?: Prisma.SortOrder
   profilePictureUrl?: Prisma.SortOrder
   status?: Prisma.SortOrder
   reviewNote?: Prisma.SortOrder
@@ -853,12 +790,9 @@ export type ProfileMinOrderByAggregateInput = {
   userId?: Prisma.SortOrder
   line?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  fullTraditionalName?: Prisma.SortOrder
-  currentPosition?: Prisma.SortOrder
   biography?: Prisma.SortOrder
   familyHistory?: Prisma.SortOrder
   achievements?: Prisma.SortOrder
-  palaceResponsibilities?: Prisma.SortOrder
   profilePictureUrl?: Prisma.SortOrder
   status?: Prisma.SortOrder
   reviewNote?: Prisma.SortOrder
@@ -979,12 +913,9 @@ export type ProfileCreateWithoutUserInput = {
   id?: string
   line: $Enums.LineType
   title: string
-  fullTraditionalName: string
-  currentPosition: string
   biography: string
   familyHistory: string
   achievements: string
-  palaceResponsibilities: string
   profilePictureUrl?: string | null
   status?: $Enums.ProfileStatus
   reviewNote?: string | null
@@ -1013,12 +944,9 @@ export type ProfileUncheckedCreateWithoutUserInput = {
   id?: string
   line: $Enums.LineType
   title: string
-  fullTraditionalName: string
-  currentPosition: string
   biography: string
   familyHistory: string
   achievements: string
-  palaceResponsibilities: string
   profilePictureUrl?: string | null
   status?: $Enums.ProfileStatus
   reviewNote?: string | null
@@ -1077,12 +1005,9 @@ export type ProfileScalarWhereInput = {
   userId?: Prisma.StringFilter<"Profile"> | string
   line?: Prisma.EnumLineTypeFilter<"Profile"> | $Enums.LineType
   title?: Prisma.StringFilter<"Profile"> | string
-  fullTraditionalName?: Prisma.StringFilter<"Profile"> | string
-  currentPosition?: Prisma.StringFilter<"Profile"> | string
   biography?: Prisma.StringFilter<"Profile"> | string
   familyHistory?: Prisma.StringFilter<"Profile"> | string
   achievements?: Prisma.StringFilter<"Profile"> | string
-  palaceResponsibilities?: Prisma.StringFilter<"Profile"> | string
   profilePictureUrl?: Prisma.StringNullableFilter<"Profile"> | string | null
   status?: Prisma.EnumProfileStatusFilter<"Profile"> | $Enums.ProfileStatus
   reviewNote?: Prisma.StringNullableFilter<"Profile"> | string | null
@@ -1109,12 +1034,9 @@ export type ProfileCreateWithoutMediaInput = {
   id?: string
   line: $Enums.LineType
   title: string
-  fullTraditionalName: string
-  currentPosition: string
   biography: string
   familyHistory: string
   achievements: string
-  palaceResponsibilities: string
   profilePictureUrl?: string | null
   status?: $Enums.ProfileStatus
   reviewNote?: string | null
@@ -1144,12 +1066,9 @@ export type ProfileUncheckedCreateWithoutMediaInput = {
   userId: string
   line: $Enums.LineType
   title: string
-  fullTraditionalName: string
-  currentPosition: string
   biography: string
   familyHistory: string
   achievements: string
-  palaceResponsibilities: string
   profilePictureUrl?: string | null
   status?: $Enums.ProfileStatus
   reviewNote?: string | null
@@ -1193,12 +1112,9 @@ export type ProfileUpdateWithoutMediaInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   line?: Prisma.EnumLineTypeFieldUpdateOperationsInput | $Enums.LineType
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  fullTraditionalName?: Prisma.StringFieldUpdateOperationsInput | string
-  currentPosition?: Prisma.StringFieldUpdateOperationsInput | string
   biography?: Prisma.StringFieldUpdateOperationsInput | string
   familyHistory?: Prisma.StringFieldUpdateOperationsInput | string
   achievements?: Prisma.StringFieldUpdateOperationsInput | string
-  palaceResponsibilities?: Prisma.StringFieldUpdateOperationsInput | string
   profilePictureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumProfileStatusFieldUpdateOperationsInput | $Enums.ProfileStatus
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1228,12 +1144,9 @@ export type ProfileUncheckedUpdateWithoutMediaInput = {
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   line?: Prisma.EnumLineTypeFieldUpdateOperationsInput | $Enums.LineType
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  fullTraditionalName?: Prisma.StringFieldUpdateOperationsInput | string
-  currentPosition?: Prisma.StringFieldUpdateOperationsInput | string
   biography?: Prisma.StringFieldUpdateOperationsInput | string
   familyHistory?: Prisma.StringFieldUpdateOperationsInput | string
   achievements?: Prisma.StringFieldUpdateOperationsInput | string
-  palaceResponsibilities?: Prisma.StringFieldUpdateOperationsInput | string
   profilePictureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumProfileStatusFieldUpdateOperationsInput | $Enums.ProfileStatus
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1261,12 +1174,9 @@ export type ProfileCreateWithoutDocumentsInput = {
   id?: string
   line: $Enums.LineType
   title: string
-  fullTraditionalName: string
-  currentPosition: string
   biography: string
   familyHistory: string
   achievements: string
-  palaceResponsibilities: string
   profilePictureUrl?: string | null
   status?: $Enums.ProfileStatus
   reviewNote?: string | null
@@ -1296,12 +1206,9 @@ export type ProfileUncheckedCreateWithoutDocumentsInput = {
   userId: string
   line: $Enums.LineType
   title: string
-  fullTraditionalName: string
-  currentPosition: string
   biography: string
   familyHistory: string
   achievements: string
-  palaceResponsibilities: string
   profilePictureUrl?: string | null
   status?: $Enums.ProfileStatus
   reviewNote?: string | null
@@ -1345,12 +1252,9 @@ export type ProfileUpdateWithoutDocumentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   line?: Prisma.EnumLineTypeFieldUpdateOperationsInput | $Enums.LineType
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  fullTraditionalName?: Prisma.StringFieldUpdateOperationsInput | string
-  currentPosition?: Prisma.StringFieldUpdateOperationsInput | string
   biography?: Prisma.StringFieldUpdateOperationsInput | string
   familyHistory?: Prisma.StringFieldUpdateOperationsInput | string
   achievements?: Prisma.StringFieldUpdateOperationsInput | string
-  palaceResponsibilities?: Prisma.StringFieldUpdateOperationsInput | string
   profilePictureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumProfileStatusFieldUpdateOperationsInput | $Enums.ProfileStatus
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1380,12 +1284,9 @@ export type ProfileUncheckedUpdateWithoutDocumentsInput = {
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   line?: Prisma.EnumLineTypeFieldUpdateOperationsInput | $Enums.LineType
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  fullTraditionalName?: Prisma.StringFieldUpdateOperationsInput | string
-  currentPosition?: Prisma.StringFieldUpdateOperationsInput | string
   biography?: Prisma.StringFieldUpdateOperationsInput | string
   familyHistory?: Prisma.StringFieldUpdateOperationsInput | string
   achievements?: Prisma.StringFieldUpdateOperationsInput | string
-  palaceResponsibilities?: Prisma.StringFieldUpdateOperationsInput | string
   profilePictureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumProfileStatusFieldUpdateOperationsInput | $Enums.ProfileStatus
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1413,12 +1314,9 @@ export type ProfileCreateManyUserInput = {
   id?: string
   line: $Enums.LineType
   title: string
-  fullTraditionalName: string
-  currentPosition: string
   biography: string
   familyHistory: string
   achievements: string
-  palaceResponsibilities: string
   profilePictureUrl?: string | null
   status?: $Enums.ProfileStatus
   reviewNote?: string | null
@@ -1445,12 +1343,9 @@ export type ProfileUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   line?: Prisma.EnumLineTypeFieldUpdateOperationsInput | $Enums.LineType
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  fullTraditionalName?: Prisma.StringFieldUpdateOperationsInput | string
-  currentPosition?: Prisma.StringFieldUpdateOperationsInput | string
   biography?: Prisma.StringFieldUpdateOperationsInput | string
   familyHistory?: Prisma.StringFieldUpdateOperationsInput | string
   achievements?: Prisma.StringFieldUpdateOperationsInput | string
-  palaceResponsibilities?: Prisma.StringFieldUpdateOperationsInput | string
   profilePictureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumProfileStatusFieldUpdateOperationsInput | $Enums.ProfileStatus
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1479,12 +1374,9 @@ export type ProfileUncheckedUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   line?: Prisma.EnumLineTypeFieldUpdateOperationsInput | $Enums.LineType
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  fullTraditionalName?: Prisma.StringFieldUpdateOperationsInput | string
-  currentPosition?: Prisma.StringFieldUpdateOperationsInput | string
   biography?: Prisma.StringFieldUpdateOperationsInput | string
   familyHistory?: Prisma.StringFieldUpdateOperationsInput | string
   achievements?: Prisma.StringFieldUpdateOperationsInput | string
-  palaceResponsibilities?: Prisma.StringFieldUpdateOperationsInput | string
   profilePictureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumProfileStatusFieldUpdateOperationsInput | $Enums.ProfileStatus
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1513,12 +1405,9 @@ export type ProfileUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   line?: Prisma.EnumLineTypeFieldUpdateOperationsInput | $Enums.LineType
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  fullTraditionalName?: Prisma.StringFieldUpdateOperationsInput | string
-  currentPosition?: Prisma.StringFieldUpdateOperationsInput | string
   biography?: Prisma.StringFieldUpdateOperationsInput | string
   familyHistory?: Prisma.StringFieldUpdateOperationsInput | string
   achievements?: Prisma.StringFieldUpdateOperationsInput | string
-  palaceResponsibilities?: Prisma.StringFieldUpdateOperationsInput | string
   profilePictureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumProfileStatusFieldUpdateOperationsInput | $Enums.ProfileStatus
   reviewNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1586,12 +1475,9 @@ export type ProfileSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   userId?: boolean
   line?: boolean
   title?: boolean
-  fullTraditionalName?: boolean
-  currentPosition?: boolean
   biography?: boolean
   familyHistory?: boolean
   achievements?: boolean
-  palaceResponsibilities?: boolean
   profilePictureUrl?: boolean
   status?: boolean
   reviewNote?: boolean
@@ -1623,12 +1509,9 @@ export type ProfileSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   userId?: boolean
   line?: boolean
   title?: boolean
-  fullTraditionalName?: boolean
-  currentPosition?: boolean
   biography?: boolean
   familyHistory?: boolean
   achievements?: boolean
-  palaceResponsibilities?: boolean
   profilePictureUrl?: boolean
   status?: boolean
   reviewNote?: boolean
@@ -1657,12 +1540,9 @@ export type ProfileSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   userId?: boolean
   line?: boolean
   title?: boolean
-  fullTraditionalName?: boolean
-  currentPosition?: boolean
   biography?: boolean
   familyHistory?: boolean
   achievements?: boolean
-  palaceResponsibilities?: boolean
   profilePictureUrl?: boolean
   status?: boolean
   reviewNote?: boolean
@@ -1691,12 +1571,9 @@ export type ProfileSelectScalar = {
   userId?: boolean
   line?: boolean
   title?: boolean
-  fullTraditionalName?: boolean
-  currentPosition?: boolean
   biography?: boolean
   familyHistory?: boolean
   achievements?: boolean
-  palaceResponsibilities?: boolean
   profilePictureUrl?: boolean
   status?: boolean
   reviewNote?: boolean
@@ -1719,7 +1596,7 @@ export type ProfileSelectScalar = {
   yearPromotedLine?: boolean
 }
 
-export type ProfileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "line" | "title" | "fullTraditionalName" | "currentPosition" | "biography" | "familyHistory" | "achievements" | "palaceResponsibilities" | "profilePictureUrl" | "status" | "reviewNote" | "reviewedAt" | "reviewedById" | "createdAt" | "updatedAt" | "currentOccupation" | "dateOfBirth" | "expertiseInterest" | "familyCompound" | "familyVillage" | "fieldSpecialization" | "highestQualification" | "languagesSpoken" | "localGovernment" | "otherQualifications" | "yearInstalled" | "yearInstalledAsMagaji" | "yearPromotedLine", ExtArgs["result"]["profile"]>
+export type ProfileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "line" | "title" | "biography" | "familyHistory" | "achievements" | "profilePictureUrl" | "status" | "reviewNote" | "reviewedAt" | "reviewedById" | "createdAt" | "updatedAt" | "currentOccupation" | "dateOfBirth" | "expertiseInterest" | "familyCompound" | "familyVillage" | "fieldSpecialization" | "highestQualification" | "languagesSpoken" | "localGovernment" | "otherQualifications" | "yearInstalled" | "yearInstalledAsMagaji" | "yearPromotedLine", ExtArgs["result"]["profile"]>
 export type ProfileInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   documents?: boolean | Prisma.Profile$documentsArgs<ExtArgs>
   media?: boolean | Prisma.Profile$mediaArgs<ExtArgs>
@@ -1745,12 +1622,9 @@ export type $ProfilePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     userId: string
     line: $Enums.LineType
     title: string
-    fullTraditionalName: string
-    currentPosition: string
     biography: string
     familyHistory: string
     achievements: string
-    palaceResponsibilities: string
     profilePictureUrl: string | null
     status: $Enums.ProfileStatus
     reviewNote: string | null
@@ -2201,12 +2075,9 @@ export interface ProfileFieldRefs {
   readonly userId: Prisma.FieldRef<"Profile", 'String'>
   readonly line: Prisma.FieldRef<"Profile", 'LineType'>
   readonly title: Prisma.FieldRef<"Profile", 'String'>
-  readonly fullTraditionalName: Prisma.FieldRef<"Profile", 'String'>
-  readonly currentPosition: Prisma.FieldRef<"Profile", 'String'>
   readonly biography: Prisma.FieldRef<"Profile", 'String'>
   readonly familyHistory: Prisma.FieldRef<"Profile", 'String'>
   readonly achievements: Prisma.FieldRef<"Profile", 'String'>
-  readonly palaceResponsibilities: Prisma.FieldRef<"Profile", 'String'>
   readonly profilePictureUrl: Prisma.FieldRef<"Profile", 'String'>
   readonly status: Prisma.FieldRef<"Profile", 'ProfileStatus'>
   readonly reviewNote: Prisma.FieldRef<"Profile", 'String'>

@@ -40,7 +40,6 @@ interface ProfileData {
   biography: string;
   image?: string;
   achievements: string[];
-  responsibilities: string[];
   familyHistory?: string;
   // If backend ever returns these fields on admin view
   status?: string;
@@ -49,13 +48,10 @@ interface ProfileData {
 type ApiProfile = {
   id?: string;
   title?: string;
-  fullTraditionalName?: string;
-  currentPosition?: string;
+  achievements?: string[] | string;
+  familyHistory?: string;
   biography?: string;
   profilePictureUrl?: string;
-  achievements?: string[] | string;
-  palaceResponsibilities?: string[] | string;
-  familyHistory?: string;
   user?: { name?: string; positionTitle?: string } | null;
 };
 
@@ -159,13 +155,12 @@ export default function LineProfilesPage({ line }: { line: LineKey }) {
           return {
             id,
             title: String(p.title ?? ""),
-            name: p.fullTraditionalName || p.user?.name || "Title Holder",
-            position: p.currentPosition || p.user?.positionTitle || "Chieftaincy Representative",
+            name: p.user?.name || "Title Holder",
+            position: p.user?.positionTitle || "Chieftaincy Representative",
             biography: String(p.biography ?? ""),
             image: p.profilePictureUrl || undefined,
             familyHistory: p.familyHistory,
             achievements: parseList(p.achievements),
-            responsibilities: parseList(p.palaceResponsibilities),
           };
         });
 
@@ -353,23 +348,6 @@ export default function LineProfilesPage({ line }: { line: LineKey }) {
                           </p>
                           <ul className="space-y-1 text-xs text-gray-600 font-semibold">
                             {profile.achievements.map((item, i) => (
-                              <li key={i} className="flex items-start gap-1.5">
-                                <ChevronRight className="h-3 w-3 text-[#9b762f] mt-0.5 shrink-0" />
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      {profile.responsibilities.length > 0 && (
-                        <div>
-                          <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1.5 flex items-center gap-1.5">
-                            <FileText className="h-3.5 w-3.5 text-[#9b762f]" />
-                            Palace Responsibilities
-                          </p>
-                          <ul className="space-y-1 text-xs text-gray-600 font-semibold">
-                            {profile.responsibilities.map((item, i) => (
                               <li key={i} className="flex items-start gap-1.5">
                                 <ChevronRight className="h-3 w-3 text-[#9b762f] mt-0.5 shrink-0" />
                                 {item}

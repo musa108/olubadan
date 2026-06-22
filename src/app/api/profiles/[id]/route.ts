@@ -7,12 +7,9 @@ import { prisma } from "@/lib/prisma";
 
 const updateProfileSchema = z.object({
   title: z.string().min(2).optional(),
-  fullTraditionalName: z.string().min(2).optional(),
-  currentPosition: z.string().min(2).optional(),
   biography: z.string().min(10).optional(),
   familyHistory: z.string().min(10).optional(),
   achievements: z.string().min(2).optional(),
-  palaceResponsibilities: z.string().min(2).optional(),
   profilePictureUrl: z.string().nullable().optional(),
   status: z.nativeEnum(ProfileStatus).optional(),
   reviewNote: z.string().nullable().optional(),

@@ -58,15 +58,11 @@ async function main() {
       userId: otunRep.id,
       line: LineType.OTUN,
       title: "His Royal Majesty",
-      fullTraditionalName: "Oba Abiodun Kola-Daisi",
-      currentPosition: "Osi Olubadan of Ibadanland",
       biography:
         "A respected member of the Olubadan traditional council, known for civic leadership and service to Ibadanland.",
       familyHistory:
         "The Otun line preserves senior civil chieftaincy service and family leadership records.",
       achievements: "Council representation; community mediation; cultural preservation",
-      palaceResponsibilities:
-        "Palace advisory duties; line representation; public ceremonial leadership",
       profilePictureUrl: "/oba/otun2.jpeg",
       status: ProfileStatus.PUBLISHED,
       reviewedById: admin.id,
