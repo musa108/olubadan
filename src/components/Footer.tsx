@@ -148,15 +148,11 @@ export default function Footer() {
               <ul className="space-y-3 text-xs text-[#f4f1ea]/65 font-medium">
                 <li className="flex items-start gap-2.5">
                   <MapPin className="h-4 w-4 text-[#d6b15b] shrink-0 mt-0.5" />
-                  <span>Olubadan Palace, Oja Oba Area,<br />Ibadan, Oyo State, Nigeria.</span>
+                  <span>Olubadan Palace, Oke-Aramo,<br />Ibadan, Oyo State, Nigeria.</span>
                 </li>
                 <li className="flex items-center gap-2.5">
                   <Mail className="h-4 w-4 text-[#d6b15b] shrink-0" />
-                  <a href="mailto:secretariat@olubadanpalace.org" className="hover:text-[#d6b15b] transition">secretariat@olubadanpalace.org</a>
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <Phone className="h-4 w-4 text-[#d6b15b] shrink-0" />
-                  <a href="tel:+2348000000000" className="hover:text-[#d6b15b] transition">+234 800 000 0000</a>
+                  <a href="mailto:Olubadanpalace@gmail.com" className="hover:text-[#d6b15b] transition">Olubadanpalace@gmail.com</a>
                 </li>
               </ul>
             </div>
