@@ -7,7 +7,6 @@ import {
   Crown,
   MapPin,
   Mail,
-  Phone,
   ArrowRight,
   Twitter,
   Facebook,
