@@ -134,57 +134,58 @@ export default function LatestNewsSection() {
         {news.length > 0 ? (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {news.map((item, index) => (
-              <motion.article
-                key={item.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-[#eae6db] shadow-xs hover:shadow-xl transition-all duration-300"
-              >
-                <div className="relative h-60 w-full overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.headline}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="inline-flex items-center gap-1.5 rounded-lg bg-black/60 backdrop-blur-md px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#e1bd62] border border-white/10">
-                      <Tag className="h-3 w-3 text-[#e1bd62]" />
-                      {item.category}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex flex-1 flex-col p-6 justify-between">
-                  <div>
-                    <div className="flex items-center gap-2 text-xs font-medium text-gray-500 mb-3.5">
-                      <CalendarDays className="h-3.5 w-3.5 text-[#9b762f]" />
-                      {new Date(item.publishDate).toLocaleDateString("en-NG", {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
-                      })}
+              <Link key={item.id} href="/news" className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-[#eae6db] shadow-xs hover:shadow-xl transition-all duration-300">
+                <motion.article
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="flex flex-col flex-1"
+                >
+                  <div className="relative h-60 w-full overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.headline}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4 z-10">
+                      <span className="inline-flex items-center gap-1.5 rounded-lg bg-black/60 backdrop-blur-md px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#e1bd62] border border-white/10">
+                        <Tag className="h-3 w-3 text-[#e1bd62]" />
+                        {item.category}
+                      </span>
                     </div>
-                    <h3 className={`${playfair.className} text-xl font-bold text-gray-950 leading-snug group-hover:text-[#9b762f] transition-colors duration-250`}>
-                      {item.headline}
-                    </h3>
-                    <p className="mt-2.5 text-sm text-gray-600 line-clamp-3 leading-relaxed">
-                      {item.subtitle || (Array.isArray(item.content) ? item.content[0] : item.content)}
-                    </p>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-[#eae6db] flex items-center justify-between">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-gray-400">
-                      BY {item.author.replace("Signed: ", "")}
-                    </span>
-                    <span className="text-xs font-bold text-[#9b762f] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                      Read More <ArrowRight className="h-3 w-3" />
-                    </span>
+                  <div className="flex flex-1 flex-col p-6 justify-between">
+                    <div>
+                      <div className="flex items-center gap-2 text-xs font-medium text-gray-500 mb-3.5">
+                        <CalendarDays className="h-3.5 w-3.5 text-[#9b762f]" />
+                        {new Date(item.publishDate).toLocaleDateString("en-NG", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                        })}
+                      </div>
+                      <h3 className={`${playfair.className} text-xl font-bold text-gray-950 leading-snug group-hover:text-[#9b762f] transition-colors duration-250`}>
+                        {item.headline}
+                      </h3>
+                      <p className="mt-2.5 text-sm text-gray-600 line-clamp-3 leading-relaxed">
+                        {item.subtitle || (Array.isArray(item.content) ? item.content[0] : item.content)}
+                      </p>
+                    </div>
+
+                    <div className="mt-6 pt-4 border-t border-[#eae6db] flex items-center justify-between">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                        BY {item.author.replace("Signed: ", "")}
+                      </span>
+                      <span className="text-xs font-bold text-[#9b762f] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                        Read More <ArrowRight className="h-3 w-3" />
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </motion.article>
+                </motion.article>
+              </Link>
             ))}
           </div>
         ) : (
