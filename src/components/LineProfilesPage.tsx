@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Award,
-  FileText,
   Shield,
   X,
   BookOpen,
@@ -225,11 +224,7 @@ export default function LineProfilesPage({ line }: { line: LineKey }) {
           <h1 className={`${playfair.className} mt-2 text-3xl font-bold text-gray-950 sm:text-4xl md:text-5xl`}>
             {label}
           </h1>
-          {!isAdmin && (
-            <p className="mt-3 text-sm leading-7 text-gray-600 md:text-base font-medium">
-              Title-holder directory (public preview). Full verified dossiers are available to Palace Super Admin only.
-            </p>
-          )}
+        
           <p className="mt-4 max-w-3xl text-sm sm:text-base leading-7 sm:leading-8 text-gray-600 md:text-lg font-medium">
             {description}
           </p>
